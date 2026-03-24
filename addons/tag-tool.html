@@ -6,38 +6,41 @@
   <title>Tag Tool — JM Addons</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
   <header class="site-header">
     <div class="header-inner">
-      <div class="logo">
-        <span class="logo-bracket">[</span>JM<span class="logo-bracket">]</span>
-        <span class="logo-sub">Addons</span>
-      </div>
+      <a href="../index.html" class="logo">
+        <span class="logo-pixel">JM</span>
+        <span class="logo-text">Addons</span>
+      </a>
       <nav class="top-nav">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="https://github.com/Joshm99" class="nav-link" target="_blank">GitHub</a>
-        <a href="https://www.curseforge.com" class="nav-link" target="_blank">CurseForge</a>
+        <a href="../index.html" class="nav-link">Docs</a>
+        <a href="https://github.com/Joshm99" class="nav-link" target="_blank">GitHub ↗</a>
+        <a href="https://www.curseforge.com" class="nav-link" target="_blank">CurseForge ↗</a>
       </nav>
     </div>
   </header>
 
-  <div class="page-wrap">
+  <div class="page-layout">
 
     <aside class="sidebar">
       <a href="../index.html" class="sidebar-back">← All Addons</a>
-      <p class="sidebar-title">On this page</p>
-      <ul class="sidebar-nav">
-        <li><a href="#overview" class="active">Overview</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#commands">Commands</a></li>
-        <li><a href="#compatibility">Compatibility</a></li>
-        <li><a href="#changelog">Changelog</a></li>
-      </ul>
+
+      <div class="sidebar-section">
+        <span class="sidebar-label">On this page</span>
+        <ul class="sidebar-nav">
+          <li><a href="#overview" class="active">Overview</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#usage">Usage</a></li>
+          <li><a href="#commands">Commands</a></li>
+          <li><a href="#compatibility">Compatibility</a></li>
+          <li><a href="#changelog">Changelog</a></li>
+        </ul>
+      </div>
     </aside>
 
     <main class="doc-content">
@@ -47,85 +50,89 @@
         <h1 class="doc-title">Tag Tool</h1>
         <p class="doc-desc">A minimal entity tagging utility for Bedrock. Add, remove, and inspect tags on any entity through a clean in-game Script API UI — no commands needed.</p>
         <div class="doc-meta">
-          <div class="meta-item">
+          <div class="meta-pill">
             <span class="meta-label">Version</span>
             <span class="meta-value">1.0.0</span>
           </div>
-          <div class="meta-item">
+          <div class="meta-pill">
             <span class="meta-label">Namespace</span>
             <span class="meta-value">jm_tt:</span>
           </div>
-          <div class="meta-item">
+          <div class="meta-pill">
             <span class="meta-label">Bedrock</span>
             <span class="meta-value">1.21+</span>
           </div>
-          <div class="meta-item">
+          <div class="meta-pill">
             <span class="meta-label">Script API</span>
-            <span class="meta-value">@minecraft/server 2.x</span>
+            <span class="meta-value">2.x</span>
           </div>
         </div>
       </div>
 
-      <!-- OVERVIEW -->
       <h2 id="overview">Overview</h2>
       <p>Tag Tool is a lightweight addon for server admins and addon developers who need to inspect or modify entity tags in-game without using the <code>/tag</code> command. Everything happens through a multi-screen Script API UI — just interact with an entity and you're in.</p>
       <p>It's intentionally small. No economy system, no player registry, no database. Just a focused tool for tag management.</p>
 
-      <!-- INSTALLATION -->
       <h2 id="installation">Installation</h2>
       <ol class="steps">
         <li>Download the <code>.mcpack</code> file from CurseForge or the release page.</li>
         <li>Open it — Minecraft will automatically import both the behavior pack and resource pack.</li>
         <li>Create or open a world and go to <strong>Behavior Packs</strong> in world settings.</li>
         <li>Activate <strong>JM Tag Tool BP</strong>. The resource pack will be added automatically.</li>
-        <li>Make sure <strong>Beta APIs</strong> / <strong>Experiments → GameTest Framework</strong> is enabled in world settings.</li>
+        <li>Enable <strong>Beta APIs</strong> under Experiments in world settings.</li>
       </ol>
 
       <div class="callout warn">
-        <span class="callout-label">⚠ Note</span>
-        <p>Tag Tool requires the Beta APIs experiment enabled. This is standard for all Script API addons on Bedrock 1.21+.</p>
+        <span class="callout-icon">ℹ</span>
+        <div class="callout-body">
+          <span class="callout-label">Note</span>
+          <p>Tag Tool requires the Beta APIs experiment enabled. This is standard for all Script API addons on Bedrock 1.21+.</p>
+        </div>
       </div>
 
-      <!-- USAGE -->
       <h2 id="usage">Usage</h2>
+
       <h3>Opening the UI</h3>
       <p>Sneak + interact (right-click / use button) on any entity to open the Tag Tool interface. The main screen shows all tags currently on that entity.</p>
 
-      <h3>Adding a Tag</h3>
+      <h3>Adding a tag</h3>
       <p>From the main screen, select <strong>Add Tag</strong>. Type the tag name into the text field and confirm. The tag is applied immediately — no reload needed.</p>
 
-      <h3>Removing a Tag</h3>
+      <h3>Removing a tag</h3>
       <p>From the main screen, select any existing tag from the list. You'll get a confirmation screen before the tag is removed.</p>
 
       <div class="callout">
-        <span class="callout-label">Tip</span>
-        <p>Tag Tool works on all entity types — mobs, players, armor stands, item frames, etc. If it's an entity, you can tag it.</p>
+        <span class="callout-icon">★</span>
+        <div class="callout-body">
+          <span class="callout-label">Tip</span>
+          <p>Tag Tool works on all entity types — mobs, players, armor stands, item frames, and more. If it's an entity, you can tag it.</p>
+        </div>
       </div>
 
-      <!-- COMMANDS -->
       <h2 id="commands">Commands</h2>
-      <p>Tag Tool is UI-first and doesn't add custom slash commands. Standard Bedrock <code>/tag</code> commands still work alongside it — Tag Tool just gives you a GUI alternative.</p>
+      <p>Tag Tool is UI-first and doesn't add custom slash commands. Standard Bedrock <code>/tag</code> commands still work alongside it.</p>
 
-      <pre><code># Native Bedrock commands still work as expected:
+      <pre><code># Native Bedrock tag commands still work as expected
 /tag @e[type=cow] add my_custom_tag
 /tag @e list</code></pre>
 
-      <!-- COMPATIBILITY -->
       <h2 id="compatibility">Compatibility</h2>
-      <p>Tag Tool uses a minimal footprint to avoid conflicts:</p>
+      <p>Tag Tool uses a minimal footprint to avoid conflicts with other packs:</p>
       <ul>
         <li>No custom blocks or items that could conflict with other packs</li>
         <li>No global scoreboard entries</li>
-        <li>No dynamic property namespace collisions (uses <code>jm_tt:</code> prefix)</li>
-        <li>Achievement-safe — does not add any blocks or items that disable achievements</li>
+        <li>No dynamic property namespace collisions — uses <code>jm_tt:</code> prefix throughout</li>
+        <li>Achievement-safe — does not add any blocks or items</li>
       </ul>
 
       <div class="callout">
-        <span class="callout-label">Note</span>
-        <p>Compatible with AdminTools, JM Shop, JM Mail Delivery, and JM Notice Board when used together on the same world.</p>
+        <span class="callout-icon">★</span>
+        <div class="callout-body">
+          <span class="callout-label">Compatibility</span>
+          <p>Works alongside AdminTools, JM Shop, JM Mail Delivery, and JM Notice Board on the same world without conflicts.</p>
+        </div>
       </div>
 
-      <!-- CHANGELOG -->
       <h2 id="changelog">Changelog</h2>
       <h3>v1.0.0</h3>
       <ul>
@@ -140,8 +147,8 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-logo">[JM] Addons</span>
-      <span class="footer-note">Minecraft Bedrock Edition &nbsp;·&nbsp; Not affiliated with Mojang</span>
+      <span class="footer-logo">JM Addons</span>
+      <span class="footer-copy">Minecraft Bedrock · Not affiliated with Mojang</span>
     </div>
   </footer>
 
