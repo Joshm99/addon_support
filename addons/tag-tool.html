@@ -13,13 +13,13 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="logo">
+      <a href="../home.html" class="logo">
         <img src="../images/logo.png" alt="JM Addons" class="logo-icon" />
         <span class="logo-pixel">JM</span>
         <span class="logo-text">Addons</span>
       </a>
       <nav class="top-nav">
-        <a href="../index.html" class="nav-link">Docs</a>
+        <a href="../home.html" class="nav-link">Docs</a>
         <a href="https://github.com/Joshm99" class="nav-link" target="_blank">GitHub ↗</a>
         <a href="https://www.curseforge.com" class="nav-link" target="_blank">CurseForge ↗</a>
         <a href="https://discord.gg/YOUR_INVITE_CODE" class="nav-link" target="_blank">Discord ↗</a>
@@ -30,7 +30,7 @@
   <div class="page-layout">
 
     <aside class="sidebar">
-      <a href="../index.html" class="sidebar-back">← All Addons</a>
+      <a href="../home.html" class="sidebar-back">← All Addons</a>
 
       <div class="sidebar-section">
         <span class="sidebar-label">On this page</span>
@@ -62,7 +62,7 @@
           </div>
           <div class="meta-pill">
             <span class="meta-label">Bedrock</span>
-            <span class="meta-value">1.21+</span>
+            <span class="meta-value">1.21.90+</span>
           </div>
           <div class="meta-pill">
             <span class="meta-label">Script API</span>
@@ -72,42 +72,39 @@
       </div>
 
       <h2 id="overview">Overview</h2>
-      <p>Tag Tool is a lightweight addon for server admins and addon developers who need to inspect or modify entity tags in-game without using the <code>/tag</code> command. Everything happens through a multi-screen Script API UI — just interact with an entity and you're in.</p>
-      <p>It's intentionally small. No economy system, no player registry, no database. Just a focused tool for tag management.</p>
+      <p>Tag Tool is a lightweight addon that lets operators add and remove tags on players in worlds where cheats are off — no <code>/tag</code> command access needed. Everything runs through a multi-screen Script API UI triggered by using the Tag Tool item.</p>
+      <p>It's intentionally scoped. No economy system, no player registry, no database. Just tag management for players, done through a clean in-game interface.</p>
 
       <h2 id="installation">Installation</h2>
       <ol class="steps">
-        <li>Download the <code>.mcpack</code> file from CurseForge or the release page.</li>
+        <li>Download the <code>.mcaddon</code> file from CurseForge or the release page.</li>
         <li>Open it — Minecraft will automatically import both the behavior pack and resource pack.</li>
         <li>Create or open a world and go to <strong>Behavior Packs</strong> in world settings.</li>
-        <li>Activate <strong>JM Tag Tool BP</strong>. The resource pack will be added automatically.</li>
-        <li>Enable <strong>Beta APIs</strong> under Experiments in world settings.</li>
+        <li>Activate <strong>JM Tag Tool BP</strong>. The resource pack is linked automatically.</li>
       </ol>
-
-      <div class="callout warn">
-        <span class="callout-icon">ℹ</span>
-        <div class="callout-body">
-          <span class="callout-label">Note</span>
-          <p>Tag Tool requires the Beta APIs experiment enabled. This is standard for all Script API addons on Bedrock 1.21+.</p>
-        </div>
-      </div>
 
       <h2 id="usage">Usage</h2>
 
       <h3>Opening the UI</h3>
-      <p>Sneak + interact (right-click / use button) on any entity to open the Tag Tool interface. The main screen shows all tags currently on that entity.</p>
+      <p>Hold the Tag Tool item and use it (right-click, or the use button on mobile/controller) to open the main menu. Operators receive the item automatically on their first join. It can also be crafted at any crafting table — place a <strong>paper</strong> and a <strong>gold ingot</strong> together (shapeless) to get one.</p>
 
       <h3>Adding a tag</h3>
-      <p>From the main screen, select <strong>Add Tag</strong>. Type the tag name into the text field and confirm. The tag is applied immediately — no reload needed.</p>
+      <p>From the main menu, choose <strong>My Tags</strong> to manage your own tags, or <strong>Target Player</strong> to pick another online player. From the tag manager screen, select <strong>Add Tag</strong>, type a name into the text field (max 256 characters), and confirm. The tag is applied immediately.</p>
 
       <h3>Removing a tag</h3>
-      <p>From the main screen, select any existing tag from the list. You'll get a confirmation screen before the tag is removed.</p>
+      <p>From the tag manager screen, select <strong>Remove Tag</strong> to see a list of all tags currently on that player. Select one to remove it immediately.</p>
+
+      <h3>In-game help</h3>
+      <p>The main menu includes a <strong>How to Use</strong> button that opens a built-in help screen covering all features. It's always up to date with the installed version.</p>
+
+      <h3>Protected tags</h3>
+      <p>Tags beginning with <code>sb_</code>, <code>scoreboard</code>, or <code>jm_</code> are hidden from the Tag Tool UI and cannot be added or removed through it. This prevents accidental modification of internal addon or scoreboard state.</p>
 
       <div class="callout">
         <span class="callout-icon">★</span>
         <div class="callout-body">
           <span class="callout-label">Tip</span>
-          <p>Tag Tool works on all entity types — mobs, players, armor stands, item frames, and more. If it's an entity, you can tag it.</p>
+          <p>Tag Tool works without cheats enabled. It's the cleanest way to manage player tags on a survival or adventure world where <code>/tag</code> would otherwise require operator cheats to be on.</p>
         </div>
       </div>
 
@@ -121,11 +118,13 @@
       <h2 id="compatibility">Compatibility</h2>
       <p>Tag Tool uses a minimal footprint to avoid conflicts with other packs:</p>
       <ul>
-        <li>No custom blocks or items that could conflict with other packs</li>
+        <li>Adds one custom item (<code>jm_tt:tag_tool</code>) with a crafting recipe — no custom blocks</li>
         <li>No global scoreboard entries</li>
         <li>No dynamic property namespace collisions — uses <code>jm_tt:</code> prefix throughout</li>
-        <li>Achievement-safe — does not add any blocks or items</li>
       </ul>
+
+      <h3>Operator access</h3>
+      <p>Tag Tool checks operator status in three stages. First it reads the player's command permission level (the standard Bedrock operator flag). If that isn't available, it falls back to player permission level. As a final fallback, any player carrying one of the tags <code>op</code>, <code>operator</code>, or <code>admin</code> is granted access — useful on servers or realms where formal op assignment isn't possible.</p>
 
       <div class="callout">
         <span class="callout-icon">★</span>
@@ -140,7 +139,7 @@
       <ul>
         <li>Initial release</li>
         <li>Multi-screen Script API UI for add / remove / inspect</li>
-        <li>Support for all entity types</li>
+        <li>Player tag management — manage your own tags or target any online player</li>
         <li>Full Script API 2.x compatibility</li>
       </ul>
 

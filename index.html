@@ -13,175 +13,112 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <a href="index.html" class="logo">
-          <img src="images/logo.png" alt="JM Addons" class="logo-icon" />
-          <span class="logo-pixel">JM</span>
-          <span class="logo-text">Addons</span>
-        </a>
-        <nav class="top-nav">
-          <a href="index.html" class="nav-link active">Docs</a>
-          <a href="https://github.com/Joshm99" class="nav-link" target="_blank"
-            >GitHub ↗</a
-          >
-          <a
-            href="https://www.curseforge.com/members/jm_1775/projects"
-            class="nav-link"
-            target="_blank"
-            >CurseForge ↗</a
-          >
-          <a
-            href="https://discord.gg/ZsrM5HqHdS"
-            class="nav-link"
-            target="_blank"
-            >Discord ↗</a
-          >
-        </nav>
+    <style>
+      .wip-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+      .wip-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .wip-logo img {
+        width: 48px;
+        height: 48px;
+        image-rendering: pixelated;
+      }
+      .wip-badge {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--gold);
+        background: var(--gold-glow);
+        border: 1px solid var(--border-mid);
+        border-radius: 999px;
+        padding: 0.35rem 1rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .wip-heading {
+        font-family: var(--font-pixel);
+        font-size: clamp(1.25rem, 4vw, 2rem);
+        color: var(--text);
+        line-height: 1.4;
+      }
+      .wip-sub {
+        color: var(--text-dim);
+        font-size: 1.05rem;
+        max-width: 420px;
+        line-height: 1.7;
+      }
+      .wip-discord {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 1rem;
+        color: #fff;
+        background: #5865F2;
+        border: none;
+        border-radius: var(--radius-md);
+        padding: 0.75rem 1.75rem;
+        text-decoration: none;
+        transition: background var(--transition-base);
+      }
+      .wip-discord:hover {
+        background: #4752C4;
+      }
+      .wip-discord svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+      }
+      .wip-footer {
+        position: absolute;
+        bottom: 3rem;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+      }
+      .wip-enter {
+        position: absolute;
+        bottom: 1rem;
+        color: var(--text-muted);
+        font-size: 0.65rem;
+        text-decoration: none;
+        opacity: 0.35;
+        transition: opacity var(--transition-base);
+      }
+      .wip-enter:hover {
+        opacity: 0.7;
+      }
+    </style>
+
+    <div class="wip-wrapper">
+      <div class="wip-logo">
+        <img src="images/logo.png" alt="JM Addons" />
+        <span class="logo-pixel">JM</span>
+        <span class="logo-text">Addons</span>
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="hero-badge">Minecraft Bedrock Edition</div>
-          <h1 class="hero-title">Addon<br />Documentation</h1>
-          <p class="hero-sub">
-            Guides and references for all JM Bedrock addons. Built for server
-            owners and players.
-          </p>
-        </div>
-        <div class="hero-blocks" aria-hidden="true">
-          <div class="block bl-1"></div>
-          <div class="block bl-2"></div>
-          <div class="block bl-3"></div>
-          <div class="block bl-4"></div>
-          <div class="block bl-5"></div>
-        </div>
-      </section>
+      <span class="wip-badge">Under Construction</span>
 
-      <section class="addons-section">
-        <div class="section-header">
-          <span class="section-tag">// addons</span>
-          <span class="section-count">5 addons</span>
-        </div>
+      <h1 class="wip-heading">Site is being built</h1>
+      <p class="wip-sub">This site is currently under construction. In the meantime, visit our Discord for addon downloads, support, and updates.</p>
 
-        <div class="addon-grid">
-          <a href="addons/mail-delivery.html" class="addon-card">
-            <div class="card-top">
-              <div class="card-icon-wrap"><img src="images/mail-delivery.png" alt="Mail Delivery" class="card-icon" /></div>
-              <div class="card-meta">
-                <span class="card-version">v1.0.2</span>
-              </div>
-            </div>
-            <h2 class="card-name">Mail Delivery</h2>
-            <p class="card-desc">
-              Send items and messages to players. Multi-recipient,
-              return-to-sender, and admin broadcast tools included.
-            </p>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">Multiplayer</span>
-                <span class="tag">Economy</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
+      <a href="https://discord.gg/ZsrM5HqHdS" class="wip-discord" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        Join the Discord
+      </a>
 
-          <a href="addons/admintools.html" class="addon-card">
-            <div class="card-top">
-              <div class="card-icon-wrap"><img src="images/admin-tools.png" alt="AdminTools" class="card-icon" /></div>
-              <div class="card-meta">
-                <span class="card-version">v2.0.0</span>
-              </div>
-            </div>
-            <h2 class="card-name">AdminTools</h2>
-            <p class="card-desc">
-              Full server management suite with player registry, database
-              snapshots, and moderation utilities.
-            </p>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">Admin</span>
-                <span class="tag">Server</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-
-          <a href="addons/shop.html" class="addon-card">
-            <div class="card-top">
-              <div class="card-icon-wrap"><img src="images/jm-shop.png" alt="JM Shop" class="card-icon" /></div>
-              <div class="card-meta">
-                <span class="card-version">v2.0.0</span>
-              </div>
-            </div>
-            <h2 class="card-name">JM Shop</h2>
-            <p class="card-desc">
-              Scoreboard-based in-game shop with configurable buy pages and
-              Economy+ integration.
-            </p>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">Economy</span>
-                <span class="tag">UI</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-
-          <a href="addons/notice-board.html" class="addon-card">
-            <div class="card-top">
-              <div class="card-icon-wrap"><img src="images/notice-board.png" alt="Notice Board" class="card-icon" /></div>
-              <div class="card-meta">
-                <span class="card-version">v1.0.4</span>
-              </div>
-            </div>
-            <h2 class="card-name">Notice Board</h2>
-            <p class="card-desc">
-              Post server announcements and searchable notices in-game.
-              Achievement-safe and fully compatible.
-            </p>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">Utility</span>
-                <span class="tag">Multiplayer</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-
-          <a href="addons/tag-tool.html" class="addon-card">
-            <div class="card-top">
-              <div class="card-icon-wrap"><img src="images/tag-tool.png" alt="Tag Tool" class="card-icon" /></div>
-              <div class="card-meta">
-                <span class="card-version">v1.0.0</span>
-              </div>
-            </div>
-            <h2 class="card-name">Tag Tool</h2>
-            <p class="card-desc">
-              Lightweight entity tagging utility. Add, remove, and inspect tags
-              on any entity through a clean in-game UI.
-            </p>
-            <div class="card-footer">
-              <div class="card-tags">
-                <span class="tag">Utility</span>
-                <span class="tag">Lightweight</span>
-              </div>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span class="footer-logo">JM Addons</span>
-        <span class="footer-copy"
-          >Minecraft Bedrock · Not affiliated with Mojang</span
-        >
-      </div>
-    </footer>
+      <span class="wip-footer">Minecraft Bedrock &middot; Not affiliated with Mojang</span>
+      <a href="home.html" class="wip-enter">Enter site anyway</a>
+    </div>
   </body>
 </html>
