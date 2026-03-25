@@ -528,10 +528,15 @@ img { display: block; max-width: 100%; }
   gap: 3.5rem;
   align-items: start;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .doc-content {
   min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* ========================
@@ -787,6 +792,7 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.5rem;
   overflow-x: auto;
+  max-width: 100%;
   margin: 1.25rem 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
@@ -814,6 +820,8 @@ img { display: block; max-width: 100%; }
   margin: 1.5rem 0;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .callout.warn {
