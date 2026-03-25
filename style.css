@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background: var(--bg);
@@ -989,8 +989,6 @@ img { display: block; max-width: 100%; }
     display: none;
   }
 
-  .hero-blocks { display: none; }
-
   .addon-grid {
     grid-template-columns: 1fr;
   }
@@ -1037,6 +1035,8 @@ img { display: block; max-width: 100%; }
   }
 
   /* Hero */
+  .hero-blocks { display: none; }
+
   .hero {
     padding: 2rem 1rem;
     min-height: auto;
