@@ -136,6 +136,18 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 2px 0 0 var(--gold);
 }
 
+.nav-link[target="_blank"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: 0.3em;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: translateY(-0.05em) rotate(45deg);
+  opacity: 0.6;
+}
+
 /* ========================
    Hero
    ======================== */
