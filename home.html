@@ -21,11 +21,13 @@
           <span class="logo-pixel">JM</span>
           <span class="logo-text">Addons</span>
         </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
         <nav class="top-nav">
           <a href="home.html" class="nav-link active">Docs</a>
-          <a href="https://github.com/Joshm99" class="nav-link" target="_blank"
-            >GitHub</a
-          >
           <a
             href="https://www.curseforge.com/members/jm_1775/projects"
             class="nav-link"
@@ -37,6 +39,12 @@
             class="nav-link"
             target="_blank"
             >Discord</a
+          >
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            class="nav-link nav-donate"
+            target="_blank"
+            >Donate</a
           >
         </nav>
       </div>
@@ -179,10 +187,22 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <span class="footer-logo">JM Addons</span>
-        <span class="footer-copy"
-          >Minecraft Bedrock · Not affiliated with Mojang</span
-        >
+        <span class="footer-copy">Minecraft Bedrock · Not affiliated with Mojang</span>
+        <div class="footer-links">
+          <a href="https://www.curseforge.com/members/jm_1775/projects" target="_blank">CurseForge</a>
+          <span class="footer-sep">|</span>
+          <a href="https://discord.gg/ZsrM5HqHdS" target="_blank">Discord</a>
+          <span class="footer-sep">|</span>
+          <a href="https://buymeacoffee.com/jm1775" target="_blank">Donate</a>
+        </div>
       </div>
     </footer>
+    <script>
+      document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        document.querySelector('.top-nav').classList.toggle('open');
+      });
+    </script>
   </body>
 </html>
