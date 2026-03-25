@@ -993,7 +993,7 @@ img { display: block; max-width: 100%; }
     position: static;
     display: flex;
     flex-direction: column;
-    overflow: visible;
+    min-width: 0;
   }
 
   .sidebar-nav {
@@ -1079,7 +1079,7 @@ img { display: block; max-width: 100%; }
   }
 
   .page-layout {
-    padding: 1.5rem 1rem 5rem;
+    padding: 1.5rem 1rem 8rem;
   }
 
   /* Footer */
