@@ -1,154 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JM Addons — Bedrock Addon Documentation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-pixel">JM</span>
-        <span class="logo-text">Addons</span>
-      </a>
-      <nav class="top-nav">
-        <a href="index.html" class="nav-link active">Docs</a>
-        <a href="https://github.com/Joshm99" class="nav-link" target="_blank">GitHub ↗</a>
-        <a href="https://www.curseforge.com" class="nav-link" target="_blank">CurseForge ↗</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-badge">Minecraft Bedrock Edition</div>
-        <h1 class="hero-title">Addon<br>Documentation</h1>
-        <p class="hero-sub">Guides and references for all JM Bedrock addons. Built for server owners and players.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JM Addons — Bedrock Addon Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="JM Addons" class="logo-icon" />
+          <span class="logo-pixel">JM</span>
+          <span class="logo-text">Addons</span>
+        </a>
+        <nav class="top-nav">
+          <a href="index.html" class="nav-link active">Docs</a>
+          <a href="https://github.com/Joshm99" class="nav-link" target="_blank"
+            >GitHub ↗</a
+          >
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            class="nav-link"
+            target="_blank"
+            >CurseForge ↗</a
+          >
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            class="nav-link"
+            target="_blank"
+            >Discord ↗</a
+          >
+        </nav>
       </div>
-      <div class="hero-blocks" aria-hidden="true">
-        <div class="block bl-1"></div>
-        <div class="block bl-2"></div>
-        <div class="block bl-3"></div>
-        <div class="block bl-4"></div>
-        <div class="block bl-5"></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-badge">Minecraft Bedrock Edition</div>
+          <h1 class="hero-title">Addon<br />Documentation</h1>
+          <p class="hero-sub">
+            Guides and references for all JM Bedrock addons. Built for server
+            owners and players.
+          </p>
+        </div>
+        <div class="hero-blocks" aria-hidden="true">
+          <div class="block bl-1"></div>
+          <div class="block bl-2"></div>
+          <div class="block bl-3"></div>
+          <div class="block bl-4"></div>
+          <div class="block bl-5"></div>
+        </div>
+      </section>
+
+      <section class="addons-section">
+        <div class="section-header">
+          <span class="section-tag">// addons</span>
+          <span class="section-count">5 addons</span>
+        </div>
+
+        <div class="addon-grid">
+          <a href="addons/mail-delivery.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap"><img src="images/mail-delivery.png" alt="Mail Delivery" class="card-icon" /></div>
+              <div class="card-meta">
+                <span class="card-version">v1.0.2</span>
+              </div>
+            </div>
+            <h2 class="card-name">Mail Delivery</h2>
+            <p class="card-desc">
+              Send items and messages to players. Multi-recipient,
+              return-to-sender, and admin broadcast tools included.
+            </p>
+            <div class="card-footer">
+              <div class="card-tags">
+                <span class="tag">Multiplayer</span>
+                <span class="tag">Economy</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+
+          <a href="addons/admintools.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap"><img src="images/admin-tools.png" alt="AdminTools" class="card-icon" /></div>
+              <div class="card-meta">
+                <span class="card-version">v2.0.0</span>
+              </div>
+            </div>
+            <h2 class="card-name">AdminTools</h2>
+            <p class="card-desc">
+              Full server management suite with player registry, database
+              snapshots, and moderation utilities.
+            </p>
+            <div class="card-footer">
+              <div class="card-tags">
+                <span class="tag">Admin</span>
+                <span class="tag">Server</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+
+          <a href="addons/shop.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap"><img src="images/jm-shop.png" alt="JM Shop" class="card-icon" /></div>
+              <div class="card-meta">
+                <span class="card-version">v2.0.0</span>
+              </div>
+            </div>
+            <h2 class="card-name">JM Shop</h2>
+            <p class="card-desc">
+              Scoreboard-based in-game shop with configurable buy pages and
+              Economy+ integration.
+            </p>
+            <div class="card-footer">
+              <div class="card-tags">
+                <span class="tag">Economy</span>
+                <span class="tag">UI</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+
+          <a href="addons/notice-board.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap"><img src="images/notice-board.png" alt="Notice Board" class="card-icon" /></div>
+              <div class="card-meta">
+                <span class="card-version">v1.0.4</span>
+              </div>
+            </div>
+            <h2 class="card-name">Notice Board</h2>
+            <p class="card-desc">
+              Post server announcements and searchable notices in-game.
+              Achievement-safe and fully compatible.
+            </p>
+            <div class="card-footer">
+              <div class="card-tags">
+                <span class="tag">Utility</span>
+                <span class="tag">Multiplayer</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+
+          <a href="addons/tag-tool.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap"><img src="images/tag-tool.png" alt="Tag Tool" class="card-icon" /></div>
+              <div class="card-meta">
+                <span class="card-version">v1.0.0</span>
+              </div>
+            </div>
+            <h2 class="card-name">Tag Tool</h2>
+            <p class="card-desc">
+              Lightweight entity tagging utility. Add, remove, and inspect tags
+              on any entity through a clean in-game UI.
+            </p>
+            <div class="card-footer">
+              <div class="card-tags">
+                <span class="tag">Utility</span>
+                <span class="tag">Lightweight</span>
+              </div>
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-logo">JM Addons</span>
+        <span class="footer-copy"
+          >Minecraft Bedrock · Not affiliated with Mojang</span
+        >
       </div>
-    </section>
-
-    <section class="addons-section">
-      <div class="section-header">
-        <span class="section-tag">// addons</span>
-        <span class="section-count">5 addons</span>
-      </div>
-
-      <div class="addon-grid">
-
-        <a href="addons/mail-delivery.html" class="addon-card">
-          <div class="card-top">
-            <div class="card-icon-wrap">✉</div>
-            <div class="card-meta">
-              <span class="card-version">v2.9</span>
-            </div>
-          </div>
-          <h2 class="card-name">Mail Delivery</h2>
-          <p class="card-desc">Send items and messages to players. Multi-recipient, return-to-sender, and admin broadcast tools included.</p>
-          <div class="card-footer">
-            <div class="card-tags">
-              <span class="tag">Multiplayer</span>
-              <span class="tag">Economy</span>
-            </div>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="addons/admintools.html" class="addon-card">
-          <div class="card-top">
-            <div class="card-icon-wrap">⚙</div>
-            <div class="card-meta">
-              <span class="card-version">v2.9.2</span>
-            </div>
-          </div>
-          <h2 class="card-name">AdminTools</h2>
-          <p class="card-desc">Full server management suite with player registry, database snapshots, and moderation utilities.</p>
-          <div class="card-footer">
-            <div class="card-tags">
-              <span class="tag">Admin</span>
-              <span class="tag">Server</span>
-            </div>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="addons/shop.html" class="addon-card">
-          <div class="card-top">
-            <div class="card-icon-wrap">🛒</div>
-            <div class="card-meta">
-              <span class="card-version">v1.x</span>
-            </div>
-          </div>
-          <h2 class="card-name">JM Shop</h2>
-          <p class="card-desc">Scoreboard-based in-game shop with configurable buy pages and Economy+ integration.</p>
-          <div class="card-footer">
-            <div class="card-tags">
-              <span class="tag">Economy</span>
-              <span class="tag">UI</span>
-            </div>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="addons/notice-board.html" class="addon-card">
-          <div class="card-top">
-            <div class="card-icon-wrap">📋</div>
-            <div class="card-meta">
-              <span class="card-version">v1.x</span>
-            </div>
-          </div>
-          <h2 class="card-name">Notice Board</h2>
-          <p class="card-desc">Post server announcements and searchable notices in-game. Achievement-safe and fully compatible.</p>
-          <div class="card-footer">
-            <div class="card-tags">
-              <span class="tag">Utility</span>
-              <span class="tag">Multiplayer</span>
-            </div>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-
-        <a href="addons/tag-tool.html" class="addon-card">
-          <div class="card-top">
-            <div class="card-icon-wrap">🏷</div>
-            <div class="card-meta">
-              <span class="card-version">v1.0.0</span>
-            </div>
-          </div>
-          <h2 class="card-name">Tag Tool</h2>
-          <p class="card-desc">Lightweight entity tagging utility. Add, remove, and inspect tags on any entity through a clean in-game UI.</p>
-          <div class="card-footer">
-            <div class="card-tags">
-              <span class="tag">Utility</span>
-              <span class="tag">Lightweight</span>
-            </div>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span class="footer-logo">JM Addons</span>
-      <span class="footer-copy">Minecraft Bedrock · Not affiliated with Mojang</span>
-    </div>
-  </footer>
-
-</body>
+    </footer>
+  </body>
 </html>
