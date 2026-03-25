@@ -466,10 +466,21 @@ img { display: block; max-width: 100%; }
    Footer
    ======================== */
 .site-footer {
+  position: relative;
   border-top: 1px solid transparent;
   background-image: linear-gradient(var(--bg), var(--bg)), linear-gradient(90deg, transparent, var(--gold-dim), var(--blue-dim), transparent);
   background-origin: padding-box, border-box;
   background-clip: padding-box, border-box;
+}
+
+.site-version {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  opacity: 0.5;
 }
 
 .footer-inner {
