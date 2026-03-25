@@ -527,6 +527,11 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 220px 1fr;
   gap: 3.5rem;
   align-items: start;
+  overflow: hidden;
+}
+
+.doc-content {
+  min-width: 0;
 }
 
 /* ========================
