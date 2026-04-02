@@ -48,8 +48,8 @@ html, body {
 body {
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(91, 184, 255, 0.04), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 0%, rgba(91, 184, 255, 0.03), transparent);
+    radial-gradient(ellipse 200% 50% at 50% -20%, rgba(91, 184, 255, 0.04), transparent),
+    radial-gradient(ellipse 160% 40% at 80% 0%, rgba(91, 184, 255, 0.03), transparent);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 15px;
@@ -103,19 +103,12 @@ img { display: block; max-width: 100%; }
 
 .logo-pixel {
   font-family: var(--font-pixel);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   color: var(--gold);
   letter-spacing: 0.05em;
   line-height: 1;
 }
 
-.logo-text {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
 
 .top-nav {
   display: flex;
