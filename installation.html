@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="94e442b6-0d47-4737-835d-95391824ef61"></script>
 </head>
@@ -44,6 +45,8 @@
           <li>
             <a href="#updating">Updating</a>
             <ul class="sidebar-subnav">
+              <li><a href="#updating-realms">Realms</a></li>
+              <li><a href="#updating-non-realms">Non-Realm Worlds</a></li>
               <li><a href="#keeping-your-data">Keeping your data</a></li>
             </ul>
           </li>
@@ -77,16 +80,41 @@
       </div>
 
       <h2 id="updating">Updating</h2>
-      <p>To update an addon to a newer version:</p>
+      <p>The update process differs slightly depending on whether you're running a Realm or a local/singleplayer world. Follow the steps for your setup below.</p>
+
+      <h3 id="updating-realms">Realms</h3>
       <ol class="steps">
-        <li>Download the latest .mcaddon from CurseForge.</li>
-        <li>Close Minecraft completely.</li>
-        <li>Double-click the new .mcaddon file to import it. Minecraft will replace the old version automatically.</li>
-        <li>Open your world — the updated addon is already active.</li>
+        <li><span>Open Minecraft.</span></li>
+        <li><span>Deactivate the BP and RP from your Realm, then click the back button so it saves the change.</span></li>
+        <li><span>Go to <strong>Settings → Storage</strong> and remove the old behavior pack and resource pack.</span></li>
+        <li><span>Close Minecraft completely.</span></li>
+        <li><span>Download the new <code>.mcaddon</code> file and open it — the pack will auto-install.</span></li>
+        <li><span>Go to <strong>Edit World</strong> on your Realm's page.</span></li>
+        <li><span>Verify that the behavior and resource packs show the new version number (use the green check mark to confirm).</span></li>
+        <li><span>Load into your Realm.</span></li>
       </ol>
 
+      <h3 id="updating-non-realms">Non-Realm Worlds</h3>
+      <ol class="steps">
+        <li><span>Open Minecraft.</span></li>
+        <li><span>Go to <strong>Settings → Storage</strong> and remove the old behavior pack and resource pack.</span></li>
+        <li><span>Close Minecraft completely.</span></li>
+        <li><span>Download the new <code>.mcaddon</code> file and open it — the pack will auto-install.</span></li>
+        <li><span>Click the pencil icon on your world to edit it.</span></li>
+        <li><span>Activate the behavior pack and make sure the resource pack activates too.</span></li>
+        <li><span>Load into your world.</span></li>
+      </ol>
+
+      <div class="callout warn">
+        <span class="callout-icon">⚠</span>
+        <div class="callout-body">
+          <span class="callout-label">Important</span>
+          <p>Always remove the old packs from <strong>Settings → Storage</strong> before importing the new version. This ensures Minecraft uses the updated files and avoids version conflicts.</p>
+        </div>
+      </div>
+
       <h3 id="keeping-your-data">Keeping your data</h3>
-      <p>Updates preserve your world data. Scoreboards, tags, dynamic properties, and any in-game state created by the addon remain intact after updating. You do not need to deactivate or remove the old version first.</p>
+      <p>Updates preserve your world data. Scoreboards, tags, dynamic properties, and any in-game state created by the addon remain intact after updating. Removing the old packs from storage only removes the addon files — your world's saved data is untouched.</p>
 
       <h2 id="troubleshooting">Troubleshooting</h2>
       <ul>
@@ -119,6 +147,77 @@
       this.setAttribute('aria-expanded', String(!expanded));
       document.querySelector('.top-nav').classList.toggle('open');
     });
+
+    // Collapsible sidebar sections
+    document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
+      if (li.querySelector(".sidebar-subnav")) {
+        li.classList.add("has-children");
+        li.querySelector(":scope > a").addEventListener("click", function (e) {
+          e.preventDefault();
+          li.classList.toggle("open");
+        });
+      }
+    });
+
+    // Active section tracking via scroll position
+    (function () {
+      var sidebarLinks = document.querySelectorAll(".sidebar-nav a[href^='#']");
+      var idToLink = {};
+      sidebarLinks.forEach(function (link) {
+        idToLink[link.getAttribute("href").slice(1)] = link;
+      });
+
+      var headings = [];
+      document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(function (el) {
+        if (idToLink[el.id]) headings.push(el);
+      });
+
+      var currentId = null;
+
+      function setActive(id) {
+        if (id === currentId) return;
+        currentId = id;
+        sidebarLinks.forEach(function (l) { l.classList.remove("active"); });
+        var link = idToLink[id];
+        if (link) {
+          link.classList.add("active");
+          var parentLi = link.closest("li.has-children");
+          if (!parentLi) {
+            var subnav = link.closest(".sidebar-subnav");
+            if (subnav) parentLi = subnav.closest("li.has-children");
+          }
+          document.querySelectorAll(".sidebar-nav > li.has-children").forEach(function (li) {
+            if (li === parentLi) {
+              li.classList.add("open");
+            } else {
+              li.classList.remove("open");
+            }
+          });
+        }
+      }
+
+      function onScroll() {
+        var scrollTop = window.scrollY + 100;
+        var active = null;
+        for (var i = 0; i < headings.length; i++) {
+          if (headings[i].offsetTop <= scrollTop) {
+            active = headings[i].id;
+          } else {
+            break;
+          }
+        }
+        if (active) setActive(active);
+      }
+
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (!ticking) {
+          requestAnimationFrame(function () { onScroll(); ticking = false; });
+          ticking = true;
+        }
+      });
+      onScroll();
+    })();
   </script>
 </body>
 </html>

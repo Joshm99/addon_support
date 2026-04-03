@@ -10,12 +10,41 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
     <link rel="stylesheet" href="../style.css" />
     <script
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="94e442b6-0d47-4737-835d-95391824ef61"
     ></script>
+    <style>
+      .sidebar-nav > li.has-children > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+      .sidebar-nav > li.has-children > a::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-right: 1.5px solid var(--text-muted);
+        border-bottom: 1.5px solid var(--text-muted);
+        transform: rotate(-45deg);
+        transition: transform 0.2s var(--ease-out);
+        flex-shrink: 0;
+        margin-left: 0.5rem;
+      }
+      .sidebar-nav > li.has-children.open > a::after {
+        transform: rotate(45deg);
+      }
+      .sidebar-nav > li.has-children > .sidebar-subnav {
+        display: none;
+      }
+      .sidebar-nav > li.has-children.open > .sidebar-subnav {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -283,6 +312,78 @@
           this.setAttribute("aria-expanded", String(!expanded));
           document.querySelector(".top-nav").classList.toggle("open");
         });
+
+      // Collapsible sidebar sections
+      document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
+        if (li.querySelector(".sidebar-subnav")) {
+          li.classList.add("has-children");
+          li.querySelector(":scope > a").addEventListener("click", function (e) {
+            e.preventDefault();
+            li.classList.toggle("open");
+          });
+        }
+      });
+
+      // Active section tracking via scroll position
+      (function () {
+        var sidebarLinks = document.querySelectorAll(".sidebar-nav a[href^='#']");
+        var idToLink = {};
+        sidebarLinks.forEach(function (link) {
+          idToLink[link.getAttribute("href").slice(1)] = link;
+        });
+
+        // Collect headings in document order
+        var headings = [];
+        document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(function (el) {
+          if (idToLink[el.id]) headings.push(el);
+        });
+
+        var currentId = null;
+
+        function setActive(id) {
+          if (id === currentId) return;
+          currentId = id;
+          sidebarLinks.forEach(function (l) { l.classList.remove("active"); });
+          var link = idToLink[id];
+          if (link) {
+            link.classList.add("active");
+            var parentLi = link.closest("li.has-children");
+            if (!parentLi) {
+              var subnav = link.closest(".sidebar-subnav");
+              if (subnav) parentLi = subnav.closest("li.has-children");
+            }
+            document.querySelectorAll(".sidebar-nav > li.has-children").forEach(function (li) {
+              if (li === parentLi) {
+                li.classList.add("open");
+              } else {
+                li.classList.remove("open");
+              }
+            });
+          }
+        }
+
+        function onScroll() {
+          var scrollTop = window.scrollY + 100;
+          var active = null;
+          for (var i = 0; i < headings.length; i++) {
+            if (headings[i].offsetTop <= scrollTop) {
+              active = headings[i].id;
+            } else {
+              break;
+            }
+          }
+          if (active) setActive(active);
+        }
+
+        var ticking = false;
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            requestAnimationFrame(function () { onScroll(); ticking = false; });
+            ticking = true;
+          }
+        });
+        onScroll();
+      })();
     </script>
   </body>
 </html>
