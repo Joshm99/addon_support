@@ -1,0 +1,547 @@
+{
+  "pages": [
+    { "id": "admintools", "title": "Admin Tools", "addon": "AdminTools", "url": "addons/admintools.html" },
+    { "id": "tag-tool", "title": "Tag Tool", "addon": "Tag Tool", "url": "addons/tag-tool.html" },
+    { "id": "installation", "title": "Installation & Updating", "addon": "General", "url": "installation.html" }
+  ],
+  "sections": [
+    {
+      "page": "installation",
+      "heading": "Installation",
+      "anchor": "installation",
+      "level": 2,
+      "text": "Download the .mcaddon from CurseForge. Double-click the file to automatically import the addon into Minecraft. Create or open a world and go to Behavior Packs in world settings. Activate the Behavior Pack. The resource pack is linked automatically. These steps apply to all JM Addons."
+    },
+    {
+      "page": "installation",
+      "heading": "Updating",
+      "anchor": "updating",
+      "level": 2,
+      "text": "The update process differs slightly depending on whether you're running a Realm or a local/singleplayer world. Follow the steps for your setup below."
+    },
+    {
+      "page": "installation",
+      "heading": "Realms",
+      "anchor": "updating-realms",
+      "level": 3,
+      "parent": "Updating",
+      "text": "Deactivate the BP and RP from your Realm, then save. Go to Settings, Storage and remove the old behavior pack and resource pack. Close Minecraft completely. Download the new .mcaddon file and open it. Verify the new version number."
+    },
+    {
+      "page": "installation",
+      "heading": "Non-Realm Worlds",
+      "anchor": "updating-non-realms",
+      "level": 3,
+      "parent": "Updating",
+      "text": "Go to Settings, Storage and remove the old behavior pack and resource pack. Close Minecraft completely. Download the new .mcaddon file and open it. Activate the behavior pack and make sure the resource pack activates too. Always remove old packs before importing new versions."
+    },
+    {
+      "page": "installation",
+      "heading": "Keeping your data",
+      "anchor": "keeping-your-data",
+      "level": 3,
+      "parent": "Updating",
+      "text": "Updates preserve your world data. Scoreboards, tags, dynamic properties, and any in-game state created by the addon remain intact after updating. Removing the old packs from storage only removes the addon files — your world's saved data is untouched."
+    },
+    {
+      "page": "installation",
+      "heading": "Troubleshooting",
+      "anchor": "troubleshooting",
+      "level": 2,
+      "text": "Addon not appearing in Behavior Packs? Make sure Minecraft was fully closed before importing. Resource pack not loading? It should activate automatically; check Active Packs. Features not working after update? Close and reopen the world."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Overview",
+      "anchor": "overview",
+      "level": 2,
+      "text": "Tag Tool is a lightweight addon that lets operators add and remove tags on players without needing cheats on. No fumbling with the /tag command, no losing achievements. Just a clean in-game UI you open by using the item. Focused entirely on tag management."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Usage",
+      "anchor": "usage",
+      "level": 2,
+      "text": "How to use the Tag Tool — opening the UI, adding tags, removing tags, in-game help, and protected tags."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Opening the UI",
+      "anchor": "opening-the-ui",
+      "level": 3,
+      "parent": "Usage",
+      "text": "Hold the Tag Tool item and use it (right-click, or the interact button on mobile/controller) to open the main menu. Operators receive the item automatically on first join. It can also be crafted with a paper and a gold ingot together (shapeless)."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Adding a tag",
+      "anchor": "adding-a-tag",
+      "level": 3,
+      "parent": "Usage",
+      "text": "From the main menu, choose My Tags to manage your own tags, or Target Player to pick another online player. Select Add Tag, type a name into the text field (max 256 characters), and confirm. The tag is applied immediately."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Removing a tag",
+      "anchor": "removing-a-tag",
+      "level": 3,
+      "parent": "Usage",
+      "text": "From the tag manager screen, select Remove Tag to see a list of all tags currently on that player. Select one to remove it immediately."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "In-game help",
+      "anchor": "in-game-help",
+      "level": 3,
+      "parent": "Usage",
+      "text": "The main menu includes a How to Use button that opens a built-in help screen covering all features. It's always up to date with the installed version."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Protected tags",
+      "anchor": "protected-tags",
+      "level": 3,
+      "parent": "Usage",
+      "text": "Tags beginning with sb_, scoreboard, or jm_ are hidden from the Tag Tool UI and cannot be added or removed through it. This prevents accidental modification of internal addon or scoreboard state."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Commands",
+      "anchor": "commands",
+      "level": 2,
+      "text": "Tag Tool is UI-first and doesn't add custom slash commands. Standard Bedrock /tag commands still work alongside it. Native commands like /tag @e[type=cow] add my_custom_tag still work as expected."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Compatibility",
+      "anchor": "compatibility",
+      "level": 2,
+      "text": "Tag Tool uses a minimal footprint to avoid conflicts with other packs. Adds one custom item (jm_tt:tag_tool) with a crafting recipe — no custom blocks. No global scoreboard entries. No dynamic properties used — zero namespace footprint."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Operator access",
+      "anchor": "operator-access",
+      "level": 3,
+      "parent": "Compatibility",
+      "text": "Tag Tool checks operator status in three stages: command permission level, player permission level, and tag fallback (op, operator, or admin tags). Works on all devices."
+    },
+    {
+      "page": "tag-tool",
+      "heading": "Changelog",
+      "anchor": "changelog",
+      "level": 2,
+      "text": "v1.0.0 — Initial release. Multi-screen Script API UI for add/remove/view. Player tag management for your own tags or any online player. Full Script API 2.5.0 compatibility."
+    },
+    {
+      "page": "admintools",
+      "heading": "Overview",
+      "anchor": "overview",
+      "level": 2,
+      "text": "Admin Tools is a complete in-game admin panel for Minecraft Bedrock servers and realms. Full control over player moderation, ticketing, land claims, ranks, teleportation, and server settings through in-game menus. Runs on Script API with zero experimental features. Cheats off, achievements on."
+    },
+    {
+      "page": "admintools",
+      "heading": "Getting Started",
+      "anchor": "getting-started",
+      "level": 2,
+      "text": "How to install and set up Admin Tools. Covers installation, first launch, and all custom items and recipes."
+    },
+    {
+      "page": "admintools",
+      "heading": "Installation",
+      "anchor": "installation",
+      "level": 3,
+      "parent": "Getting Started",
+      "text": "Download the .mcaddon file from CurseForge. Open it to auto-import. Enable both Admin Tools BP and RP. Operators receive the Admin Tool on first join. The first admin becomes the Owner. You can change the owner with /jm_at:transferowner or /jm_at:resetowner."
+    },
+    {
+      "page": "admintools",
+      "heading": "First Launch",
+      "anchor": "first-launch",
+      "level": 3,
+      "parent": "Getting Started",
+      "text": "Operators receive the Admin Tool and Player Tool automatically. All players receive the Player Tool on first join. Use the Admin Tool to open the Admin Panel, and the Player Tool to open the Player Menu. Resource pack includes button styling subpack options."
+    },
+    {
+      "page": "admintools",
+      "heading": "Items & Recipes",
+      "anchor": "items-recipes",
+      "level": 3,
+      "parent": "Getting Started",
+      "text": "Six custom items: Admin Tool (staff only, opens Admin Panel), Player Tool (all players, opens Player Menu), Claim Tool (select corners for land claims), Claim Viewer (see claim boundaries), Hologram Tool (admin, floating text), Chest Sorter (sort chest contents)."
+    },
+    {
+      "page": "admintools",
+      "heading": "Roles & Permissions",
+      "anchor": "roles-permissions",
+      "level": 2,
+      "text": "Admin Tools uses a four-tier permission system: Player, Moderator, Admin, and Owner. Understanding these tiers is key to knowing who can do what on your server."
+    },
+    {
+      "page": "admintools",
+      "heading": "Permission Tiers",
+      "anchor": "permission-tiers",
+      "level": 3,
+      "parent": "Roles & Permissions",
+      "text": "Player — all players, can use Player Tool. Moderator — assigned by admins, sees limited Moderator Panel. Admin — operator permissions or admin tag, full Admin Panel access. Owner — first admin to open Admin Tool, exclusive abilities like gamemode change and clearing admin log."
+    },
+    {
+      "page": "admintools",
+      "heading": "Moderator Privileges",
+      "anchor": "moderator-privileges",
+      "level": 3,
+      "parent": "Roles & Permissions",
+      "text": "Configurable globally and per-moderator. Enabled by default: Tickets, Warn, Kick, Temp Ban (max 24h), Freeze, Heal/Feed, TP to Player, Spy Camera, View Inventory, Punishment History. Disabled by default: Server Controls, Config Editor, Warps, Broadcasts, Gamemode, Rank Panel, and more."
+    },
+    {
+      "page": "admintools",
+      "heading": "Player Features",
+      "anchor": "player-features",
+      "level": 2,
+      "text": "Features available to all players through the Player Tool: tickets, homes, warps, TPA, deathback, player stats."
+    },
+    {
+      "page": "admintools",
+      "heading": "Player Tool Menu",
+      "anchor": "player-tool",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Hold the Player Tool and use it to open the Player Menu. Craftable with Paper + Redstone (shaped, vertical) or given on first join. Contains buttons for: Tickets & Warnings, Homes, Warps, TPA, Deathback, My Stats, and Info."
+    },
+    {
+      "page": "admintools",
+      "heading": "Tickets & Warnings",
+      "anchor": "tickets-warnings",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Submit tickets by category with configurable cooldowns and limits. Ticket lifecycle: Open, Claimed, Resolved, Closed. View active warnings, acknowledge them, and submit appeals. Resolved tickets auto-close once viewed."
+    },
+    {
+      "page": "admintools",
+      "heading": "Homes",
+      "anchor": "homes",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Save locations as named home points, then teleport back anytime. Up to configurable max (default 3, max 20). Each home can be assigned one of 11 color icons. Teleport to bed spawn from Homes menu. Short teleport delay, cancels if you move."
+    },
+    {
+      "page": "admintools",
+      "heading": "Warps",
+      "anchor": "warps",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Server-wide teleport points created by admins. Players can browse and teleport to any public warp. Warps show dimension icons. Staff-only warps are hidden from regular players. Teleportation to locked dimensions is blocked."
+    },
+    {
+      "page": "admintools",
+      "heading": "TPA",
+      "anchor": "tpa",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Send teleport requests to other online players. Requests expire after 60 seconds. Both players must stay still during the teleport countdown — moving cancels the teleport. Admins can enable or disable TPA in Config Editor."
+    },
+    {
+      "page": "admintools",
+      "heading": "Deathback",
+      "anchor": "deathback",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Return to the location where you last died. Tracks death point automatically. Optional tool restore on respawn. Warning shown if death location is unsafe (lava, fire, void). Configurable in Config Editor."
+    },
+    {
+      "page": "admintools",
+      "heading": "Player Stats",
+      "anchor": "player-stats",
+      "level": 3,
+      "parent": "Player Features",
+      "text": "Tracked automatically for every player: playtime, mob kills, player kills, deaths, blocks mined, blocks placed, and distance traveled. Visible through My Stats and to admins through player profiles."
+    },
+    {
+      "page": "admintools",
+      "heading": "Land Claims",
+      "anchor": "land-claims",
+      "level": 2,
+      "text": "Players and admins can claim and protect land using the Claim Tool (select corners) and the Claim Viewer (see boundaries). Claims protect builds from griefing with configurable protections. Everything managed through in-game menus."
+    },
+    {
+      "page": "admintools",
+      "heading": "Creating Claims",
+      "anchor": "creating-claims",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Hold the Claim Tool. Crouch + Hit a block to set Corner 1. Crouch + Interact to set Corner 2. Open Claim Tool normally to access Claims menu, then Confirm Pending Claim. Auto-detects overlapping or bordering claims. Claims extend from bedrock to sky automatically."
+    },
+    {
+      "page": "admintools",
+      "heading": "Claim Viewer",
+      "anchor": "claim-viewer",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Hold the Claim Viewer in your offhand — the action bar displays info about the claim you're standing in. Crouch while holding it to show boundary particles in a 20-block range."
+    },
+    {
+      "page": "admintools",
+      "heading": "Protections",
+      "anchor": "protections",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "12 individual protection toggles per claim: Blocks, Containers, Entities, PvP, Interactions, Item Use, Explosions, Hostile Mobs, Crop Trampling, Fire Spread, Ender Pearls, Eject Players. All enabled by default except Eject Players. Configurable defaults and player abilities."
+    },
+    {
+      "page": "admintools",
+      "heading": "Members & Trusted",
+      "anchor": "members-trusted",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Three member roles: Visitor (enter only), Member (interact with doors, buttons, levers), Builder (full build and interact). Add members by name with optional expiring access (15 min to 7 days). Trusted Ranks grant access to everyone with a specific server rank."
+    },
+    {
+      "page": "admintools",
+      "heading": "Sub-Claims",
+      "anchor": "sub-claims",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Zones inside a parent claim with independent protections and member lists. Up to 10 sub-claims per claim. Created by selecting an area inside an existing claim. Cannot be nested inside other sub-claims."
+    },
+    {
+      "page": "admintools",
+      "heading": "Expanding & Extending",
+      "anchor": "expand-extend",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Expand: select a larger area encompassing the claim to grow it. Extend: select a bordering area to attach an extension (up to 2 per claim). Extensions share protections and members. Expanding an extended claim merges into one rectangle."
+    },
+    {
+      "page": "admintools",
+      "heading": "Budgets & Chunks",
+      "anchor": "budgets",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Cost measured in chunks (16x16 = 256 blocks XZ area). Starting budget: 5 chunks. Earned: +1 per 60 min playtime. Max cap: 15 chunks. Admins can grant bonus chunks. Sub-claims don't cost extra. All settings configurable in Claims Config."
+    },
+    {
+      "page": "admintools",
+      "heading": "Admin Claims",
+      "anchor": "admin-claims",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Server-owned protected areas that don't count against any player's budget. Ideal for protecting spawn areas, shops, arenas, and shared builds. Display the creating admin's name."
+    },
+    {
+      "page": "admintools",
+      "heading": "Admin Panel",
+      "anchor": "admin-panel",
+      "level": 2,
+      "text": "Central hub for server management. Open with the Admin Tool. Includes: Search, Tickets, Players, Control Panel, Commands, Warps, Broadcasts, Admin Log, and Info. Moderators see a filtered version based on privileges."
+    },
+    {
+      "page": "admintools",
+      "heading": "Tickets (Admin)",
+      "anchor": "tickets-admin",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "View tickets across four tabs: Open, Claimed, Resolved, Closed. Actions: claim, reply, resolve, close, teleport to submission location, delete. Configure ticketing on/off, categories, cooldowns, limits, and auto-delete."
+    },
+    {
+      "page": "admintools",
+      "heading": "Player Management",
+      "anchor": "player-management",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "Browse players in three views: Online, Offline records, and Search by name. Select any player to open their profile and access moderation actions."
+    },
+    {
+      "page": "admintools",
+      "heading": "Player Profiles",
+      "anchor": "player-profiles",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "Each profile includes: View Tickets, Punishment History, Warnings (with appeals), Spy History, Admin Notes (up to 20), and Rank. Player stats (playtime, kills, deaths, blocks, distance) visible here."
+    },
+    {
+      "page": "admintools",
+      "heading": "Actions & Moderation",
+      "anchor": "actions-moderation",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "Kick, Temp Ban, Perm Ban, Unban, Warn, Freeze, Heal/Feed, TP to Player, Summon, Clear Inventory, Gamemode (no cheats needed), Assign/Remove Moderator, Make/Remove Admin. Warn threshold is configurable."
+    },
+    {
+      "page": "admintools",
+      "heading": "Spy Camera",
+      "anchor": "spy-camera",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "Silently orbit around a target player in spectator mode. Look around to orbit, walk to adjust distance, crouch to stop. Sessions are logged. Reworked in v2.0 to work on all platforms including consoles and Realms."
+    },
+    {
+      "page": "admintools",
+      "heading": "Inventory Viewer",
+      "anchor": "inventory-viewer",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "View a player's hotbar and armor slots. Ender chest contents available — snapshot taken when player opens their ender chest."
+    },
+    {
+      "page": "admintools",
+      "heading": "Server Controls",
+      "anchor": "server-controls",
+      "level": 2,
+      "text": "Server-level configuration and management tools: Config Editor, Item Watch, Ticket Settings, Dimension Locks, Server Controls, Storage Health, and Restore Holograms."
+    },
+    {
+      "page": "admintools",
+      "heading": "Control Panel",
+      "anchor": "control-panel",
+      "level": 3,
+      "parent": "Server Controls",
+      "text": "Central server configuration hub. Contains all server-level settings including Config Editor, Item Watch, Ticket Settings, Dimension Locks, Server Controls, Storage Health, and Restore Holograms."
+    },
+    {
+      "page": "admintools",
+      "heading": "Server Lock & Whitelist",
+      "anchor": "server-lock",
+      "level": 3,
+      "parent": "Server Controls",
+      "text": "Server Lock prevents non-staff from joining. Toggle via UI or /jm_at:lockserver. Whitelist allows only approved players (up to 200). Toggle via UI or /jm_at:whitelist."
+    },
+    {
+      "page": "admintools",
+      "heading": "Dimension Locks",
+      "anchor": "dimension-locks",
+      "level": 3,
+      "parent": "Server Controls",
+      "text": "Lock any dimension instantly or with countdown announcements (5 min, 1 min, 30 sec). Players inside locked dimension sent to spawn. All teleportation to locked dimensions blocked."
+    },
+    {
+      "page": "admintools",
+      "heading": "Config Editor",
+      "anchor": "config-editor",
+      "level": 3,
+      "parent": "Server Controls",
+      "text": "All addon settings in one place. Changes take effect immediately. Sub-sections: Homes, Teleport Settings, Deathback, Warn Flag Threshold, Gamemode Access, AFK Settings, Mod Privileges."
+    },
+    {
+      "page": "admintools",
+      "heading": "Item Watch",
+      "anchor": "item-watch",
+      "level": 3,
+      "parent": "Server Controls",
+      "text": "Banned items are automatically removed from player inventories. Tracked items alert admins when a player holds more than the configured threshold."
+    },
+    {
+      "page": "admintools",
+      "heading": "Storage Health",
+      "anchor": "storage-health",
+      "level": 3,
+      "parent": "Server Controls",
+      "text": "Monitors dynamic property storage usage across tickets, claims, admin log, and player registry (up to 300 players). Automatic alerts on admin join when storage approaches capacity. On-demand check available."
+    },
+    {
+      "page": "admintools",
+      "heading": "Ranks & Progression",
+      "anchor": "ranks-progression",
+      "level": 2,
+      "text": "Create and manage player ranks with custom colored name tags, auto-promotion based on playtime, and bulk assignment tools."
+    },
+    {
+      "page": "admintools",
+      "heading": "Rank Database",
+      "anchor": "rank-database",
+      "level": 3,
+      "parent": "Ranks & Progression",
+      "text": "Create up to 100 named ranks with custom colored name tags. Each rank has an internal name (up to 20 chars) and display tag (up to 40 chars with Minecraft color/style codes). Add, edit, remove from Rank Manager."
+    },
+    {
+      "page": "admintools",
+      "heading": "Bulk Assign / Remove",
+      "anchor": "bulk-assign",
+      "level": 3,
+      "parent": "Ranks & Progression",
+      "text": "Assign a rank to many players at once (including offline players), or remove a rank from all or selected players."
+    },
+    {
+      "page": "admintools",
+      "heading": "Staff Tags",
+      "anchor": "staff-tags",
+      "level": 3,
+      "parent": "Ranks & Progression",
+      "text": "Customize the default [Admin] and [Mod] name tags. Toggle per-staff custom rank display."
+    },
+    {
+      "page": "admintools",
+      "heading": "Playtime Ranks",
+      "anchor": "playtime-ranks",
+      "level": 3,
+      "parent": "Ranks & Progression",
+      "text": "Automatically promote players based on playtime thresholds (up to 20 tiers). Optionally override manually assigned ranks. Bonus playtime feature to credit untracked time for players who played before the addon was installed."
+    },
+    {
+      "page": "admintools",
+      "heading": "Broadcasts & Logging",
+      "anchor": "broadcasts-logging",
+      "level": 2,
+      "text": "Server-wide announcements and activity logging for moderation tracking."
+    },
+    {
+      "page": "admintools",
+      "heading": "Broadcasts",
+      "anchor": "broadcasts",
+      "level": 3,
+      "parent": "Broadcasts & Logging",
+      "text": "Send one-time multi-line announcements to all players, or set up scheduled recurring broadcasts (up to 5 active at a time)."
+    },
+    {
+      "page": "admintools",
+      "heading": "Admin Log",
+      "anchor": "admin-log",
+      "level": 3,
+      "parent": "Broadcasts & Logging",
+      "text": "All moderation actions logged with timestamps and staff names. Sub-views: Action Log (filter by type), Rollcall (session join/leave), Staff Activity (grouped by staff member). Owner can clear the log."
+    },
+    {
+      "page": "admintools",
+      "heading": "Saved Commands",
+      "anchor": "saved-commands",
+      "level": 3,
+      "parent": "Broadcasts & Logging",
+      "text": "Save and run custom slash commands. Supports one-time execution and repeating scheduled commands. Each admin has their own command list (up to 50 saved commands). Some may require cheats."
+    },
+    {
+      "page": "admintools",
+      "heading": "Holograms",
+      "anchor": "holograms",
+      "level": 2,
+      "text": "Floating text displays placed in the world. Admin-only using the Hologram Tool (Sign + Glow Ink Sac). Up to 50 holograms, 10 lines each, 60 chars per line. Supports Minecraft color codes. Edit by interacting with Hologram Tool. Restore at Control Panel if despawned."
+    },
+    {
+      "page": "admintools",
+      "heading": "Chest Sorter",
+      "anchor": "chest-sorter",
+      "level": 2,
+      "text": "Craftable by all players. Use the Chest Sorter item on any vanilla chest, trapped chest, or copper chest to sort its contents alphabetically. Recipe: Iron Ingot + Chest + Iron Ingot (shaped, vertical)."
+    },
+    {
+      "page": "admintools",
+      "heading": "AFK Detection",
+      "anchor": "afk-detection",
+      "level": 2,
+      "text": "Configurable idle detection with warning timer (default 2 min) and optional auto-kick (disabled by default, 10-120 min configurable). Staff can be exempted. AFK players see cycling subtitle reminders. Moving or interacting resets the timer."
+    },
+    {
+      "page": "admintools",
+      "heading": "Custom Commands",
+      "anchor": "custom-commands",
+      "level": 2,
+      "text": "Slash commands for quick access: /jm_at:transferowner, /jm_at:resetowner, /jm_at:freeze, /jm_at:unfreeze, /jm_at:warn, /jm_at:heal, /jm_at:feed, /jm_at:summonplayer, /jm_at:lockserver, /jm_at:whitelist, /jm_at:forceunfreeze, /jm_at:removemod. Also /scriptevent jm_at:resetData for full reset."
+    },
+    {
+      "page": "admintools",
+      "heading": "Troubleshooting & FAQ",
+      "anchor": "troubleshooting",
+      "level": 2,
+      "text": "Common issues: Admin Tool not in inventory — check operator status and pack versions. Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared — restore from Control Panel. Storage full — check Storage Health, delete old tickets. Claims not working — check BP/RP versions and budget."
+    }
+  ]
+}

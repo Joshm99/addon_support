@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="search.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="94e442b6-0d47-4737-835d-95391824ef61"></script>
 </head>
 <body>
@@ -19,6 +20,14 @@
         <img src="images/logo.png" alt="JM Addons" class="logo-icon" />
         <span class="logo-pixel">JM Addons</span>
       </a>
+      <div class="search-wrapper">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="search-input" placeholder="Search docs..." aria-label="Search documentation" aria-expanded="false" autocomplete="off" />
+          <kbd class="search-kbd">/</kbd>
+        </div>
+        <div class="search-results" role="listbox" aria-label="Search results" hidden></div>
+      </div>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -219,5 +228,6 @@
       onScroll();
     })();
   </script>
+  <script defer src="search.js"></script>
 </body>
 </html>
