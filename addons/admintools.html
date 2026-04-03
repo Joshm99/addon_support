@@ -550,6 +550,7 @@
           <li>Summon</li>
           <li>Gamemode</li>
           <li>Admin Notes</li>
+          <li>Rank Panel</li>
           <li>Rank Manager</li>
           <li>Clear Inventory</li>
           <li>Claim Bypass</li>
@@ -621,7 +622,7 @@
         <p>
           Save locations as named home points, then teleport back to them
           anytime. Players can save up to a configurable number of homes
-          (default: 3, max: 50). Each home can be assigned one of 11 color
+          (default: 3, max: 20). Each home can be assigned one of 11 color
           icons for organization.
         </p>
         <p>
@@ -667,8 +668,9 @@
         <p>
           Return to the location where you last died. The addon tracks your
           death point automatically. There's an optional tool restore feature
-          that returns your items on respawn. If the death location is unsafe
-          (lava, fire, void), you'll see a warning before teleporting.
+          that re-gives your Player Tool and Admin Tool on respawn if you had
+          them when you died. If the death location is unsafe (lava, fire,
+          void), you'll see a warning before teleporting.
         </p>
         <p>
           Admins can configure deathback at
@@ -728,14 +730,16 @@
         <h3 id="claim-viewer">Claim Viewer</h3>
         <p>
           Hold the Claim Viewer in your offhand — the action bar displays
-          info about the claim you're standing in. Crouch while holding it to
-          show boundary particles in a 20-block range around you.
+          info about the claim you're standing in. Crouch while holding it
+          in either hand to show boundary particles in a 20-block range
+          around you.
         </p>
 
         <h3 id="protections">Protections</h3>
         <p>
-          Each claim has 12 individual protection toggles. Admins set the
-          default protections for new claims at
+          Each claim has 12 individual protection toggles. All protections
+          except Eject Players are enabled by default on new claims. Admins
+          set the default protections for new claims at
           <code>Claim Tool → Claims → All Claims / Settings → Claim Defaults</code>
           and control which protections players can toggle themselves at
           <code>Claim Tool → Claims → All Claims / Settings → Player Abilities</code>.
@@ -1168,8 +1172,10 @@
         </p>
         <p>
           Monitors dynamic property storage usage across tickets, claims,
-          admin log, and the player registry. Automatic alerts appear on admin
-          join when storage approaches capacity. You can also run an on-demand
+          admin log, and the player registry (up to 300 players — when the
+          limit is reached the oldest entries by last-seen date are removed to
+          make room). Automatic alerts appear on admin join when storage
+          approaches capacity. You can also run an on-demand
           check from the Control Panel.
         </p>
 
@@ -1285,7 +1291,8 @@
           with Sign + Glow Ink Sac, shapeless).
         </p>
         <p>
-          Each hologram supports up to 10 lines with 60 characters per line.
+          A world can have up to 50 holograms total. Each hologram supports
+          up to 10 lines with 60 characters per line.
           Minecraft § color and style codes are fully supported. To create
           one, use the Hologram Tool on a block — add lines, adjust the
           position, preview, and place.
@@ -1326,8 +1333,9 @@
 
         <h2 id="chest-sorter">Chest Sorter</h2>
         <p>
-          Craftable by all players. Use the Chest Sorter item on any vanilla or
-          copper chest to sort its contents alphabetically. Recipe: Iron Ingot +
+          Craftable by all players. Use the Chest Sorter item on any vanilla
+          chest, trapped chest, or copper chest to sort its contents
+          alphabetically. Recipe: Iron Ingot +
           Chest + Iron Ingot (shaped, vertical).
         </p>
 
@@ -1343,8 +1351,9 @@
         </p>
         <p>
           Configurable idle detection with a warning timer (default: 2 minutes
-          idle) and an optional auto-kick timer (default: 30 minutes,
-          configurable from 10 to 120 minutes). Staff can be exempted globally.
+          idle) and an optional auto-kick timer (disabled by default; 60 minutes
+          when enabled, configurable from 10 to 120 minutes). Staff can be
+          exempted globally.
         </p>
         <p>
           AFK players see cycling subtitle reminders. Moving, looking around,
