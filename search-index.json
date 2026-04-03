@@ -520,7 +520,7 @@
       "heading": "Chest Sorter",
       "anchor": "chest-sorter",
       "level": 2,
-      "text": "Craftable by all players. Use the Chest Sorter item on any vanilla chest, trapped chest, or copper chest to sort its contents alphabetically. Recipe: Iron Ingot + Chest + Iron Ingot (shaped, vertical)."
+      "text": "Craftable by all players. Use the Chest Sorter item on any vanilla chest, trapped chest, copper chest, barrel, or shulker box to sort its contents alphabetically. Recipe: Iron Ingot + Chest + Iron Ingot (shaped, vertical)."
     },
     {
       "page": "admintools",
@@ -541,7 +541,7 @@
       "heading": "Troubleshooting & FAQ",
       "anchor": "troubleshooting",
       "level": 2,
-      "text": "Common issues: Admin Tool not in inventory — check operator status and pack versions. Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared — restore from Control Panel. Storage full — check Storage Health, delete old tickets. Claims not working — check BP/RP versions and budget."
+      "text": "Common issues: Admin Tool not in inventory — check operator status and pack versions (v2.0.13). Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared — restore from Control Panel. Storage full — check Storage Health, delete old tickets. Claims not working — check BP/RP versions and budget."
     }
   ]
 }
