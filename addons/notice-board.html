@@ -430,8 +430,9 @@ L L L      L = Log  (any type)</code></pre>
           Standing boards auto-orient to face the player. Wall boards face out
           from whichever wall they were placed against. The full footprint must
           be clear. If any of the 6 or 9 destination blocks are obstructed,
-          placement fails silently and the item is not consumed. Diagonal wall
-          placements are not supported.
+          placement fails silently and the item is not consumed. Wall boards
+          can only attach to vertical block faces (north, south, east, or
+          west) — you can't hang one from a ceiling or place one on the floor.
         </p>
 
         <h3 id="breaking">Breaking the Board</h3>
@@ -685,8 +686,8 @@ L L L      L = Log  (any type)</code></pre>
             <tbody>
               <tr><td><strong>Comments</strong></td><td>Everyone (if comments enabled)</td><td>Disabled label <code>Comments (Locked)</code> if the post is locked</td></tr>
               <tr><td><strong>Save / Unsave</strong></td><td>Everyone</td><td>Toggles the post in your personal saved list</td></tr>
-              <tr><td><strong>Edit</strong></td><td>Post author + admins</td><td>Cannot edit locked posts unless you are an admin</td></tr>
-              <tr><td><strong>Delete</strong></td><td>Post author + admins</td><td>Removes the post from the active list</td></tr>
+              <tr><td><strong>Edit</strong></td><td>Player posts: author or any admin. Admin posts: admins only.</td><td>Cannot edit locked posts unless you are an admin</td></tr>
+              <tr><td><strong>Delete</strong></td><td>Player posts: author or any admin. Admin posts: admins only.</td><td>Removes the post from the active list</td></tr>
               <tr><td><strong>Lock / Unlock</strong></td><td>Admins only</td><td>Locked posts can't be edited; comments are also locked</td></tr>
               <tr><td><strong>Pin / Unpin</strong></td><td>Admins only</td><td>4 pin slots per scope</td></tr>
               <tr><td><strong>Approve / Deny</strong></td><td>Admins, on pending posts</td><td>Only shows when viewing a pending post</td></tr>
@@ -979,7 +980,7 @@ L L L      L = Log  (any type)</code></pre>
           <li>Tap any archived post to view it (read-only)</li>
           <li>Inside an archived post, admins can permanently <strong>Delete</strong> it</li>
           <li><strong>Delete all</strong> at the bottom clears the entire archive</li>
-          <li>If <code>Auto-delete archived notices after 14 days</code> is ON, the system removes archived posts older than 14 days the next time someone interacts with a board (and at least one player is online)</li>
+          <li>If <code>Auto-delete archived notices after 14 days</code> is ON, the sweep runs whenever any player opens any notice board, as long as at least one player is online. Expired posts older than 14 days are removed scope-by-scope — opening a Global board sweeps the global archive, and opening a Local board sweeps that Local board's archive.</li>
           <li>Archive caps at <strong>250 entries</strong> per scope (oldest dropped beyond that)</li>
         </ul>
 
@@ -1204,6 +1205,12 @@ L L L      L = Log  (any type)</code></pre>
         <p>
           The default icon for new categories (if none is picked) is the
           <strong>pin</strong> icon.
+        </p>
+        <p>
+          <strong>Note:</strong> <code>diamond_chesplate</code> is a known
+          misspelling of "chestplate" in the source code. The ID reproduced
+          here matches what you'll see in-game, and the spelling will be
+          corrected in the next addon update.
         </p>
 
         <h3>Default category assignments</h3>
