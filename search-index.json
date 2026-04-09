@@ -2,6 +2,7 @@
   "pages": [
     { "id": "admintools", "title": "Admin Tools", "addon": "AdminTools", "url": "addons/admintools.html" },
     { "id": "tag-tool", "title": "Tag Tool", "addon": "Tag Tool", "url": "addons/tag-tool.html" },
+    { "id": "notice-board", "title": "Notice Board", "addon": "Notice Board", "url": "addons/notice-board.html" },
     { "id": "installation", "title": "Installation & Updating", "addon": "General", "url": "installation.html" }
   ],
   "sections": [
@@ -41,7 +42,7 @@
       "anchor": "keeping-your-data",
       "level": 3,
       "parent": "Updating",
-      "text": "Updates preserve your world data. Scoreboards, tags, dynamic properties, and any in-game state created by the addon remain intact after updating. Removing the old packs from storage only removes the addon files — your world's saved data is untouched."
+      "text": "Updates preserve your world data. Scoreboards, tags, dynamic properties, and any in-game state created by the addon stay intact after updating. Removing the old packs from storage only removes the addon files; your world's saved data is untouched."
     },
     {
       "page": "installation",
@@ -62,7 +63,7 @@
       "heading": "Usage",
       "anchor": "usage",
       "level": 2,
-      "text": "How to use the Tag Tool — opening the UI, adding tags, removing tags, in-game help, and protected tags."
+      "text": "How to use the Tag Tool: opening the UI, adding tags, removing tags, in-game help, and protected tags."
     },
     {
       "page": "tag-tool",
@@ -116,7 +117,7 @@
       "heading": "Compatibility",
       "anchor": "compatibility",
       "level": 2,
-      "text": "Tag Tool uses a minimal footprint to avoid conflicts with other packs. Adds one custom item (jm_tt:tag_tool) with a crafting recipe — no custom blocks. No global scoreboard entries. No dynamic properties used — zero namespace footprint."
+      "text": "Tag Tool uses a minimal footprint to avoid conflicts with other packs. Adds one custom item (jm_tt:tag_tool) with a crafting recipe, no custom blocks. No global scoreboard entries. No dynamic properties used, so zero namespace footprint."
     },
     {
       "page": "tag-tool",
@@ -131,7 +132,7 @@
       "heading": "Changelog",
       "anchor": "changelog",
       "level": 2,
-      "text": "v1.0.0 — Initial release. Multi-screen Script API UI for add/remove/view. Player tag management for your own tags or any online player. Full Script API 2.5.0 compatibility."
+      "text": "v1.0.0 - Initial release. Multi-screen Script API UI for add/remove/view. Player tag management for your own tags or any online player. Full Script API 2.5.0 compatibility."
     },
     {
       "page": "admintools",
@@ -184,7 +185,7 @@
       "anchor": "permission-tiers",
       "level": 3,
       "parent": "Roles & Permissions",
-      "text": "Player — all players, can use Player Tool. Moderator — assigned by admins, sees limited Moderator Panel. Admin — operator permissions or admin tag, full Admin Panel access. Owner — first admin to open Admin Tool, exclusive abilities like gamemode change and clearing admin log."
+      "text": "Player: all players, can use Player Tool. Moderator: assigned by admins, sees limited Moderator Panel. Admin: operator permissions or admin tag, full Admin Panel access. Owner: first admin to open Admin Tool, with exclusive abilities like gamemode change and clearing the admin log."
     },
     {
       "page": "admintools",
@@ -239,7 +240,7 @@
       "anchor": "tpa",
       "level": 3,
       "parent": "Player Features",
-      "text": "Send teleport requests to other online players. Requests expire after 60 seconds. Both players must stay still during the teleport countdown — moving cancels the teleport. Admins can enable or disable TPA in Config Editor."
+      "text": "Send teleport requests to other online players. Requests expire after 60 seconds. Both players must stay still during the teleport countdown; moving cancels the teleport. Admins can enable or disable TPA in Config Editor."
     },
     {
       "page": "admintools",
@@ -278,7 +279,7 @@
       "anchor": "claim-viewer",
       "level": 3,
       "parent": "Land Claims",
-      "text": "Hold the Claim Viewer in your offhand — the action bar displays info about the claim you're standing in. Crouch while holding it to show boundary particles in a 20-block range."
+      "text": "Hold the Claim Viewer in your offhand, and the action bar displays info about the claim you're standing in. Crouch while holding it to show boundary particles in a 20-block range."
     },
     {
       "page": "admintools",
@@ -381,7 +382,7 @@
       "anchor": "inventory-viewer",
       "level": 3,
       "parent": "Admin Panel",
-      "text": "View a player's hotbar and armor slots. Ender chest contents available — snapshot taken when player opens their ender chest."
+      "text": "View a player's hotbar and armor slots. Ender chest contents available (snapshot taken when the player opens their ender chest)."
     },
     {
       "page": "admintools",
@@ -541,7 +542,242 @@
       "heading": "Troubleshooting & FAQ",
       "anchor": "troubleshooting",
       "level": 2,
-      "text": "Common issues: Admin Tool not in inventory — check operator status and pack versions (v2.0.13). Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared — restore from Control Panel. Storage full — check Storage Health, delete old tickets. Claims not working — check BP/RP versions and budget."
+      "text": "Common issues: Admin Tool not in inventory, check operator status and pack versions (v2.0.13). Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared, restore from Control Panel. Storage full, check Storage Health and delete old tickets. Claims not working, check BP/RP versions and budget."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Overview",
+      "anchor": "overview",
+      "level": 2,
+      "text": "Notice Board replaces wall-of-signs setups with one organized place for community posts. Players write announcements, trades, rules, and event notes from an in-game menu. Posts persist in dynamic properties across restarts. Achievement-safe, no experiments. Categories, expirations, comments, search, saved posts, archive, and per-board local mode."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Installation",
+      "anchor": "installation",
+      "level": 2,
+      "text": "Both the Behavior Pack and the Resource Pack must be enabled, since block models live in the RP. Requires Minecraft Bedrock 1.21.100 or newer. No experimental toggles. Posts persist in world dynamic properties across restarts and pack updates."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Crafting Recipe",
+      "anchor": "recipe",
+      "level": 3,
+      "parent": "Getting the Board",
+      "text": "Shaped recipe at any Crafting Table: top row 3 cobblestone, middle row log plank log, bottom row 3 logs. Outputs 1 Notice Board item. Found in the creative Items tab. Stacks to 16. Total ingredients: 3 cobblestone, 1 plank, 5 logs."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Placing the Board",
+      "anchor": "placing",
+      "level": 3,
+      "parent": "Getting the Board",
+      "text": "Multi-block structure that auto-builds when placed. Right-click the top of a block for a standing board (3 wide x 3 tall, 9 blocks). Right-click the side of a block facing N/S/E/W for a wall board (3 wide x 2 tall, 6 blocks). Standing boards auto-orient to face the player. Footprint must be clear or placement fails silently."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Breaking the Board",
+      "anchor": "breaking",
+      "level": 3,
+      "parent": "Getting the Board",
+      "text": "Breaking any block of a notice board removes the entire structure and drops one Notice Board item. Posts, categories, pins, archive, templates, and activity log are preserved, since data is keyed to dimension and position. Replacing a board at the same coordinates restores the dataset. Use Reset Board to wipe data without breaking it."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Opening the Menu",
+      "anchor": "opening",
+      "level": 2,
+      "text": "Right-click or long-press any block of a notice board to open the Main Menu UI. Closing forms has no effect on the world. The title bar shows the current scope: Notice Board (Global) or Notice Board (local label). Multiplayer-safe: concurrent writes are protected by a world-level lock that auto-clears in under 3 seconds."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Main Menu",
+      "anchor": "main-menu",
+      "level": 2,
+      "text": "Categories at top, actions below. Action order: Search, Saved, Addon Info, Add Notice (players if allowed plus admins), Add Admin Notice (admins only), Board Controls (admins only). Hidden and admin-only categories are filtered for non-admins. Category buttons show an unread badge when new posts have been added since last viewed."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Search",
+      "anchor": "main-search",
+      "level": 3,
+      "parent": "Main Menu",
+      "text": "Modal text field for keywords. Multi-keyword AND search across post title, body, author name, and category name. Results sorted by most recently posted or edited. Tap any result to read; back returns to results. Search Again button on the results page."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Saved",
+      "anchor": "main-saved",
+      "level": 3,
+      "parent": "Main Menu",
+      "text": "Personal bookmarks list. Up to 200 saved post IDs per player; older entries dropped FIFO. Looks up posts in both active and archive lists, so bookmarked posts stay accessible even after they expire."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Creating a Post",
+      "anchor": "creating-a-post",
+      "level": 2,
+      "text": "Post composer fields: Category dropdown, Title (button name), 5 line text fields joined with newlines, Expiration dropdown (default 7d), Include Location toggle (default ON). Each line accepts literal \\n for manual line breaks. Body capped at 1000 characters on save."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Expiration durations",
+      "anchor": "post-expiration",
+      "level": 3,
+      "parent": "Creating a Post",
+      "text": "8 expiration options: 12hr, 24hr, 48hr, 72hr, 7d (default), 14d, 30d, Infinite. Time is real-time, so posts expire even if no players are online. If admins disable infinite posts via Allow infinite posts, the Infinite option is rejected at submit time."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Templates",
+      "anchor": "post-templates",
+      "level": 3,
+      "parent": "Creating a Post",
+      "text": "Admins create templates under Board Controls Post Templates. When templates exist for the current scope, the post composer shows a Choose a template or start blank picker. Templates pre-fill title, category, and body. Players only see templates whose category they can post in."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Approval queue",
+      "anchor": "post-approval",
+      "level": 3,
+      "parent": "Creating a Post",
+      "text": "When the admin setting Require approval queue is ON, every player post is sent to the Pending Queue instead of going live. Admins review via Board Controls Pending Queue and choose Approve or Deny. Admin posts always go live immediately and skip the queue."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Reading a Post",
+      "anchor": "post-detail",
+      "level": 2,
+      "text": "Post detail view shows title in bold, info line of category age author, full message text, optional location stamp, edited timestamp, and expiration countdown. Action buttons depend on permission and post state: Comments, Save/Unsave, Edit, Delete, Lock/Unlock, Pin/Unpin, Approve/Deny, Back."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Comments",
+      "anchor": "comments",
+      "level": 3,
+      "parent": "Reading a Post",
+      "text": "Each comment up to 30 characters. Each post can hold up to 20 comments total. 60-second cooldown between comments per player. You can delete your own; admins can delete any. Locked posts also lock comments. Comments can be disabled per-category or globally."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Categories",
+      "anchor": "categories",
+      "level": 2,
+      "text": "5 built-in categories: News, Trade, Rules, Miscellaneous, Admin Notices (hidden by default). Admin Notices always sorts to the bottom. Per-category flags: visible, admin-only posting, comments off, custom icon (21 to choose from), description text shown at the top of the category page."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Admin access",
+      "anchor": "admin-access",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "A player is treated as a board admin if any are true: they are an Operator (/op name), their command permission level is GameDirectors or higher, or they have the admin tag. Use /tag player add admin or /tag player remove admin. The admin tag is a fallback for older Bedrock builds where OP detection isn't reliable."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Pinning posts",
+      "anchor": "admin-pin",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Each scope (global feed and each local board) has 4 pin slots. From a post tap Pin and choose Slot 1-4. Pinned posts list first in their category. Pinning replaces whatever was in that slot. Pins are scope-wide but only display inside their own category."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Locking posts",
+      "anchor": "admin-lock",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Locking prevents anyone (including the author) from editing the post. Comments on a locked post are also locked. Admins can still edit or delete a locked post. The post detail view shows the lock icon and Comments (Locked) label."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Board Controls",
+      "anchor": "board-controls",
+      "level": 2,
+      "text": "Admin-only hub at Notice Board Board Controls. Buttons: Settings (Global/Local), Pending Queue (only when approval queue is ON), Manage Categories, Post Templates, Activity Log, Archive (only when archiving is ON), Reset Board (Defaults), Main Menu."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Settings",
+      "anchor": "bc-settings",
+      "level": 3,
+      "parent": "Board Controls",
+      "text": "Single ModalForm with toggles. Global-scope: Allow player posts (default ON), Allow infinite posts (ON), Require approval queue (OFF), Allow comments (ON), Enable post archiving (ON), Auto-delete archived notices after 14 days (ON). Local-scope: Board mode (Global by default), Local label (max 20 chars). Six of the eight settings apply globally to every board."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Manage Categories",
+      "anchor": "bc-categories",
+      "level": 3,
+      "parent": "Board Controls",
+      "text": "8 actions: Add category, Rename, Set icon (21 icons), Set description, Toggle visibility, Lock posting (admin-only), Toggle comments, Remove category. Removed-category posts get reassigned to Misc. At least 1 category must remain. Local-board categories only exist on that board."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Post Templates",
+      "anchor": "bc-templates",
+      "level": 3,
+      "parent": "Board Controls",
+      "text": "Admin-only screen with Add template, Edit template, Remove template. Each template has a name, default category, and body text. When templates exist, the post composer shows a picker before the post form. Common uses: pre-formatted Trade Listings, Event templates, Rule announcements."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Activity Log",
+      "anchor": "bc-log",
+      "level": 3,
+      "parent": "Board Controls",
+      "text": "Shows the last 20 activity entries for this scope, newest first. Tracks posts, edits, deletes, approvals/denials, pins/unpins, locks, comment activity, category changes, template changes, archive deletions. Capped at 50 stored entries internally. Has a Clear log button."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Archive",
+      "anchor": "bc-archive",
+      "level": 3,
+      "parent": "Board Controls",
+      "text": "Lists expired posts for the current scope, sorted by most recently expired. Only available when Enable post archiving is ON. Tap to view (read-only). Admins can permanently delete individual posts or use Delete all. Auto-delete sweeps archived posts older than 14 days. Archive caps at 250 entries per scope."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Reset Board",
+      "anchor": "bc-reset",
+      "level": 3,
+      "parent": "Board Controls",
+      "text": "Destructive: no undo, no backup. Local-mode reset clears this board's local posts, pins, pending, archive, templates, and category overrides; the board returns to Global mode. Global-mode reset wipes the entire global feed across all Global boards, resets settings to defaults, and resets the category list."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Global vs Local Mode",
+      "anchor": "modes",
+      "level": 2,
+      "text": "Global mode (default): all Global boards share posts, pins, categories, archive, and templates. Local mode: each board has independent posts, pins, archive, pending, templates, and category overrides. Mode is set per-board under Board Controls Settings Board mode. Switching to Local does not copy global posts. Switching back hides local data but does not delete it."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Limits & Caps",
+      "anchor": "limits",
+      "level": 2,
+      "text": "Active posts per scope 80, Pending 80, Archived 250, Activity log stored 50 displayed 20, Saved posts per player 200, Per-category posts per page 15, Pin slots per scope 4, Comment length 30 chars, Comments per post 20, Comment cooldown 60 seconds, Post body 1000 chars, Local label 20 chars, Per-player seen entries 250, Category icons 21. Database stored in dynamic properties with 32767-char single-key cap and 4-key chunked fallback."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Troubleshooting",
+      "anchor": "troubleshooting",
+      "level": 2,
+      "text": "Most common issue: only one of BP and RP enabled. Both packs must be applied at v1.0.4. Add Notice missing means Allow player posts is OFF. Board Controls missing means you aren't an admin. Submitted message means the approval queue is on. Local-mode boards have their own categories. Posts can be auto-deleted by expiration or archive auto-delete. Busy/lock prompts auto-clear in 3 seconds. Debug command: /function jm_nb/debug or chat !nbdebug verbose."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Reference Tables",
+      "anchor": "reference",
+      "level": 2,
+      "text": "21 category icons: bed, bell, book_and_quill, bread, brick_block, bundle, campfire, chest, clock, command_block, compass, diamond_chesplate, diamond_hoe, knowledge_book, locations, nether, news, pin, sign, sword, trade. Default icon is pin. Comment system constants: 30 chars, 20 per post, 60s cooldown."
+    },
+    {
+      "page": "notice-board",
+      "heading": "Compatibility",
+      "anchor": "compatibility",
+      "level": 2,
+      "text": "Bedrock 1.21.100 or newer. Script API @minecraft/server 2.1.0 and @minecraft/server-ui 2.0.0. No experiments needed. Achievement-safe. Cheats not required. Designed for multiplayer with concurrent-write lock. Uses jm_nb namespace exclusively. Adds 15 custom block IDs (9 standing + 6 wall). Posts persist across restarts via dynamic properties."
     }
   ]
 }

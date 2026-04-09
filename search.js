@@ -26,7 +26,10 @@
 
   // ---- Index loading ----
 
+  var indexLoading = false;
   function loadIndex() {
+    if (index || indexLoading) return;
+    indexLoading = true;
     fetch(basePath + 'search-index.json')
       .then(function (r) { return r.json(); })
       .then(function (data) {
@@ -207,8 +210,8 @@
 
   function buildFilterBar() {
     filterBarEl.innerHTML = '';
-    var filters = ['All', 'AdminTools', 'Tag Tool', 'General'];
-    var values = ['all', 'AdminTools', 'Tag Tool', 'General'];
+    var filters = ['All', 'AdminTools', 'Tag Tool', 'Notice Board', 'General'];
+    var values = ['all', 'AdminTools', 'Tag Tool', 'Notice Board', 'General'];
 
     for (var i = 0; i < filters.length; i++) {
       var btn = document.createElement('button');
@@ -328,10 +331,10 @@
     resultsEl.appendChild(emptyEl);
 
     buildFilterBar();
-    loadIndex();
 
     inputEl.addEventListener('input', onInput);
     inputEl.addEventListener('keydown', onKeyDown);
+    inputEl.addEventListener('focus', loadIndex, { once: false });
     inputEl.addEventListener('focus', onFocusIn);
     filterBarEl.addEventListener('click', onFilterClick);
     document.addEventListener('click', onClickOutside);

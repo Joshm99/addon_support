@@ -2,9 +2,255 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=home.html" />
-    <title>JM Addons — Bedrock Addon Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JM Addons — Minecraft Bedrock Addon Documentation</title>
+    <meta name="description" content="In-depth guides for Minecraft Bedrock addons built by JM. Admin toolkits, community notice boards, and utilities that work without cheats or experiments." />
+    <link rel="canonical" href="https://jmaddons.support/" />
+    <meta name="theme-color" content="#1e8fff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="JM Addons" />
+    <meta property="og:title" content="JM Addons — Minecraft Bedrock Addon Documentation" />
+    <meta property="og:description" content="In-depth guides for Minecraft Bedrock addons built by JM. Admin toolkits, community notice boards, and utilities that work without cheats or experiments." />
+    <meta property="og:url" content="https://jmaddons.support/" />
+    <meta property="og:image" content="https://jmaddons.support/images/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JM Addons — Minecraft Bedrock Addon Documentation" />
+    <meta name="twitter:description" content="In-depth guides for Minecraft Bedrock addons built by JM. Admin toolkits, community notice boards, and utilities that work without cheats or experiments." />
+    <meta name="twitter:image" content="https://jmaddons.support/images/og-banner.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="search.css" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="94e442b6-0d47-4737-835d-95391824ef61"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="JM Addons" class="logo-icon" />
+          <span class="logo-pixel">JM Addons</span>
+        </a>
+        <div class="search-wrapper">
+          <div class="search-input-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="Search docs..." aria-label="Search documentation" aria-expanded="false" autocomplete="off" />
+            <kbd class="search-kbd">/</kbd>
+          </div>
+          <div class="search-results" role="listbox" aria-label="Search results" hidden></div>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="top-nav">
+          <a href="index.html" class="nav-link active">Docs</a>
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            class="nav-link"
+            target="_blank"
+            >CurseForge</a
+          >
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            class="nav-link"
+            target="_blank"
+            >Discord</a
+          >
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            class="nav-link nav-donate"
+            target="_blank"
+            >Donate</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-badge">Minecraft Bedrock Edition</div>
+          <h1 class="hero-title">Addon<br />Documentation</h1>
+          <p class="hero-sub">
+            Guides and references for Bedrock addons made by JM, built for
+            server/realm owners and players.
+          </p>
+        </div>
+        <div class="hero-blocks" aria-hidden="true">
+          <div class="iso-block bl-1">
+            <img src="images/admin-tools.png" alt="" style="width:100%;height:100%;image-rendering:pixelated;object-fit:contain;" />
+          </div>
+          <div class="iso-block bl-2">
+            <img src="images/wallboard.svg" alt="" style="width:100%;height:100%;image-rendering:pixelated;object-fit:contain;" />
+          </div>
+          <!-- Shop chest -->
+          <div class="iso-block bl-3">
+            <img src="images/shop_chest.svg" alt="" style="width:100%;height:100%;image-rendering:pixelated;" />
+          </div>
+          <div class="iso-block bl-4">
+            <img src="images/tag-tool.png" alt="" style="width:100%;height:100%;image-rendering:pixelated;object-fit:contain;" />
+          </div>
+          <div class="iso-block bl-5">
+            <img src="images/mailbox.svg" alt="" style="width:100%;height:100%;image-rendering:pixelated;object-fit:contain;" />
+          </div>
+        </div>
+      </section>
+
+      <section class="addons-section">
+        <div class="section-header">
+          <span class="section-tag">// addons</span>
+          <span class="section-count">3 addons</span>
+        </div>
+
+        <div class="addon-grid">
+          <a href="addons/admintools.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap">
+                <img
+                  src="images/admin-tools.png"
+                  alt="AdminTools"
+                  class="card-icon"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-meta">
+                <span class="card-version">v2.0.13</span>
+              </div>
+            </div>
+            <h2 class="card-name">AdminTools</h2>
+            <p class="card-desc">
+              A full admin toolkit covering moderation, claims, ranks, and more.
+              Everything is configurable in-game, so there are no config files to edit.
+            </p>
+            <div class="card-footer">
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+
+          <a
+            href="addons/notice-board.html"
+            class="addon-card"
+          >
+            <div class="card-top">
+              <div class="card-icon-wrap">
+                <img
+                  src="images/notice-board.png"
+                  alt="Notice Board"
+                  class="card-icon"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-meta">
+                <span class="card-version">v1.0.4</span>
+              </div>
+            </div>
+            <h2 class="card-name">Notice Board</h2>
+            <p class="card-desc">
+              Post server announcements and searchable notices from inside the game.
+              Achievement-safe and fully compatible.
+            </p>
+            <div class="card-footer">
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+
+          <a href="addons/tag-tool.html" class="addon-card">
+            <div class="card-top">
+              <div class="card-icon-wrap">
+                <img
+                  src="images/tag-tool.png"
+                  alt="Tag Tool"
+                  class="card-icon"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="card-meta">
+                <span class="card-version">v1.0.0</span>
+              </div>
+            </div>
+            <h2 class="card-name">Tag Tool</h2>
+            <p class="card-desc">
+              A lightweight player tagging utility. Add, remove, and view tags
+              on any player through a clean in-game UI.
+            </p>
+            <div class="card-footer">
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="callout" style="margin-top: 2.5rem">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">More coming soon</span>
+            <p>
+              Docs for the rest of my addons will be added as I find the time.
+              In the meantime, feel free to reach out on
+              <a href="https://discord.gg/ZsrM5HqHdS" target="_blank"
+                >Discord</a
+              >
+              if you need help with any addon.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-logo">JM Addons</span>
+        <span class="footer-copy"
+          >Minecraft Bedrock · Not affiliated with Mojang</span
+        >
+        <div class="footer-links">
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            target="_blank"
+            >CurseForge</a
+          >
+          <span class="footer-sep">|</span>
+          <a href="https://discord.gg/ZsrM5HqHdS" target="_blank">Discord</a>
+          <span class="footer-sep">|</span>
+          <a href="https://buymeacoffee.com/jm1775" target="_blank">Donate</a>
+        </div>
+      </div>
+      <span class="site-version">v0.1.12</span>
+    </footer>
+    <script>
+      document
+        .querySelector(".nav-toggle")
+        ?.addEventListener("click", function () {
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", String(!expanded));
+          document.querySelector(".top-nav").classList.toggle("open");
+        });
+    </script>
+    <script defer src="search.js"></script>
+  </body>
 </html>

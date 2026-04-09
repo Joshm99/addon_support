@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notice Board | JM Addons</title>
+    <meta name="description" content="Notice Board lets Minecraft Bedrock server admins post searchable announcements from inside the game. Achievement-safe and fully compatible." />
+    <link rel="canonical" href="https://jmaddons.support/addons/notice-board.html" />
+    <meta name="theme-color" content="#1e8fff" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="JM Addons" />
+    <meta property="og:title" content="Notice Board | JM Addons" />
+    <meta property="og:description" content="Notice Board lets Minecraft Bedrock server admins post searchable announcements from inside the game. Achievement-safe and fully compatible." />
+    <meta property="og:url" content="https://jmaddons.support/addons/notice-board.html" />
+    <meta property="og:image" content="https://jmaddons.support/images/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Notice Board | JM Addons" />
+    <meta name="twitter:description" content="Notice Board lets Minecraft Bedrock server admins post searchable announcements from inside the game. Achievement-safe and fully compatible." />
+    <meta name="twitter:image" content="https://jmaddons.support/images/og-banner.png" />
+    <link rel="apple-touch-icon" href="../images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../search.css" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="94e442b6-0d47-4737-835d-95391824ef61"
+    ></script>
+    <style>
+      .table-wrap {
+        overflow-x: auto;
+        margin: 1.25rem 0;
+        border-radius: var(--radius-lg);
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-mid) transparent;
+      }
+      .table-wrap::-webkit-scrollbar {
+        height: 4px;
+      }
+      .table-wrap::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .table-wrap::-webkit-scrollbar-thumb {
+        background: var(--border-mid);
+        border-radius: 4px;
+      }
+      .table-wrap::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+      }
+      .doc-content table {
+        width: 100%;
+        min-width: 620px;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        background: var(--bg-code);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+      }
+      .doc-content th {
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.78rem;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border-mid);
+        background: var(--bg-raised);
+      }
+      .doc-content td {
+        padding: 0.6rem 1rem;
+        color: var(--text-dim);
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+        line-height: 1.7;
+      }
+      .doc-content tr:last-child td {
+        border-bottom: none;
+      }
+      .doc-content td code,
+      .doc-content th code {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--blue);
+        background: var(--bg-code);
+        border: 1px solid var(--border);
+        padding: 1px 6px;
+        border-radius: var(--radius);
+      }
+      .back-to-top {
+        display: inline-block;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 1.5rem;
+        transition: color var(--transition-base);
+      }
+      .back-to-top:hover {
+        color: var(--gold);
+      }
+      .sidebar-nav > li.has-children > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+      .sidebar-nav > li.has-children > a::after {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-right: 1.5px solid var(--text-muted);
+        border-bottom: 1.5px solid var(--text-muted);
+        transform: rotate(-45deg);
+        transition: transform 0.2s var(--ease-out);
+        flex-shrink: 0;
+        margin-left: 0.5rem;
+      }
+      .sidebar-nav > li.has-children.open > a::after {
+        transform: rotate(45deg);
+      }
+      .sidebar-nav > li.has-children > .sidebar-subnav {
+        display: none;
+      }
+      .sidebar-nav > li.has-children.open > .sidebar-subnav {
+        display: flex;
+      }
+      .section-divider {
+        border: none;
+        height: 1px;
+        background: linear-gradient(to right, var(--gold), var(--blue), transparent);
+        margin: 3rem 0 0;
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <img src="../images/logo.png" alt="JM Addons" class="logo-icon" />
+          <span class="logo-pixel">JM Addons</span>
+        </a>
+        <div class="search-wrapper">
+          <div class="search-input-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="search-input" placeholder="Search docs..." aria-label="Search documentation" aria-expanded="false" autocomplete="off" />
+            <kbd class="search-kbd">/</kbd>
+          </div>
+          <div class="search-results" role="listbox" aria-label="Search results" hidden></div>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="top-nav">
+          <a href="../index.html" class="nav-link active">Docs</a>
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            class="nav-link"
+            target="_blank"
+            >CurseForge</a
+          >
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            class="nav-link"
+            target="_blank"
+            >Discord</a
+          >
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            class="nav-link nav-donate"
+            target="_blank"
+            >Donate</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <aside class="sidebar">
+        <a href="../index.html" class="sidebar-back">← All Addons</a>
+
+        <div class="sidebar-section">
+          <span class="sidebar-label">On this page</span>
+          <ul class="sidebar-nav">
+            <li><a href="#overview" class="active">Overview</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li>
+              <a href="#getting-the-board">Getting the Board</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#recipe">Crafting Recipe</a></li>
+                <li><a href="#placing">Placing the Board</a></li>
+                <li><a href="#breaking">Breaking the Board</a></li>
+              </ul>
+            </li>
+            <li><a href="#opening">Opening the Menu</a></li>
+            <li>
+              <a href="#main-menu">Main Menu</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#main-categories">Categories</a></li>
+                <li><a href="#main-search">Search</a></li>
+                <li><a href="#main-saved">Saved</a></li>
+                <li><a href="#main-info">Addon Info</a></li>
+                <li><a href="#main-add">Add Notice</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#creating-a-post">Creating a Post</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#post-fields">Post Fields</a></li>
+                <li><a href="#post-expiration">Expiration</a></li>
+                <li><a href="#post-templates">Templates</a></li>
+                <li><a href="#post-approval">Approval Queue</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#post-detail">Reading a Post</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#comments">Comments</a></li>
+                <li><a href="#saved-posts">Saved Posts</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#categories">Categories</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#default-categories">Default Categories</a></li>
+                <li><a href="#unread-badges">Unread Badges</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#admin-guide">Admin Guide</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#admin-access">Admin Access</a></li>
+                <li><a href="#admin-notices">Admin Notices</a></li>
+                <li><a href="#admin-pin">Pinning Posts</a></li>
+                <li><a href="#admin-lock">Locking Posts</a></li>
+                <li><a href="#admin-edit-delete">Edit &amp; Delete</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#board-controls">Board Controls</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#bc-settings">Settings</a></li>
+                <li><a href="#bc-pending">Pending Queue</a></li>
+                <li><a href="#bc-categories">Manage Categories</a></li>
+                <li><a href="#bc-templates">Post Templates</a></li>
+                <li><a href="#bc-log">Activity Log</a></li>
+                <li><a href="#bc-archive">Archive</a></li>
+                <li><a href="#bc-reset">Reset Board</a></li>
+              </ul>
+            </li>
+            <li><a href="#modes">Global vs Local Mode</a></li>
+            <li><a href="#limits">Limits &amp; Caps</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#reference">Reference Tables</a></li>
+            <li><a href="#compatibility">Compatibility</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="doc-content">
+        <div class="doc-header">
+          <p class="doc-eyebrow">Utility · Multiplayer · Community</p>
+          <h1 class="doc-title">Notice Board</h1>
+          <p class="doc-desc">
+            A community notice board that replaces wall-of-signs setups with one
+            organized place for posts. Players write announcements, trades, rules,
+            and events directly from an in-game menu, with categories, expiration
+            timers, comments, search, saved posts, archiving, and per-board local
+            mode.
+          </p>
+          <div class="doc-meta">
+            <div class="meta-pill">
+              <span class="meta-label">Version</span>
+              <span class="meta-value">1.0.4</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Namespace</span>
+              <span class="meta-value">jm_nb:</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Bedrock</span>
+              <span class="meta-value">1.21.100+</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Script API</span>
+              <span class="meta-value">@minecraft/server 2.1.0, @minecraft/server-ui 2.0.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================== Overview ======================== -->
+
+        <h2 id="overview">Overview</h2>
+        <p>
+          I built Notice Board because every survival world I joined eventually
+          ended up with a wall of signs at spawn, half of them outdated and the
+          rest impossible to read. This addon replaces all of that with one
+          organized place where players can write announcements, trades, rules,
+          and event notes directly from an in-game menu.
+        </p>
+        <p>
+          It's designed for survival servers, realms, and shared worlds. Posts
+          live in the world's dynamic properties so they survive restarts.
+          Everything runs through the Script API with no experimental features
+          required, and the addon is fully achievement-safe.
+        </p>
+
+        <p><strong>Key features:</strong></p>
+        <ul>
+          <li>One central board for community notices, with multi-block standing and wall variants</li>
+          <li>Player-created posts with title, body, category, expiration, and optional location stamp</li>
+          <li>5 built-in categories plus unlimited custom categories with 21 icons to pick from</li>
+          <li>Pin up to 4 posts to the top of any scope</li>
+          <li>Per-post comments with cooldowns and length limits</li>
+          <li>Personal Saved Posts list, kept across sessions</li>
+          <li>Multi-keyword search across every visible post</li>
+          <li>Optional admin approval queue for player posts</li>
+          <li>Archive system with optional 14-day auto-delete</li>
+          <li>Per-board "Local mode": each board can carry its own posts, categories, pins, and templates</li>
+        </ul>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Achievement Friendly</span>
+            <p>
+              Notice Board uses only the stable Script API and dynamic properties.
+              No experiments, no cheats, no achievements disabled.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Installation ======================== -->
+
+        <h2 id="installation">Installation</h2>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Setup</span>
+            <p>
+              New here? See the <a href="../installation.html">Installation &amp; Updating</a>
+              guide for the basics on importing <code>.mcaddon</code> files and
+              applying packs to a world.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Both the Behavior Pack and the Resource Pack must be enabled on the
+          world. The wall and floor block models live in the RP, so the board
+          will look broken if only the BP is applied. Both packs ship in the
+          single <code>.mcaddon</code> import.
+        </p>
+        <p>
+          Notice Board requires Minecraft Bedrock <strong>1.21.100</strong> or
+          newer. No experimental toggles are required, and posts persist in
+          world dynamic properties so they survive restarts and pack updates.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Getting the Board ======================== -->
+
+        <h2 id="getting-the-board">Getting the Board</h2>
+
+        <h3 id="recipe">Crafting Recipe</h3>
+        <p>
+          The Notice Board item is crafted at any Crafting Table using the
+          shaped pattern below:
+        </p>
+<pre><code>S S S      S = Cobblestone
+L P L      P = Plank (any type)
+L L L      L = Log  (any type)</code></pre>
+        <p>
+          Total ingredients: 3 cobblestone, 1 plank, and 5 logs. The recipe
+          outputs 1 Notice Board item, found in the creative inventory under
+          the <strong>Items</strong> tab. The item stacks to 16.
+        </p>
+
+        <h3 id="placing">Placing the Board</h3>
+        <p>
+          The Notice Board is a multi-block structure that auto-builds when you
+          place it. Where you click decides which variant you get:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Variant</th>
+                <th>Trigger</th>
+                <th>Footprint</th>
+                <th>Total blocks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Standing board</td>
+                <td>Right-click the <strong>top</strong> of a block</td>
+                <td>3 wide × 3 tall × 1 thick</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>Wall board</td>
+                <td>Right-click the <strong>side</strong> of a block facing N/S/E/W</td>
+                <td>3 wide × 2 tall × 1 thick</td>
+                <td>6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Standing boards auto-orient to face the player. Wall boards face out
+          from whichever wall they were placed against. The full footprint must
+          be clear. If any of the 6 or 9 destination blocks are obstructed,
+          placement fails silently and the item is not consumed. Diagonal wall
+          placements are not supported.
+        </p>
+
+        <h3 id="breaking">Breaking the Board</h3>
+        <p>
+          Breaking <strong>any block</strong> of a notice board removes the entire
+          structure and drops one Notice Board item. All posts, categories,
+          pins, archive, templates, and the activity log for that board are
+          preserved, since the data is keyed to dimension, position, and board type
+          rather than to the blocks themselves. Placing a new board at the same
+          coordinates will restore the same dataset.
+        </p>
+        <p>
+          Use the in-menu <strong>Reset Board</strong> option (under Board Controls)
+          to wipe a board's data without breaking it.
+        </p>
+
+        <div class="callout warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Mode-aware data</span>
+            <p>
+              If you place a Local-mode board, then break it and place a
+              Global-mode board at the same spot, you'll see the Global feed, but
+              the Local data is still stored in case you want it back later.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Opening the Menu ======================== -->
+
+        <h2 id="opening">Opening the Menu</h2>
+        <p>
+          Right-click (or long-press on touch) any block of a notice board to
+          open the Main Menu UI. The board UI uses Script API forms, so closing a
+          form has no effect on the world and you can browse freely without
+          committing changes.
+        </p>
+        <p>
+          The title bar of every menu shows the current scope:
+          <code>Notice Board (Global)</code> or <code>Notice Board (&lt;your local label&gt;)</code>
+          (default <code>Local</code>).
+        </p>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Multiplayer-safe</span>
+            <p>
+              Several players can use the same board at once. Writes are protected
+              by a world-level lock. If two players try to post at the exact same
+              instant, one gets a "Busy" prompt and can retry. The lock auto-clears
+              in under 3 seconds.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Main Menu ======================== -->
+
+        <h2 id="main-menu">Main Menu</h2>
+        <p>
+          The main menu has two parts: <strong>categories</strong> at the top, and
+          <strong>actions</strong> below. Non-admins only see categories where
+          visibility is on. Admins see every category, with hidden ones marked
+          <code>(Not visible to non-admins)</code>.
+        </p>
+        <p>After the category buttons, the actions appear in this order:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Button</th>
+                <th>Available to</th>
+                <th>What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><strong>Search</strong></td><td>Everyone</td><td>Keyword search across all visible active posts</td></tr>
+              <tr><td>2</td><td><strong>Saved</strong></td><td>Everyone</td><td>Open your personal saved-posts list</td></tr>
+              <tr><td>3</td><td><strong>Addon Info</strong></td><td>Everyone</td><td>In-game help, recipe, and admin reference</td></tr>
+              <tr><td>4</td><td><strong>Add Notice</strong></td><td>Players (if allowed) + admins</td><td>Create a new player post</td></tr>
+              <tr><td>5</td><td><strong>Add Admin Notice</strong></td><td>Admins only</td><td>Create an admin-tagged post</td></tr>
+              <tr><td>6</td><td><strong>Board Controls</strong></td><td>Admins only</td><td>Settings, moderation, and management pages</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          If <code>Allow player posts</code> is OFF in settings, the
+          <strong>Add Notice</strong> button only appears for admins. Category
+          buttons show an unread badge <code>[N Unread]</code> when new posts
+          have been added since you last viewed that category.
+        </p>
+
+        <h3 id="main-categories">Categories</h3>
+        <p>
+          Tapping a category opens a paged list (15 posts per page). Pinned
+          posts always appear first. Each post button shows the post title, or
+          the first ~44 characters of the body if no title was set. Pinned
+          entries display <code>[Pinned]</code> underneath, and pagination
+          appears only when there is more than one page.
+        </p>
+        <p>
+          The category page also shows an <strong>Add Notice</strong> /
+          <strong>Add Admin Notice</strong> button at the top, scoped to that
+          category.
+        </p>
+
+        <h3 id="main-search">Search</h3>
+        <p>
+          A modal text field accepts multi-keyword input. The search is an AND
+          match across post title, body, author name, and category name, with
+          results sorted by most recently posted or edited. Tap any result to
+          read it, and use <strong>Search Again</strong> on the results page to
+          run another query.
+        </p>
+
+        <h3 id="main-saved">Saved</h3>
+        <p>
+          Your personal bookmarks list. You can save up to 200 posts per
+          player; older entries are dropped FIFO when the cap is hit. Saved
+          entries are looked up in both the active post list <strong>and</strong>
+          the archive, so anything you've bookmarked stays accessible after it
+          expires (until it's permanently deleted).
+        </p>
+
+        <h3 id="main-info">Addon Info</h3>
+        <p>The in-game info screen has three sub-pages:</p>
+        <ul>
+          <li><strong>How To</strong>: quick guide for posting, formatting, saving, editing, and expirations</li>
+          <li><strong>Recipes</strong>: visual recipe for the board item</li>
+          <li><strong>Admin Control Info</strong>: full admin reference (the same notes I'd type in chat to an OP)</li>
+        </ul>
+
+        <h3 id="main-add">Add Notice</h3>
+        <p>
+          Opens the post composer for the current scope. Admins also see
+          <strong>Add Admin Notice</strong>, which tags the resulting post as
+          <code>admin</code> and skips the approval queue. See
+          <a href="#creating-a-post">Creating a Post</a> for the full form.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Creating a Post ======================== -->
+
+        <h2 id="creating-a-post">Creating a Post</h2>
+
+        <h3 id="post-fields">Post Fields</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Category</td><td>Dropdown</td><td>Yes</td><td>Hidden and admin-only categories are filtered out for non-admins</td></tr>
+              <tr><td>Title (Button Name)</td><td>Text</td><td>Yes</td><td>Used as the button label in category lists</td></tr>
+              <tr><td>Line 1 – Line 5</td><td>5 text fields</td><td>At least one non-empty</td><td>Joined with newlines in the order entered, regardless of which box you typed in</td></tr>
+              <tr><td>Expiration</td><td>Dropdown</td><td>Yes</td><td>Default: <strong>7d</strong></td></tr>
+              <tr><td>Include Location</td><td>Toggle</td><td>Default ON</td><td>Stamps current dimension and coordinates onto the post</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Each line field accepts the literal sequence <code>\n</code> to insert
+          a manual line break inside that line. The full message body is
+          normalized and capped at <strong>1000 characters</strong> on save.
+        </p>
+
+        <h3 id="post-expiration">Expiration durations</h3>
+        <p>
+          The composer offers 8 expiration choices. Time is real-time, so posts
+          expire even when no players are online.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Option</th><th>Length</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>12hr</td><td>12 hours</td></tr>
+              <tr><td>24hr</td><td>1 day</td></tr>
+              <tr><td>48hr</td><td>2 days</td></tr>
+              <tr><td>72hr</td><td>3 days</td></tr>
+              <tr><td>7d</td><td>7 days <em>(default)</em></td></tr>
+              <tr><td>14d</td><td>14 days</td></tr>
+              <tr><td>30d</td><td>30 days</td></tr>
+              <tr><td>Infinite</td><td>Never expires</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          If admins disable infinite posts via the
+          <code>Allow infinite posts</code> setting, the Infinite option is
+          rejected at submit time with an error message.
+        </p>
+
+        <h3 id="post-templates">Templates</h3>
+        <p>
+          Admins create templates under
+          <code>Board Controls → Post Templates</code>. When at least one
+          template exists for the current scope, the post composer first shows
+          a "Choose a template or start blank" picker. Picking a template
+          pre-fills the title, category, and body. Players only see templates
+          whose category they're allowed to post in.
+        </p>
+
+        <h3 id="post-approval">Approval queue</h3>
+        <p>
+          When the admin setting <code>Require approval queue</code> is ON,
+          every player post is sent to the Pending Queue instead of going live.
+          Admins review it via <code>Board Controls → Pending Queue</code> and
+          choose <strong>Approve</strong> or <strong>Deny</strong>. Admin posts
+          always go live immediately and skip the queue.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Reading a Post ======================== -->
+
+        <h2 id="post-detail">Reading a Post</h2>
+        <p>
+          Tapping any post button opens its detail view. The body shows the
+          title in bold, an info line of <code>&lt;category&gt; · &lt;age&gt; · &lt;author&gt;</code>,
+          the full message text, the location (if attached), an
+          <code>Edited: Xh Xm ago</code> stamp if the post was edited, and an
+          <code>Expires in: Xd Xh</code> line if the post has an expiration set.
+        </p>
+        <p>Action buttons vary by permission and post state:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Button</th>
+                <th>Who sees it</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Comments</strong></td><td>Everyone (if comments enabled)</td><td>Disabled label <code>Comments (Locked)</code> if the post is locked</td></tr>
+              <tr><td><strong>Save / Unsave</strong></td><td>Everyone</td><td>Toggles the post in your personal saved list</td></tr>
+              <tr><td><strong>Edit</strong></td><td>Post author + admins</td><td>Cannot edit locked posts unless you are an admin</td></tr>
+              <tr><td><strong>Delete</strong></td><td>Post author + admins</td><td>Removes the post from the active list</td></tr>
+              <tr><td><strong>Lock / Unlock</strong></td><td>Admins only</td><td>Locked posts can't be edited; comments are also locked</td></tr>
+              <tr><td><strong>Pin / Unpin</strong></td><td>Admins only</td><td>4 pin slots per scope</td></tr>
+              <tr><td><strong>Approve / Deny</strong></td><td>Admins, on pending posts</td><td>Only shows when viewing a pending post</td></tr>
+              <tr><td><strong>Back / Main Menu</strong></td><td>Everyone</td><td>Returns to where you came from</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="comments">Comments</h3>
+        <ul>
+          <li>Each comment is up to <strong>30 characters</strong></li>
+          <li>Each post can hold up to <strong>20 comments</strong> total</li>
+          <li>Each player has a <strong>60-second cooldown</strong> between comments</li>
+          <li>Comments display as <code>&lt;author&gt;: &lt;text&gt; - &lt;age&gt;</code></li>
+          <li>You can delete your own comments; admins can delete any comment</li>
+          <li>If a post is locked, or comments are disabled at the category or global level, the comment screen explains why</li>
+        </ul>
+
+        <h3 id="saved-posts">Saved Posts</h3>
+        <p>
+          Saved entries are stored per-player in the world database (not on the
+          player's account). The list caps at 200 entries per player, with the
+          oldest dropped first when the cap is hit. Saved posts are looked up
+          in both the active and archive lists, and the list is personal:
+          only you see your own saved items.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Categories ======================== -->
+
+        <h2 id="categories">Categories</h2>
+
+        <h3 id="default-categories">Default categories</h3>
+        <p>The board ships with 5 built-in categories:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Icon</th>
+                <th>Visible by default</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>news</code></td><td>News</td><td>News</td><td>Yes</td></tr>
+              <tr><td><code>trade</code></td><td>Trade</td><td>Trade</td><td>Yes</td></tr>
+              <tr><td><code>rules</code></td><td>Rules</td><td>Book and Quill</td><td>Yes</td></tr>
+              <tr><td><code>misc</code></td><td>Miscellaneous</td><td>Bundle</td><td>Yes</td></tr>
+              <tr><td><code>admin_notices</code></td><td>Admin Notices</td><td>Command Block</td><td>No (hidden)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          The Admin Notices category always sorts to the bottom of the list. To
+          make it visible to players, an admin can toggle it on under
+          <code>Manage Categories → Toggle visibility</code>.
+        </p>
+        <p>Each category supports the following per-category flags:</p>
+        <ul>
+          <li><strong>Visible</strong>: controls whether non-admins see it</li>
+          <li><strong>Admin-only posting</strong>: only admins can post here (great for "Rules")</li>
+          <li><strong>Comments off</strong>: disables comments on every post in the category</li>
+          <li><strong>Custom icon</strong>: pick from 21 built-in icons (see <a href="#reference">Reference Tables</a>)</li>
+          <li><strong>Description</strong>: optional text shown at the top of the category page</li>
+        </ul>
+
+        <h3 id="unread-badges">New / unread badges</h3>
+        <p>
+          The board tracks per-player "last seen" timestamps for each
+          scope+category pair. When new posts are added after you last viewed
+          the category, the category button shows a green
+          <code>[N Unread]</code> badge. The seen list caps at 250 entries per
+          player and drops the oldest entries when full.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Admin Guide ======================== -->
+
+        <h2 id="admin-guide">Admin Guide</h2>
+
+        <h3 id="admin-access">Admin access</h3>
+        <p>
+          A player is treated as a board admin if <strong>any</strong> of these
+          are true:
+        </p>
+        <ol>
+          <li>They are an <strong>Operator</strong> (<code>/op &lt;name&gt;</code>) - recommended</li>
+          <li>Their command permission level is <code>GameDirectors</code> or higher</li>
+          <li>They have the <code>admin</code> tag - backup</li>
+        </ol>
+        <p>To grant admin access via tag (useful when OP detection isn't available):</p>
+<pre><code>/tag &lt;player&gt; add admin</code></pre>
+        <p>To revoke:</p>
+<pre><code>/tag &lt;player&gt; remove admin</code></pre>
+
+        <div class="callout warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Important</span>
+            <p>
+              All OPs are admins automatically. The <code>admin</code> tag is
+              only a fallback for situations where OP detection isn't returning
+              the expected result (older Bedrock builds, etc).
+            </p>
+          </div>
+        </div>
+
+        <h3 id="admin-notices">Admin Notices</h3>
+        <ul>
+          <li>Posted via <strong>Add Admin Notice</strong> on the main menu, or from inside any category</li>
+          <li>Tagged as <code>admin</code> in the database, so they get the admin icon and can only be edited or deleted by admins</li>
+          <li>Admin posts always skip the approval queue, even when it's enabled</li>
+          <li>Use the hidden <strong>Admin Notices</strong> category for staff-only messages</li>
+        </ul>
+
+        <h3 id="admin-pin">Pinning posts</h3>
+        <p>
+          Each scope (the global feed and each local board) has
+          <strong>4 pin slots</strong>. From a post, tap <strong>Pin</strong>
+          and choose Slot 1–4. Pinned posts are listed first in their category.
+          Pinning a post in slot N replaces whatever was in that slot. Tapping
+          <strong>Unpin (slot N)</strong> clears the slot.
+        </p>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Tip</span>
+            <p>
+              Pins are scope-wide, not per-category. A pinned post still only
+              appears inside its own category. Pinning doesn't push it
+              everywhere, it just sticks it to the top of its category.
+            </p>
+          </div>
+        </div>
+
+        <h3 id="admin-lock">Locking posts</h3>
+        <p>
+          Locking a post prevents anyone (including the author) from editing
+          it. Comments on a locked post are also locked. Admins can still edit
+          or delete a locked post. The post detail view shows the lock icon
+          and the <code>Comments (Locked)</code> label.
+        </p>
+
+        <h3 id="admin-edit-delete">Editing &amp; deleting any post</h3>
+        <p>
+          Admins can edit or delete any player post and any admin post. Players
+          can only edit or delete their own posts. Editing a post stamps it
+          with <code>editedAt</code> and shows "Edited: Xh ago" in the body.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Board Controls ======================== -->
+
+        <h2 id="board-controls">Board Controls</h2>
+        <p>
+          Menu path: <code>Notice Board → Board Controls</code>. The Board
+          Controls hub is admin-only and shows these buttons in order:
+        </p>
+        <ol>
+          <li><strong>Settings (Global/Local)</strong></li>
+          <li><strong>Pending Queue</strong> (only when <code>Require approval queue</code> is ON)</li>
+          <li><strong>Manage Categories</strong></li>
+          <li><strong>Post Templates</strong></li>
+          <li><strong>Activity Log</strong></li>
+          <li><strong>Archive</strong> (only when <code>Enable post archiving</code> is ON)</li>
+          <li><strong>Reset Board (Defaults)</strong></li>
+          <li><strong>Main Menu</strong></li>
+        </ol>
+        <p>
+          Each button shows the current board mode label in parens, e.g.
+          <code>Manage Categories (Global)</code>.
+        </p>
+
+        <h3 id="bc-settings">Settings (Global/Local)</h3>
+        <p>
+          A single ModalForm with all toggles, in this exact order. Note the
+          <strong>Scope</strong> column: most toggles affect every board in
+          the world.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Scope</th>
+                <th>Default</th>
+                <th>What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Allow player posts</td><td><strong>Global</strong></td><td>ON</td><td>When OFF, only admins can post</td></tr>
+              <tr><td>Allow infinite posts</td><td><strong>Global</strong></td><td>ON</td><td>When OFF, the Infinite expiration option is rejected</td></tr>
+              <tr><td>Require approval queue</td><td><strong>Global</strong></td><td>OFF</td><td>When ON, player posts go to the Pending Queue first</td></tr>
+              <tr><td>Allow comments</td><td><strong>Global</strong></td><td>ON</td><td>Master toggle for the comment system</td></tr>
+              <tr><td>Enable post archiving</td><td><strong>Global</strong></td><td>ON</td><td>When OFF, expired posts are deleted instead of archived</td></tr>
+              <tr><td>Auto-delete archived notices after 14 days</td><td><strong>Global</strong></td><td>ON</td><td>Removes archived posts older than 14 days</td></tr>
+              <tr><td>Board mode</td><td><strong>Local</strong></td><td>Global</td><td>Switches <em>this</em> board between Global and Local</td></tr>
+              <tr><td>Local label</td><td><strong>Local</strong></td><td><code>Local</code></td><td>Custom name shown on this board's title (max 20 chars)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Settings scope</span>
+            <p>
+              Six of the eight settings apply globally to every board in the
+              world. Only <strong>Board mode</strong> and <strong>Local label</strong>
+              change just the board you're standing at. Plan your global toggles
+              before your players start filling boards with posts.
+            </p>
+          </div>
+        </div>
+
+        <h3 id="bc-pending">Pending Queue</h3>
+        <ul>
+          <li>Lists all pending posts for the current scope, newest first</li>
+          <li>Tap any post to open the standard detail view</li>
+          <li>Inside, admins see <strong>Approve</strong> (publishes the post) and <strong>Deny</strong> (discards it)</li>
+          <li>The activity log records who approved or denied what</li>
+        </ul>
+
+        <h3 id="bc-categories">Manage Categories</h3>
+        <p>This menu has 8 actions, in order:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Action</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Add category</strong></td><td>Name + icon picker + visibility toggle</td></tr>
+              <tr><td><strong>Rename category</strong></td><td>Pick a category, type a new name</td></tr>
+              <tr><td><strong>Set category icon</strong></td><td>Two-step flow: pick category, then pick from 21 icons</td></tr>
+              <tr><td><strong>Set category description</strong></td><td>Optional text shown at the top of the category page</td></tr>
+              <tr><td><strong>Toggle visibility</strong></td><td>Hide a category from non-admins</td></tr>
+              <tr><td><strong>Lock posting (admin-only)</strong></td><td>Restrict the category to admin posts only (perfect for Rules)</td></tr>
+              <tr><td><strong>Toggle comments</strong></td><td>Disable comments for posts in this category</td></tr>
+              <tr><td><strong>Remove category</strong></td><td>Posts get reassigned to Misc (or the first remaining category). At least 1 category must remain.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Tip</span>
+            <p>
+              Categories you add on a Local-mode board only exist on that
+              board, and they don't appear on other boards. Categories created on
+              a Global-mode board appear on every Global board.
+            </p>
+          </div>
+        </div>
+
+        <h3 id="bc-templates">Post Templates</h3>
+        <p>
+          Admin-only screen with 3 actions: <strong>Add template</strong>,
+          <strong>Edit template</strong>, and <strong>Remove template</strong>.
+          Each template has a name, default category, and body text. When
+          templates exist, the post composer shows a "Choose a template or
+          start blank" picker before the post form. Players only see templates
+          whose category they're allowed to post in.
+        </p>
+        <p>
+          Common uses: pre-formatted Trade Listings, Event templates, Rule
+          announcements.
+        </p>
+
+        <h3 id="bc-log">Activity Log</h3>
+        <ul>
+          <li>Shows the last <strong>20 entries</strong> for this scope, newest first</li>
+          <li>Tracks posts, edits, deletes, approvals/denials, pins/unpins, locks, comment activity, category changes, template changes, and archive deletions</li>
+          <li>Capped at <strong>50 stored entries</strong> internally (oldest dropped)</li>
+          <li>A <strong>Clear log</strong> button sits at the bottom of the screen</li>
+        </ul>
+
+        <h3 id="bc-archive">Archive</h3>
+        <ul>
+          <li>Lists expired posts for the current scope, sorted by most recently expired</li>
+          <li>Only available when <code>Enable post archiving</code> is ON</li>
+          <li>Tap any archived post to view it (read-only)</li>
+          <li>Inside an archived post, admins can permanently <strong>Delete</strong> it</li>
+          <li><strong>Delete all</strong> at the bottom clears the entire archive</li>
+          <li>If <code>Auto-delete archived notices after 14 days</code> is ON, the system removes archived posts older than 14 days the next time someone interacts with a board (and at least one player is online)</li>
+          <li>Archive caps at <strong>250 entries</strong> per scope (oldest dropped beyond that)</li>
+        </ul>
+
+        <h3 id="bc-reset">Reset Board (Defaults)</h3>
+
+        <div class="callout danger">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Destructive: read first</span>
+            <p>
+              Reset has no undo and no backup. Read which behavior applies to
+              your board's current mode before confirming.
+            </p>
+          </div>
+        </div>
+
+        <ul>
+          <li><strong>Local-mode reset:</strong> Clears this board's local posts, pins, pending queue, archive, templates, and any local category overrides. The board returns to Global mode.</li>
+          <li><strong>Global-mode reset:</strong> Wipes the <strong>entire global feed</strong> (every board using Global mode), resets settings to defaults, and resets the category list to defaults.</li>
+        </ul>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Modes ======================== -->
+
+        <h2 id="modes">Global vs Local Mode</h2>
+        <p>
+          This is the most important conceptual feature in the addon, so it's
+          worth a careful read.
+        </p>
+
+        <p><strong>Global mode (default):</strong></p>
+        <ul>
+          <li>All Global-mode boards share the same posts, pins, categories, archive, and templates</li>
+          <li>Posting on one Global board makes the post visible on every other Global board in the world</li>
+          <li>Use this for a single server-wide notice feed</li>
+        </ul>
+
+        <p><strong>Local mode:</strong></p>
+        <ul>
+          <li>Each Local-mode board has its own independent posts, pins, archive, pending queue, templates, and category overrides</li>
+          <li>Use this for per-region notice boards: a town board, a market board, a spawn board, etc.</li>
+          <li>Each Local board can have a custom title (e.g. <code>Notice Board (Town)</code>) via the <strong>Local label</strong> setting</li>
+        </ul>
+
+        <p><strong>Important behaviors:</strong></p>
+        <ul>
+          <li>Mode is set per-board under <code>Board Controls → Settings → Board mode</code></li>
+          <li>Switching from Global to Local does <strong>not</strong> copy global posts; the new local board starts empty</li>
+          <li>Switching back from Local to Global hides the local data but does not delete it; switching to Local again restores the same data</li>
+          <li>Local categories start as a copy of the current global categories the first time you switch a board to Local mode; after that, edits on a local board only affect that board</li>
+        </ul>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Common setup</span>
+            <p>
+              Keep one Global board at spawn for server-wide announcements, and
+              place Local boards in each town for community-specific posts.
+              Same item, same recipe, just toggle the mode after placing it.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Limits & Caps ======================== -->
+
+        <h2 id="limits">Limits &amp; Caps</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Cap</th>
+                <th>Behavior when exceeded</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Active posts per scope</td><td>80</td><td>Oldest dropped</td></tr>
+              <tr><td>Pending posts per scope</td><td>80</td><td>Oldest dropped</td></tr>
+              <tr><td>Archived posts per scope</td><td>250</td><td>Oldest dropped</td></tr>
+              <tr><td>Activity log entries (stored)</td><td>50</td><td>Oldest dropped</td></tr>
+              <tr><td>Activity log entries (displayed)</td><td>20 newest</td><td>-</td></tr>
+              <tr><td>Saved posts per player</td><td>200</td><td>Oldest dropped</td></tr>
+              <tr><td>Per-category posts per page</td><td>15</td><td>Pagination</td></tr>
+              <tr><td>Pin slots per scope</td><td>4</td><td>Manual replace</td></tr>
+              <tr><td>Comment length</td><td>30 chars</td><td>Truncated</td></tr>
+              <tr><td>Comments per post</td><td>20</td><td>New comments rejected</td></tr>
+              <tr><td>Comment cooldown</td><td>60 seconds</td><td>Per player</td></tr>
+              <tr><td>Post body length</td><td>1000 chars</td><td>Truncated on save</td></tr>
+              <tr><td>Local label length</td><td>20 chars</td><td>Truncated</td></tr>
+              <tr><td>Per-player "seen" entries</td><td>250</td><td>Oldest dropped</td></tr>
+              <tr><td>Available category icons</td><td>21</td><td>(See reference)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>DB storage notes:</strong></p>
+        <ul>
+          <li>The full board database is stored in world dynamic properties</li>
+          <li>Single-key cap is 32,767 chars; when exceeded, data spills into 4 chunked keys</li>
+          <li>A world-level lock prevents two players from writing simultaneously (TTL ~2.5s)</li>
+          <li>If the DB grows too large to fit even in chunks, the oldest archived/pending/active posts are aggressively trimmed to make room</li>
+        </ul>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Troubleshooting ======================== -->
+
+        <h2 id="troubleshooting">Troubleshooting &amp; FAQ</h2>
+
+        <h3>"The board looks broken / blocks are missing textures"</h3>
+        <p>
+          The most common cause of any problem with this addon is that only
+          one of the two packs is enabled. Notice Board needs <strong>both</strong>
+          the Behavior Pack and the Resource Pack applied to the world, and
+          both should be at v1.0.4. Check the world's pack list before anything
+          else.
+        </p>
+
+        <h3>"I can't see Add Notice"</h3>
+        <p>
+          An admin has turned off <code>Allow player posts</code> in Settings.
+          Either ask an admin to enable it, or be added as an admin yourself.
+        </p>
+
+        <h3>"I can't see Board Controls"</h3>
+        <p>
+          You aren't an admin. Either get OP'd (<code>/op &lt;name&gt;</code>)
+          or have an admin run <code>/tag &lt;name&gt; add admin</code>.
+        </p>
+
+        <h3>"My post didn't appear, it says 'Submitted'"</h3>
+        <p>
+          The board has <code>Require approval queue</code> turned on. An
+          admin needs to open <code>Board Controls → Pending Queue</code>
+          and approve your post.
+        </p>
+
+        <h3>"I can't pin, lock, or approve a post"</h3>
+        <p>
+          These actions are admin-only. See
+          <a href="#admin-access">Admin access</a> for how to get admin status.
+        </p>
+
+        <h3>"Categories on this board don't match another board"</h3>
+        <p>
+          You're looking at a Local-mode board. Each Local board has its own
+          categories. Switch the board to Global mode under
+          <code>Board Controls → Settings → Board mode</code> to share
+          categories with the rest of the world.
+        </p>
+
+        <h3>"My post got auto-deleted"</h3>
+        <p>
+          Posts have an expiration timer. After expiration, posts are moved
+          to the Archive (if archiving is on) and permanently deleted after
+          14 days (if auto-delete is on). Use the <strong>Infinite</strong>
+          expiration option for posts you want to keep forever, and make
+          sure infinite posts haven't been disabled in Settings.
+        </p>
+
+        <h3>"Someone else is updating the board"</h3>
+        <p>
+          Two players tried to write to the board at the same time. Wait a
+          second and try again; the lock auto-clears in under 3 seconds.
+        </p>
+
+        <h3>"How do I run a debug report?"</h3>
+        <p>
+          Operators can run any of these to print a diagnostic report
+          (version, event wiring, DB status, settings, nearby cores, and a
+          pass/fail health check):
+        </p>
+<pre><code>/function jm_nb/debug
+/function jm_nb/debug_verbose</code></pre>
+        <p>
+          Or via chat: <code>!nbdebug</code> / <code>!nbdebug verbose</code> /
+          <code>!nb debug</code> / <code>!nb debug v</code>. Or via script
+          event: <code>/scriptevent jm_nb:debug</code> (and <code>verbose</code>).
+          When asking for help on Discord, please include the output of
+          <code>!nbdebug verbose</code>.
+        </p>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">More help</span>
+            <p>
+              For questions not covered here, visit my
+              <a href="https://discord.gg/ZsrM5HqHdS" target="_blank">Discord</a>.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Reference Tables ======================== -->
+
+        <h2 id="reference">Reference Tables</h2>
+
+        <h3>Available category icons</h3>
+        <p>
+          There are 21 icons available in the icon picker. They're sorted
+          alphabetically in the in-game picker. The internal IDs are:
+        </p>
+        <p>
+          <code>bed</code>, <code>bell</code>, <code>book_and_quill</code>,
+          <code>bread</code>, <code>brick_block</code>, <code>bundle</code>,
+          <code>campfire</code>, <code>chest</code>, <code>clock</code>,
+          <code>command_block</code>, <code>compass</code>,
+          <code>diamond_chesplate</code>, <code>diamond_hoe</code>,
+          <code>knowledge_book</code>, <code>locations</code>,
+          <code>nether</code>, <code>news</code>, <code>pin</code>,
+          <code>sign</code>, <code>sword</code>, <code>trade</code>
+        </p>
+        <p>
+          The default icon for new categories (if none is picked) is the
+          <strong>pin</strong> icon.
+        </p>
+
+        <h3>Default category assignments</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Category</th><th>Icon</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>News</td><td>News</td></tr>
+              <tr><td>Trade</td><td>Trade</td></tr>
+              <tr><td>Rules</td><td>Book and Quill</td></tr>
+              <tr><td>Miscellaneous</td><td>Bundle</td></tr>
+              <tr><td>Admin Notices</td><td>Command Block</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Comment system</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Constant</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Max comment length</td><td>30 chars</td></tr>
+              <tr><td>Max comments per post</td><td>20</td></tr>
+              <tr><td>Comment cooldown</td><td>60 seconds</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Activity events tracked</h3>
+        <ul>
+          <li>Player posted / deleted / edited a post</li>
+          <li>Admin approved / denied a pending post</li>
+          <li>Admin pinned / unpinned a post (slot N)</li>
+          <li>Admin locked / unlocked a post</li>
+          <li>Player commented on / deleted a comment</li>
+          <li>Admin set category visibility / posting lock / comments off</li>
+          <li>Admin created / edited / removed a template</li>
+          <li>Auto-delete sweep removed N archived posts</li>
+          <li>Admin deleted an archived post / cleared the archive</li>
+        </ul>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Compatibility ======================== -->
+
+        <h2 id="compatibility">Compatibility</h2>
+        <ul>
+          <li><strong>Bedrock version:</strong> 1.21.100 or newer (from manifest <code>min_engine_version</code>)</li>
+          <li><strong>Script API modules used:</strong> <code>@minecraft/server 2.1.0</code>, <code>@minecraft/server-ui 2.0.0</code></li>
+          <li><strong>No experiments needed</strong>: works on vanilla worlds and realms</li>
+          <li><strong>Achievements:</strong> Safe. Using this addon does not disable achievements</li>
+          <li><strong>Cheats:</strong> Not required. Board functions work in worlds with cheats off</li>
+          <li><strong>Multiplayer:</strong> Designed for it. Concurrent writes are protected by a world-level lock.</li>
+          <li><strong>Other JM addons:</strong> No known conflicts. Notice Board uses the <code>jm_nb:</code> namespace exclusively for item IDs, block IDs, and dynamic properties.</li>
+          <li><strong>Custom blocks:</strong> Notice Board adds 15 block IDs (9 standing + 6 wall). None overlap with vanilla.</li>
+          <li><strong>Worlds:</strong> Posts and settings persist across world saves and restarts via dynamic properties.</li>
+        </ul>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-logo">JM Addons</span>
+        <span class="footer-copy"
+          >Minecraft Bedrock · Not affiliated with Mojang</span
+        >
+        <div class="footer-links">
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            target="_blank"
+            >CurseForge</a
+          >
+          <span class="footer-sep">|</span>
+          <a href="https://discord.gg/ZsrM5HqHdS" target="_blank">Discord</a>
+          <span class="footer-sep">|</span>
+          <a href="https://buymeacoffee.com/jm1775" target="_blank">Donate</a>
+        </div>
+      </div>
+      <span class="site-version">v0.1.12</span>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".nav-toggle")
+        ?.addEventListener("click", function () {
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", String(!expanded));
+          document.querySelector(".top-nav").classList.toggle("open");
+        });
+
+      // Collapsible sidebar sections
+      document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
+        if (li.querySelector(".sidebar-subnav")) {
+          li.classList.add("has-children");
+          li.querySelector(":scope > a").addEventListener("click", function (e) {
+            e.preventDefault();
+            li.classList.toggle("open");
+          });
+        }
+      });
+
+      // Active section tracking via scroll position
+      (function () {
+        var sidebarLinks = document.querySelectorAll(".sidebar-nav a[href^='#']");
+        var idToLink = {};
+        sidebarLinks.forEach(function (link) {
+          idToLink[link.getAttribute("href").slice(1)] = link;
+        });
+
+        var headings = [];
+        document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(function (el) {
+          if (idToLink[el.id]) headings.push(el);
+        });
+
+        var currentId = null;
+
+        function setActive(id) {
+          if (id === currentId) return;
+          currentId = id;
+          sidebarLinks.forEach(function (l) { l.classList.remove("active"); });
+          var link = idToLink[id];
+          if (link) {
+            link.classList.add("active");
+            var parentLi = link.closest("li.has-children");
+            if (!parentLi) {
+              var subnav = link.closest(".sidebar-subnav");
+              if (subnav) parentLi = subnav.closest("li.has-children");
+            }
+            document.querySelectorAll(".sidebar-nav > li.has-children").forEach(function (li) {
+              if (li === parentLi) {
+                li.classList.add("open");
+              } else {
+                li.classList.remove("open");
+              }
+            });
+          }
+        }
+
+        function onScroll() {
+          var scrollTop = window.scrollY + 100;
+          var active = null;
+          for (var i = 0; i < headings.length; i++) {
+            if (headings[i].offsetTop <= scrollTop) {
+              active = headings[i].id;
+            } else {
+              break;
+            }
+          }
+          if (active) setActive(active);
+        }
+
+        var ticking = false;
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            requestAnimationFrame(function () { onScroll(); ticking = false; });
+            ticking = true;
+          }
+        });
+        onScroll();
+      })();
+    </script>
+    <script defer src="../search.js"></script>
+  </body>
+</html>
