@@ -52,6 +52,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ========================
+   Skip link
+   ======================== */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: none;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
 html, body {
   max-width: 100vw;
 }
@@ -983,6 +1005,9 @@ img { display: block; max-width: 100%; }
     animation-duration: 0.01ms !important;
     animation-delay: 0ms !important;
     transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }
 

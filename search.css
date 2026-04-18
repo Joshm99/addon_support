@@ -263,4 +263,53 @@
   .search-results {
     width: calc(100vw - 1.5rem);
   }
+  .search-filter-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+}
+
+/* ---- Loading / error states ---- */
+.search-loading,
+.search-fetch-error {
+  padding: 1.5rem 0.75rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.search-loading[hidden],
+.search-fetch-error[hidden] {
+  display: none;
+}
+
+.search-fetch-error {
+  color: var(--red);
+}
+
+.search-loading::before {
+  content: '';
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 2px solid var(--border-mid);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: search-spin 0.7s linear infinite;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes search-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-loading::before {
+    animation: none;
+    content: '\2026';
+    border: none;
+    width: auto;
+    height: auto;
+  }
 }

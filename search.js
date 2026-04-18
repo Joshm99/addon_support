@@ -13,6 +13,7 @@
   var currentResults = [];
   var currentQuery = '';
   var debounceTimer = null;
+  var indexError = false;
 
   // Base path detection — works from root or /addons/ subdirectory
   var basePath = '';
@@ -22,21 +23,32 @@
   }
 
   // DOM refs
-  var inputEl, resultsEl, filterBarEl, resultsListEl, emptyEl;
+  var inputEl, resultsEl, filterBarEl, resultsListEl, emptyEl, loadingEl, fetchErrorEl;
 
   // ---- Index loading ----
 
   var indexLoading = false;
   function loadIndex() {
-    if (index || indexLoading) return;
+    if (index || indexLoading || indexError) return;
     indexLoading = true;
+    if (loadingEl) { loadingEl.hidden = false; showResults(); }
     fetch(basePath + 'search-index.json')
-      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function (data) {
         index = data;
         data.pages.forEach(function (p) { pages[p.id] = p; });
+        indexLoading = false;
+        if (loadingEl) loadingEl.hidden = true;
       })
-      .catch(function () { /* silently fail — search just won't work */ });
+      .catch(function () {
+        indexLoading = false;
+        indexError = true;
+        if (loadingEl) loadingEl.hidden = true;
+        if (fetchErrorEl) { fetchErrorEl.hidden = false; showResults(); }
+      });
   }
 
   // ---- Search algorithm ----
@@ -249,6 +261,17 @@
     }, DEBOUNCE_MS);
   }
 
+  function getFocusableInWrapper() {
+    var wrapper = document.querySelector('.search-wrapper');
+    if (!wrapper) return [];
+    var all = wrapper.querySelectorAll('input, button, a[href], [tabindex]:not([tabindex="-1"])');
+    var visible = [];
+    for (var i = 0; i < all.length; i++) {
+      if (!all[i].hidden && all[i].offsetParent !== null) visible.push(all[i]);
+    }
+    return visible;
+  }
+
   function onKeyDown(e) {
     if (!resultsEl || resultsEl.hidden) return;
     var items = resultsListEl.querySelectorAll('.search-result');
@@ -270,6 +293,16 @@
       e.preventDefault();
       hideResults();
       inputEl.blur();
+    } else if (e.key === 'Tab') {
+      var focusable = getFocusableInWrapper();
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     }
   }
 
@@ -330,6 +363,20 @@
     emptyEl.innerHTML = 'No results for "<span class="search-empty-query"></span>"';
     resultsEl.appendChild(emptyEl);
 
+    loadingEl = document.createElement('div');
+    loadingEl.className = 'search-loading';
+    loadingEl.hidden = true;
+    loadingEl.setAttribute('aria-live', 'polite');
+    loadingEl.textContent = 'Loading search\u2026';
+    resultsEl.appendChild(loadingEl);
+
+    fetchErrorEl = document.createElement('div');
+    fetchErrorEl.className = 'search-fetch-error';
+    fetchErrorEl.hidden = true;
+    fetchErrorEl.setAttribute('role', 'alert');
+    fetchErrorEl.textContent = 'Search unavailable. Please refresh the page.';
+    resultsEl.appendChild(fetchErrorEl);
+
     buildFilterBar();
 
     inputEl.addEventListener('input', onInput);
@@ -338,6 +385,7 @@
     inputEl.addEventListener('focus', onFocusIn);
     filterBarEl.addEventListener('click', onFilterClick);
     document.addEventListener('click', onClickOutside);
+    document.addEventListener('keydown', onKeyDown);
   }
 
   if (document.readyState === 'loading') {
