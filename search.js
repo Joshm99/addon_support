@@ -210,8 +210,8 @@
 
   function buildFilterBar() {
     filterBarEl.innerHTML = '';
-    var filters = ['All', 'AdminTools', 'Tag Tool', 'Notice Board', 'General'];
-    var values = ['all', 'AdminTools', 'Tag Tool', 'Notice Board', 'General'];
+    var filters = ['All', 'AdminTools', 'Notice Board', 'Mail Delivery', 'Tag Tool', 'General'];
+    var values = ['all', 'AdminTools', 'Notice Board', 'Mail Delivery', 'Tag Tool', 'General'];
 
     for (var i = 0; i < filters.length; i++) {
       var btn = document.createElement('button');

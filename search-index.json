@@ -3,6 +3,7 @@
     { "id": "admintools", "title": "Admin Tools", "addon": "AdminTools", "url": "addons/admintools.html" },
     { "id": "tag-tool", "title": "Tag Tool", "addon": "Tag Tool", "url": "addons/tag-tool.html" },
     { "id": "notice-board", "title": "Notice Board", "addon": "Notice Board", "url": "addons/notice-board.html" },
+    { "id": "mail-delivery", "title": "Mail Delivery", "addon": "Mail Delivery", "url": "addons/mail-delivery.html" },
     { "id": "installation", "title": "Installation & Updating", "addon": "General", "url": "installation.html" }
   ],
   "sections": [
@@ -778,6 +779,208 @@
       "anchor": "compatibility",
       "level": 2,
       "text": "Bedrock 1.21.100 or newer. Script API @minecraft/server 2.1.0 and @minecraft/server-ui 2.0.0. No experiments needed. Achievement-safe. Cheats not required. Designed for multiplayer with concurrent-write lock. Uses jm_nb namespace exclusively. Adds 15 custom block IDs (9 standing + 6 wall). Posts persist across restarts via dynamic properties."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Overview",
+      "anchor": "overview",
+      "level": 2,
+      "text": "A full postal system for Bedrock worlds. Players craft mailboxes, place deposit boxes, and send items, sealed packages, or written letters to each other on a schedule or instantly. Designed for survival servers, realms, and shared worlds. Mail lives in world dynamic properties. Achievement safe, no experiments required."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Installation",
+      "anchor": "installation",
+      "level": 2,
+      "text": "Both the Behavior Pack and the Resource Pack must be enabled. The mailbox and package block models live in the RP. Both packs ship in a single .mcaddon import. Requires Minecraft Bedrock 1.26.0 or newer. No experimental toggles required."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Getting Started",
+      "anchor": "getting-started",
+      "level": 2,
+      "text": "Every player gets a Mail Delivery Guide on first join. The guide covers Info, How To, Recipes, and Admin Info. Admins get an extra Admin Controls button. All blocks and items are crafted at a standard crafting table."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "The Guide Book",
+      "anchor": "guide-book",
+      "level": 3,
+      "parent": "Getting Started",
+      "text": "Players receive a Mail Delivery Guide on first join. Use it to open a 4-section in-game reference. Can also be crafted from a single sheet of paper. Admins see an Admin Controls button inside the guide."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Crafting Recipes",
+      "anchor": "recipes",
+      "level": 3,
+      "parent": "Getting Started",
+      "text": "Mailbox on Post: Iron Ingot, Log, Cobblestone. Wall Mailbox: Iron Ingot, Paper. Mail Deposit Box: 5 Iron Ingots, Paper. Open Package: 8 Paper in a ring. Mail Delivery Guide: 1 Paper. The log type decides the post style for all 10 wood types."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Mailboxes",
+      "anchor": "mailboxes",
+      "level": 2,
+      "text": "The core of the system. Personal inbox for receiving mail, outbox for sending on a schedule, and the only block a recipient needs. 11 variants: 10 wood post types plus a wall mailbox."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Variants & Customization",
+      "anchor": "mailbox-variants",
+      "level": 3,
+      "parent": "Mailboxes",
+      "text": "11 mailbox variants: Spruce, Oak, Birch, Dark Oak, Acacia, Cherry, Jungle, Mangrove, Pale Oak posts, and a Wall Mailbox. Post mailboxes are 2 blocks tall. Dyeing with 16 dyes. Stripping post with an axe. 320 post textures total."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Ownership",
+      "anchor": "mailbox-ownership",
+      "level": 3,
+      "parent": "Mailboxes",
+      "text": "Placing a mailbox auto-claims it. Only the owner or an admin can open it. Breaking the mailbox clears the claim. Admins don't auto-claim on placement, they see a Claim or Grant form instead."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "The Mailbox Menu",
+      "anchor": "mailbox-menu",
+      "level": 3,
+      "parent": "Mailboxes",
+      "text": "Inbox, Outbox, Send Item in Hand, Write Letter, and Friends. Inbox and outbox hold up to 60 entries each. One entry equals one send action."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Mail Deposit Box",
+      "anchor": "deposit-box",
+      "level": 2,
+      "text": "Instant version of the mailbox. Anyone can use it, not owned by anyone. Send Item in Hand, Write & Send Letter, Send a Sealed Package. 2 blocks tall. Place in shared spaces like spawn, markets, trading halls."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Packages",
+      "anchor": "packages",
+      "level": 2,
+      "text": "Physical blocks that hold items, get sealed into a carryable item, and then mailed. Open Package holds up to 54 stacks. Sealed Package keeps all contents and can be placed back as Open Package."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Open Package",
+      "anchor": "open-package",
+      "level": 3,
+      "parent": "Packages",
+      "text": "Holds up to 54 stacks. Deposit items one at a time or use Bulk Deposit. Optional recipient label. Block model swaps to closed when items are inside."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Sealed Package",
+      "anchor": "sealed-package",
+      "level": 3,
+      "parent": "Packages",
+      "text": "Breaking an Open Package with items produces a Sealed Package item. Keeps contents, recipient label, and retention timer. 7 day retention unused, 30 days in outbox or returned. Can be placed back as Open Package."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Letters",
+      "anchor": "letters",
+      "level": 2,
+      "text": "Standalone text messages. Compose from Deposit Box (instant) or Mailbox Outbox (scheduled). Multi-recipient letters allowed by default. Items and packages are always single-recipient."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Friends List",
+      "anchor": "friends",
+      "level": 2,
+      "text": "Personal friends list accessible from mailbox menu. Up to 60 entries per player, oldest dropped when full. Names auto-refresh from player registry."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Delivery Schedule",
+      "anchor": "delivery",
+      "level": 2,
+      "text": "4 schedule modes: Noon (in-game), Hourly (real time), Every X in-game days (1-30), or Immediate. Deposit Box sends always fire instantly. Failed pickups return mail after 3 attempts or 60 in-game days."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Receiving Mail",
+      "anchor": "receiving",
+      "level": 2,
+      "text": "Players see a chat message and note chime when they join with waiting mail. Claim entries from inbox. Items go to inventory or drop at feet if full. Letters and sealed packages are claimed as items."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Admin Guide",
+      "anchor": "admin-guide",
+      "level": 2,
+      "text": "Admin panel accessed from Mail Delivery Guide. 5 sections: Settings, Item Blacklist, Audit Log, Mailbox Tools, and Broadcast Letter. Admin access via Operator or admin tag."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Admin Access",
+      "anchor": "admin-access",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Admin if Operator (/op) or has admin tag. Grant via /tag player add admin, revoke via /tag player remove admin."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Settings",
+      "anchor": "admin-settings",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Enforce Item Blacklist, Audit Log Enabled, Allow multi-recipient letters, Max audit log entries (10-150), Mailbox delivery schedule, Day interval (1-30), Send cooldown (0-60 seconds). Admins always bypass cooldown."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Item Blacklist",
+      "anchor": "admin-blacklist",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Blocks specific item IDs from being sent or packed. Add from inventory grid or by item ID. Some items blocked by default: containers, maps, addon items. Paginated list with Clear Blacklist button."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Audit Log",
+      "anchor": "admin-audit",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Records admin actions and key events. Ring buffer capped at 10-150 entries (default 100). Paginated log with Clear Audit Log button."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Mailbox Tools",
+      "anchor": "admin-mailbox-tools",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "View/delete any player's Inbox or Outbox. Purge Old Mail. Purge Unused Package Payloads. Inactive Mailboxes (60+ days). Destructive actions with no undo."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Broadcast Letter",
+      "anchor": "admin-broadcast",
+      "level": 3,
+      "parent": "Admin Guide",
+      "text": "Send a single letter to every known mailbox owner. Useful for server-wide announcements. Recorded in audit log."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Limits & Caps",
+      "anchor": "limits",
+      "level": 2,
+      "text": "Inbox 60 entries, Outbox 60 entries, Package 54 stacks, 3 failed pickups before return, 7 day sealed package retention (unused), 30 day retention (in outbox/returned), 60 friends per player, 10-150 audit log entries, 0-60 second send cooldown, 1-30 day interval."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Troubleshooting & FAQ",
+      "anchor": "troubleshooting",
+      "level": 2,
+      "text": "Missing textures: enable both BP and RP. Can't open mailbox: only owner or admin can open. Mail never arrived: check delivery schedule, deposit box sends instantly. Package shows closed: cosmetic when items inside. Item blocked: on blacklist, admin can review. Send cooldown: default 3 seconds, admin configurable. Lost Guide Book: craft with 1 paper."
+    },
+    {
+      "page": "mail-delivery",
+      "heading": "Compatibility",
+      "anchor": "compatibility",
+      "level": 2,
+      "text": "Bedrock 1.26.0 or newer. Script API @minecraft/server 2.6.0 and @minecraft/server-ui 2.0.0. No experiments needed. Achievement-safe. Cheats not required. Designed for multiplayer. Uses jm_md namespace exclusively. Adds 22 custom block IDs. Persists via dynamic properties."
     }
   ]
 }

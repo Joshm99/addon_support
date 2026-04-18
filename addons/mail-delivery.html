@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mail Delivery | JM Addons</title>
+    <meta
+      name="description"
+      content="Mail Delivery is a full postal system for Minecraft Bedrock — craft mailboxes, send items, packages, and letters to other players."
+    />
+    <link
+      rel="canonical"
+      href="https://jmaddons.support/addons/mail-delivery.html"
+    />
+    <meta name="theme-color" content="#1e8fff" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="JM Addons" />
+    <meta property="og:title" content="Mail Delivery | JM Addons" />
+    <meta
+      property="og:description"
+      content="Mail Delivery is a full postal system for Minecraft Bedrock — craft mailboxes, send items, packages, and letters to other players."
+    />
+    <meta
+      property="og:url"
+      content="https://jmaddons.support/addons/mail-delivery.html"
+    />
+    <meta
+      property="og:image"
+      content="https://jmaddons.support/images/og-banner.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mail Delivery | JM Addons" />
+    <meta
+      name="twitter:description"
+      content="Mail Delivery is a full postal system for Minecraft Bedrock — craft mailboxes, send items, packages, and letters to other players."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jmaddons.support/images/og-banner.png"
+    />
+    <link rel="apple-touch-icon" href="../images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../images/logo.png" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../search.css" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="94e442b6-0d47-4737-835d-95391824ef61"
+    ></script>
+    <style>
+      .table-wrap {
+        overflow-x: auto;
+        margin: 1.25rem 0;
+        border-radius: var(--radius-lg);
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-mid) transparent;
+      }
+      .table-wrap::-webkit-scrollbar {
+        height: 4px;
+      }
+      .table-wrap::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .table-wrap::-webkit-scrollbar-thumb {
+        background: var(--border-mid);
+        border-radius: 4px;
+      }
+      .table-wrap::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+      }
+      .doc-content table {
+        width: 100%;
+        min-width: 620px;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        background: var(--bg-code);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+      }
+      .doc-content th {
+        text-align: left;
+        font-weight: 600;
+        font-size: 0.78rem;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border-mid);
+        background: var(--bg-raised);
+        white-space: nowrap;
+      }
+      .doc-content td {
+        padding: 0.6rem 1rem;
+        color: var(--text-dim);
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+        line-height: 1.7;
+      }
+      .doc-content tr:last-child td {
+        border-bottom: none;
+      }
+      .doc-content td code,
+      .doc-content th code {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--blue);
+        background: var(--bg-code);
+        border: 1px solid var(--border);
+        padding: 1px 6px;
+        border-radius: var(--radius);
+      }
+      .back-to-top {
+        display: inline-block;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 1.5rem;
+        transition: color var(--transition-base);
+      }
+      .back-to-top:hover {
+        color: var(--gold);
+      }
+      .sidebar-nav > li.has-children > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+      .sidebar-nav > li.has-children > a::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-right: 1.5px solid var(--text-muted);
+        border-bottom: 1.5px solid var(--text-muted);
+        transform: rotate(-45deg);
+        transition: transform 0.2s var(--ease-out);
+        flex-shrink: 0;
+        margin-left: 0.5rem;
+      }
+      .sidebar-nav > li.has-children.open > a::after {
+        transform: rotate(45deg);
+      }
+      .sidebar-nav > li.has-children > .sidebar-subnav {
+        display: none;
+      }
+      .sidebar-nav > li.has-children.open > .sidebar-subnav {
+        display: flex;
+      }
+      .section-divider {
+        border: none;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          var(--gold),
+          var(--blue),
+          transparent
+        );
+        margin: 3rem 0 0;
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <img src="../images/logo.png" alt="JM Addons" class="logo-icon" />
+          <span class="logo-pixel">JM Addons</span>
+        </a>
+        <div class="search-wrapper">
+          <div class="search-input-wrap">
+            <svg
+              class="search-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search docs..."
+              aria-label="Search documentation"
+              aria-expanded="false"
+              autocomplete="off"
+            />
+            <kbd class="search-kbd">/</kbd>
+          </div>
+          <div
+            class="search-results"
+            role="listbox"
+            aria-label="Search results"
+            hidden
+          ></div>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="top-nav">
+          <a href="../index.html" class="nav-link active">Docs</a>
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            class="nav-link"
+            target="_blank"
+            >CurseForge</a
+          >
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            class="nav-link"
+            target="_blank"
+            >Discord</a
+          >
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            class="nav-link nav-donate"
+            target="_blank"
+            >Donate</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <div class="page-layout">
+      <aside class="sidebar">
+        <a href="../index.html" class="sidebar-back">← All Addons</a>
+
+        <div class="sidebar-section">
+          <span class="sidebar-label">On this page</span>
+          <ul class="sidebar-nav">
+            <li><a href="#overview" class="active">Overview</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li>
+              <a href="#getting-started">Getting Started</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#guide-book">The Guide Book</a></li>
+                <li><a href="#recipes">Crafting Recipes</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#mailboxes">Mailboxes</a>
+              <ul class="sidebar-subnav">
+                <li>
+                  <a href="#mailbox-variants">Variants &amp; Customization</a>
+                </li>
+                <li><a href="#mailbox-ownership">Ownership</a></li>
+                <li><a href="#mailbox-menu">The Mailbox Menu</a></li>
+              </ul>
+            </li>
+            <li><a href="#deposit-box">Mail Deposit Box</a></li>
+            <li>
+              <a href="#packages">Packages</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#open-package">Open Package</a></li>
+                <li><a href="#sealed-package">Sealed Package</a></li>
+              </ul>
+            </li>
+            <li><a href="#letters">Letters</a></li>
+            <li><a href="#friends">Friends List</a></li>
+            <li><a href="#delivery">Delivery Schedule</a></li>
+            <li><a href="#receiving">Receiving Mail</a></li>
+            <li>
+              <a href="#admin-guide">Admin Guide</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#admin-access">Admin Access</a></li>
+                <li><a href="#admin-settings">Settings</a></li>
+                <li><a href="#admin-blacklist">Item Blacklist</a></li>
+                <li><a href="#admin-audit">Audit Log</a></li>
+                <li><a href="#admin-mailbox-tools">Mailbox Tools</a></li>
+                <li><a href="#admin-broadcast">Broadcast Letter</a></li>
+              </ul>
+            </li>
+            <li><a href="#limits">Limits &amp; Caps</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#compatibility">Compatibility</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="doc-content">
+        <div class="doc-header">
+          <h1 class="doc-title">Mail Delivery</h1>
+          <p class="doc-desc">
+            A full postal system for Bedrock worlds. Players craft mailboxes,
+            place deposit boxes, and send items, sealed packages, or written
+            letters to each other on a schedule or instantly. Ownership is
+            auto-claimed on placement, packages hold up to 54 stacks (Same
+            amount as a double chest), and admins get a complete moderation
+            toolkit for settings, blacklists, audits, and cleanup.
+          </p>
+          <p class="doc-desc">
+            Don't have the addon yet?
+            <a
+              href="https://www.curseforge.com/members/jm_1775/projects"
+              target="_blank"
+              rel="noopener"
+              >Click here to get it!</a
+            >
+          </p>
+          <div class="doc-meta">
+            <div class="meta-pill">
+              <span class="meta-label">Version</span>
+              <span class="meta-value">1.0.0</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Namespace</span>
+              <span class="meta-value">jm_md:</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Bedrock</span>
+              <span class="meta-value">1.26.0+</span>
+            </div>
+            <div class="meta-pill">
+              <span class="meta-label">Script API</span>
+              <span class="meta-value"
+                >@minecraft/server 2.6.0, @minecraft/server-ui 2.0.0</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================== Overview ======================== -->
+
+        <h2 id="overview">Overview</h2>
+        <p>
+          I built Mail Delivery as a fun addition for Minecraft towns, cities,
+          and shared survival worlds. I always liked the idea of having a real
+          postal system in-game, but on most worlds item trading ends up being
+          clunky. Someone is offline, a chest at spawn becomes the drop-off
+          spot, or there is no easy way to leave a note for one specific player.
+          This addon adds a proper mailbox system so players can send items,
+          packages, and letters in a way that feels like it belongs in the
+          world.
+        </p>
+        <p>
+          It works especially well on survival servers, realms, and community
+          worlds where players are building towns that feel lived in. Mail is
+          stored in world dynamic properties, so it survives restarts and pack
+          updates. The whole addon runs on the stable Script API with no
+          experiments, and it is fully achievement safe.
+        </p>
+
+        <p><strong>Key features:</strong></p>
+        <ul>
+          <li>
+            Craftable mailboxes with 10 wood post variants plus a wall mailbox
+          </li>
+          <li>
+            Recolor any mailbox with any of the 16 dyes, and strip post
+            mailboxes with an axe
+          </li>
+          <li>Mail Deposit Box for instant public drop-offs</li>
+          <li>
+            Open and Sealed Packages that hold up to 54 stacks of items (same as
+            a double chest)
+          </li>
+          <li>Written letters for messages without items</li>
+          <li>
+            Per-player friends list (up to 60) for quick recipient picking
+          </li>
+          <li>
+            4 delivery schedules: Noon, Hourly, Every X days, or Immediate
+          </li>
+          <li>
+            Full admin toolkit: settings, item blacklist, audit log, mailbox
+            inspection, cleanup, and server-wide letter broadcast
+          </li>
+          <li>
+            Auto-return of undeliverable mail and configurable send cooldown
+          </li>
+          <li>
+            One-time Guide Book handed out on first join, with a full in-game
+            reference
+          </li>
+        </ul>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Achievement Friendly</span>
+            <p>
+              Mail Delivery uses only the stable Script API and dynamic
+              properties. No experiments, no cheats, no achievements disabled.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Installation ======================== -->
+
+        <h2 id="installation">Installation</h2>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Setup</span>
+            <p>
+              New here? See the
+              <a href="../installation.html">Installation &amp; Updating</a>
+              guide for the basics on importing <code>.mcaddon</code> files and
+              applying packs to a world.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          Both the Behavior Pack and the Resource Pack must be enabled on the
+          world. The mailbox and package block models live in the RP, so the
+          addon will look broken if only the BP is applied. Both packs ship in
+          the single <code>.mcaddon</code> import.
+        </p>
+        <p>
+          Mail Delivery requires Minecraft Bedrock <strong>1.26.0</strong> or
+          newer. No experimental toggles are required, and all mail, ownership,
+          and settings persist in world dynamic properties so they survive
+          restarts and pack updates.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Getting Started ======================== -->
+
+        <h2 id="getting-started">Getting Started</h2>
+
+        <h3 id="guide-book">The Guide Book</h3>
+        <p>
+          Every player is handed a <strong>Mail Delivery Guide</strong> the
+          first time they join a world with this addon installed. Use the guide
+          (right-click, or the interact button on mobile and controller) to open
+          a 4-section in-game reference covering Info, How To, Recipes, and
+          Admin Info. If a player somehow misses the one-time hand-out, the
+          guide can also be crafted from a single sheet of paper.
+        </p>
+        <p>
+          The guide is intentionally the first thing a new player sees, so the
+          addon is self-teaching. Admins get an extra
+          <strong>Admin Controls</strong>
+          button inside the guide that opens the full moderation panel.
+        </p>
+
+        <h3 id="recipes">Crafting Recipes</h3>
+        <p>
+          Every block and item in the pack is crafted at a standard crafting
+          table:
+        </p>
+
+        <h4>Mailbox on Post</h4>
+        <pre>
+   I          I = Iron Ingot
+   L          L = Log  (any type)
+   C          C = Cobblestone</pre
+        >
+        <p>
+          The log type you use decides the post style. Using spruce gives a
+          spruce post, oak gives an oak post, and so on for all 10 wood types.
+          Outputs 1 Mailbox on Post.
+        </p>
+
+        <h4>Wall Mailbox</h4>
+        <pre>
+   I          I = Iron Ingot
+   P          P = Paper</pre
+        >
+        <p>Outputs 1 Wall Mailbox.</p>
+
+        <h4>Mail Deposit Box</h4>
+        <pre>
+   B B B      B = (black top)
+   I P I      P = Paper
+   I I I      I = Iron Ingot</pre
+        >
+        <p>Outputs 1 Mail Deposit Box.</p>
+
+        <h4>Open Package</h4>
+        <pre>
+   P P P      P = Paper
+   P   P
+   P P P</pre
+        >
+        <p>Outputs 1 Open Package. The center is left empty.</p>
+
+        <h4>Mail Delivery Guide</h4>
+        <pre>   P          P = Paper</pre>
+        <p>
+          Outputs 1 Mail Delivery Guide. Players receive one automatically on
+          first join.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Mailboxes ======================== -->
+
+        <h2 id="mailboxes">Mailboxes</h2>
+        <p>
+          A mailbox is the core of the system. It's your personal inbox for
+          receiving mail, your outbox for sending on a schedule, and the only
+          block a recipient actually needs in the world.
+        </p>
+
+        <h3 id="mailbox-variants">Variants &amp; Customization</h3>
+        <p>Mail Delivery ships with 11 mailbox variants:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Variant</th>
+                <th>Shape</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mailbox on Spruce Post</td>
+                <td>2 tall</td>
+                <td>Default post style</td>
+              </tr>
+              <tr>
+                <td>Mailbox on Oak Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Birch Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Dark Oak Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Acacia Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Cherry Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Jungle Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Mangrove Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mailbox on Pale Oak Post</td>
+                <td>2 tall</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Wall Mailbox</td>
+                <td>1 block</td>
+                <td>Mounts on a wall</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Post mailboxes are 2 blocks tall. Both halves belong to the same
+          mailbox, and ownership is always stored on the base block so breaking
+          either half correctly cleans up the claim.
+        </p>
+
+        <p>
+          <strong>Dyeing:</strong> hold any of the 16 dyes and interact with a
+          Wall Mailbox or any Mailbox on Post to recolor it. All 16 colors are
+          available, and the color sticks through breaks and replacements as
+          long as the block stays.
+        </p>
+
+        <p>
+          <strong>Stripping:</strong> crouch (sneak) and interact with an axe on
+          a post mailbox to strip the post, the same way you'd strip a log in
+          vanilla. This only applies to post variants, not the wall mailbox.
+        </p>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Tip</span>
+            <p>
+              Each of the 10 wood types has both a regular and a stripped post
+              texture, and each of those has all 16 dye colors available. That's
+              320 post textures in total, so you can match a mailbox to almost
+              any build palette.
+            </p>
+          </div>
+        </div>
+
+        <h3 id="mailbox-ownership">Ownership</h3>
+        <p>
+          Placing a mailbox auto-claims it to whoever placed it. That player is
+          now the owner, and only the owner or an admin can open it. Ownership
+          is keyed to the exact block coordinates, so breaking the mailbox
+          clears the claim and the next player to place one gets a fresh
+          ownership record.
+        </p>
+        <p>
+          Admins are a deliberate exception. Placing a mailbox as an admin does
+          not auto-claim it. Instead, the next time that mailbox is opened, the
+          admin sees a Claim or Grant form where they can keep it, assign it to
+          another player, or leave it unclaimed. This keeps staff from
+          accidentally owning every mailbox they test.
+        </p>
+
+        <h3 id="mailbox-menu">The Mailbox Menu</h3>
+        <p>
+          Interact with any block of a mailbox to open it. Non-owners see a
+          polite "this mailbox belongs to someone else" screen. The owner (and
+          any admin) sees the full menu with these actions:
+        </p>
+        <ul>
+          <li>
+            <strong>Inbox</strong> — view and claim mail other players have sent
+            you
+          </li>
+          <li>
+            <strong>Outbox</strong> — view mail you've queued for the next
+            scheduled pickup
+          </li>
+          <li>
+            <strong>Send Item in Hand</strong> — queue the currently held item
+            for a recipient
+          </li>
+          <li>
+            <strong>Write Letter</strong> — compose a letter to queue for
+            delivery
+          </li>
+          <li>
+            <strong>Friends</strong> — manage your personal recipient list
+          </li>
+        </ul>
+        <p>
+          The inbox and outbox each hold up to <strong>60 entries</strong>, and
+          one entry equals one send action. A single send of 64 stone is 1
+          entry, not 64, so you don't have to worry about filling your inbox
+          with one careful bulk shipment.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Deposit Box ======================== -->
+
+        <h2 id="deposit-box">Mail Deposit Box</h2>
+        <p>
+          The Mail Deposit Box is the instant version of the mailbox. Anyone can
+          interact with it, it's not owned by anyone, and it sends mail
+          immediately instead of queuing on a schedule. Think of it as a public
+          drop-off at a post office instead of the mailbox attached to someone's
+          house.
+        </p>
+        <p>From a Deposit Box, any player can:</p>
+        <ul>
+          <li>
+            <strong>Send Item in Hand</strong> — hold the item, open the box,
+            pick a recipient and amount, done
+          </li>
+          <li>
+            <strong>Write &amp; Send Letter</strong> — compose and deliver a
+            letter instantly
+          </li>
+          <li>
+            <strong>Send a Sealed Package</strong> — if you're holding one
+          </li>
+        </ul>
+        <p>
+          Deposit Boxes are 2 blocks tall, like post mailboxes. Place them in
+          shared spaces: spawn, town squares, markets, trading halls, or
+          wherever you want a communal mailing point.
+        </p>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">When to use which</span>
+            <p>
+              Mailboxes are personal and scheduled. Deposit boxes are public and
+              instant. Most servers end up with a few deposit boxes at spawn for
+              anyone to use, and players put their own mailboxes near their base
+              for incoming mail.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Packages ======================== -->
+
+        <h2 id="packages">Packages</h2>
+        <p>
+          Letters and single-stack sends are fine for small trades, but when you
+          want to ship a full diamond set or a bulk resource order, you need a
+          package. Packages are physical blocks that hold items, get sealed into
+          a carryable item, and then mailed like any other send.
+        </p>
+
+        <h3 id="open-package">Open Package</h3>
+        <p>
+          Craft and place an Open Package anywhere. Interacting with it opens a
+          UI where you can deposit items one at a time or use Bulk Deposit to
+          dump a whole inventory section into it. An open package holds up to
+          <strong>54 stacks</strong>, which is the same as a double chest.
+        </p>
+        <p>
+          You can also set an optional recipient on the package while it's open.
+          This labels it as <code>To: &lt;player&gt;</code> and pre-fills the
+          recipient field when you go to mail it later. If you skip this, the
+          package can still be mailed and you'll pick the recipient at send
+          time.
+        </p>
+        <p>
+          When an Open Package has items inside, it automatically swaps its
+          block model to show as "closed". It reopens visually when emptied.
+          This is cosmetic so players can tell at a glance which packages on a
+          shelf still have stuff in them.
+        </p>
+
+        <h3 id="sealed-package">Sealed Package</h3>
+        <p>
+          Breaking an Open Package that has items in it produces a
+          <strong>Sealed Package</strong>, an item you can carry in your
+          inventory. The sealed package keeps all its contents, the recipient
+          label (if set), and its retention timer. You can:
+        </p>
+        <ul>
+          <li>Send it as mail from a Deposit Box (instant)</li>
+          <li>Send it from your Mailbox Outbox (scheduled)</li>
+          <li>
+            Place it back into the world as an Open Package if you need to edit
+            the contents or add a recipient you forgot
+          </li>
+        </ul>
+        <p>
+          Placing a sealed package back into the world turns it into an Open
+          Package again with all its contents intact, so there's no penalty for
+          "un-sealing" to fix a mistake.
+        </p>
+
+        <div class="callout warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Package retention</span>
+            <p>
+              Sealed Package contents are kept for <strong>7 days</strong>
+              while the sealed package is sitting unused in the world or in a
+              player's inventory. Once it's placed into a Mailbox outbox or
+              returned as undeliverable mail, retention extends to
+              <strong>30 days</strong>. After those windows, the payload may be
+              cleaned up by the maintenance scheduler, so mail what you pack.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Letters ======================== -->
+
+        <h2 id="letters">Letters</h2>
+        <p>
+          A letter is a standalone text message, no item required. Letters can
+          be composed from either a Deposit Box (instant delivery) or from your
+          own Mailbox Outbox (scheduled delivery). Received letters show up in
+          the recipient's inbox as a Letter item they can read.
+        </p>
+        <p>
+          By default, the addon allows multi-recipient letters, meaning a single
+          letter can be sent to multiple players at once. Items and packages are
+          always single-recipient. Admins can turn multi-recipient letters off
+          under Settings if you want everything to be strictly one-to-one.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Friends List ======================== -->
+
+        <h2 id="friends">Friends List</h2>
+        <p>
+          Every player has a personal friends list, accessible from the mailbox
+          menu. Adding someone to your friends list lets you pick them from a
+          short list instead of searching the full player registry every time
+          you mail something. The list holds up to
+          <strong>60 entries</strong> per player, with the oldest entries
+          dropped first when you hit the cap.
+        </p>
+        <p>
+          Friends names are auto-refreshed from the player registry, so if
+          someone changes their display name, your friends list updates the next
+          time you open it.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Delivery Schedule ======================== -->
+
+        <h2 id="delivery">Delivery Schedule</h2>
+        <p>
+          Mailbox outboxes process on a schedule chosen by the admin. Deposit
+          Box sends always fire immediately and aren't affected by this setting.
+          The 4 schedule modes are:
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mode</th>
+                <th>When mail moves</th>
+                <th>Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Noon (in-game)</td>
+                <td>Once per in-game day at noon</td>
+                <td>Default. Feels like a real delivery schedule.</td>
+              </tr>
+              <tr>
+                <td>Hourly (real time)</td>
+                <td>Once every real-time hour</td>
+                <td>Active servers where in-game time is unpredictable</td>
+              </tr>
+              <tr>
+                <td>Every X in-game days</td>
+                <td>Once every 1 to 30 in-game days</td>
+                <td>Slow servers or roleplay servers</td>
+              </tr>
+              <tr>
+                <td>Immediate</td>
+                <td>Mailbox sends fire instantly</td>
+                <td>When you just want mail to arrive now</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          When a mailbox is full and can't accept incoming mail, the pending
+          delivery is held and retried at the next pickup. After
+          <strong>3 failed pickups</strong> or <strong>60 in-game days</strong>
+          (whichever hits first), the mail is returned to the sender's mailbox
+          as a return-to-sender entry.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Receiving Mail ======================== -->
+
+        <h2 id="receiving">Receiving Mail</h2>
+        <p>
+          When a player with waiting mail joins the world, they see a chat
+          message telling them how many items are in their mailbox, and a note
+          chime plays so they notice. From there, they walk up to their mailbox,
+          open the Inbox, and claim individual entries. Claiming an entry moves
+          the items into their inventory or drops them at their feet if their
+          inventory is full.
+        </p>
+        <p>
+          Letters show up as a Letter item in the inbox. Claim it, hold it, and
+          use it to read the message. Sealed packages work the same way: claim
+          the entry to receive the sealed package as an inventory item, then
+          place it or break it open to get at the contents.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Admin Guide ======================== -->
+
+        <h2 id="admin-guide">Admin Guide</h2>
+
+        <h3 id="admin-access">Admin Access</h3>
+        <p>
+          A player is treated as a Mail Delivery admin if either of these is
+          true:
+        </p>
+        <ol>
+          <li>
+            They are an <strong>Operator</strong> (<code>/op &lt;name&gt;</code
+            >) — recommended
+          </li>
+          <li>They have the <code>admin</code> tag — fallback</li>
+        </ol>
+        <p>
+          To grant admin access via tag (useful when OP detection isn't
+          available):
+        </p>
+        <pre>/tag &lt;player&gt; add admin</pre>
+        <p>To revoke:</p>
+        <pre>/tag &lt;player&gt; remove admin</pre>
+        <p>
+          Admins open the admin panel from the Mail Delivery Guide by tapping
+          <strong>Admin Controls</strong>. The panel has 5 sections: Settings,
+          Item Blacklist, Audit Log, Mailbox Tools, and Broadcast Letter.
+        </p>
+
+        <h3 id="admin-settings">Settings</h3>
+        <p>A single Modal form holds every admin setting:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Setting</th>
+                <th>Default</th>
+                <th>What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enforce Item Blacklist</td>
+                <td>ON</td>
+                <td>Blocks sending or packing any blacklisted item</td>
+              </tr>
+              <tr>
+                <td>Audit Log Enabled</td>
+                <td>ON</td>
+                <td>Records admin actions and key events</td>
+              </tr>
+              <tr>
+                <td>Allow multi-recipient letters</td>
+                <td>ON</td>
+                <td>
+                  Letters only — items and packages are always single-recipient
+                </td>
+              </tr>
+              <tr>
+                <td>Max audit log entries</td>
+                <td>100</td>
+                <td>Ring buffer size (10 to 150)</td>
+              </tr>
+              <tr>
+                <td>Mailbox delivery schedule</td>
+                <td>Noon</td>
+                <td>Noon, Hourly, Every X days, or Immediate</td>
+              </tr>
+              <tr>
+                <td>Day interval</td>
+                <td>1</td>
+                <td>
+                  Only used when the schedule is "Every X in-game days" (1 to
+                  30)
+                </td>
+              </tr>
+              <tr>
+                <td>Send cooldown (seconds)</td>
+                <td>3</td>
+                <td>
+                  Per-player cooldown between sends. 0 disables it. Admins
+                  always bypass.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="admin-blacklist">Item Blacklist</h3>
+        <p>
+          The Item Blacklist blocks specific item IDs from being sent through
+          mail or packed into packages. It's paginated, and the entry flow
+          supports adding from your current inventory (just pick the item from a
+          grid) or adding by item ID if you want to type it manually.
+        </p>
+        <p>
+          Some items are blocked by default for safety reasons: containers that
+          could carry infinite nested inventories, maps, and a few addon items
+          that don't survive serialization. When a player tries to send a
+          blocked item, the UI explains why it was blocked instead of failing
+          silently.
+        </p>
+        <p>
+          The blacklist can be cleared entirely from the Clear Blacklist button
+          at the top of the page. Clear is confirmed before it runs.
+        </p>
+
+        <h3 id="admin-audit">Audit Log</h3>
+        <p>
+          When enabled, the audit log records admin actions and key events to a
+          paginated log: admins opening or deleting other players' mail, cleanup
+          actions, broadcast letters, blacklist changes, settings changes, and
+          similar. The log is a ring buffer capped at the size you pick in
+          Settings (10 to 150 entries, default 100), with the oldest entries
+          dropped first when it fills up.
+        </p>
+        <p>
+          Each entry shows a short summary of what happened. There's a Clear
+          Audit Log button at the top of the page that wipes the log after a
+          confirmation.
+        </p>
+
+        <h3 id="admin-mailbox-tools">Mailbox Tools</h3>
+        <p>
+          The Mailbox Tools page is where admins do hands-on moderation and
+          cleanup:
+        </p>
+        <ul>
+          <li>
+            <strong>View / delete any player's Inbox</strong> — open a specific
+            player's inbox and delete entries
+          </li>
+          <li>
+            <strong>View / delete any player's Outbox</strong> — same thing for
+            outbox entries
+          </li>
+          <li>
+            <strong>Purge Old Mail</strong> — sweep through every mailbox and
+            drop old entries
+          </li>
+          <li>
+            <strong>Purge Unused Package Payloads</strong> — clean up orphaned
+            sealed package contents whose owning package no longer exists
+          </li>
+          <li>
+            <strong>Inactive Mailboxes (60+ days)</strong> — list every mailbox
+            whose owner hasn't logged in for 60+ in-game days, useful for
+            finding abandoned boxes
+          </li>
+        </ul>
+
+        <div class="callout warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Destructive: read first</span>
+            <p>
+              Purge actions permanently delete stored mail or package payload
+              data. There is no undo and no backup. Confirm which tool you want
+              before running it, especially on servers with active mail traffic.
+            </p>
+          </div>
+        </div>
+
+        <h3 id="admin-broadcast">Broadcast Letter</h3>
+        <p>
+          The Broadcast Letter tool sends a single letter to every known mailbox
+          owner in the world. It's useful for server-wide announcements that you
+          want to leave in everyone's inbox rather than dropping into chat where
+          it'll scroll away. The flow is: compose the letter, pick the recipient
+          set (all known mailbox owners), and confirm. The send is recorded in
+          the audit log.
+        </p>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Limits ======================== -->
+
+        <h2 id="limits">Limits &amp; Caps</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Cap</th>
+                <th>Behavior when exceeded</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Inbox entries per mailbox</td>
+                <td>60</td>
+                <td>New mail bounces to return-to-sender flow</td>
+              </tr>
+              <tr>
+                <td>Outbox entries per mailbox</td>
+                <td>60</td>
+                <td>New sends rejected</td>
+              </tr>
+              <tr>
+                <td>Package stacks per Open Package</td>
+                <td>54</td>
+                <td>Matches a double chest</td>
+              </tr>
+              <tr>
+                <td>Failed pickup attempts before return</td>
+                <td>3</td>
+                <td>Or 60 in-game days, whichever first</td>
+              </tr>
+              <tr>
+                <td>Sealed package retention (unused)</td>
+                <td>7 days</td>
+                <td>Payload cleaned up by maintenance sweep</td>
+              </tr>
+              <tr>
+                <td>Sealed package retention (in outbox / returned)</td>
+                <td>30 days</td>
+                <td>Payload cleaned up by maintenance sweep</td>
+              </tr>
+              <tr>
+                <td>Friends per player</td>
+                <td>60</td>
+                <td>Oldest dropped</td>
+              </tr>
+              <tr>
+                <td>Audit log entries</td>
+                <td>10 to 150</td>
+                <td>Oldest dropped</td>
+              </tr>
+              <tr>
+                <td>Send cooldown</td>
+                <td>0 to 60 seconds</td>
+                <td>Admins bypass</td>
+              </tr>
+              <tr>
+                <td>Day interval (Every X days mode)</td>
+                <td>1 to 30</td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Troubleshooting ======================== -->
+
+        <h2 id="troubleshooting">Troubleshooting &amp; FAQ</h2>
+
+        <h3>"The mailbox looks broken or the block is missing textures"</h3>
+        <p>
+          The most common cause of any problem with this addon is that only one
+          of the two packs is enabled. Mail Delivery needs <strong>both</strong>
+          the Behavior Pack and the Resource Pack applied to the world, and both
+          should be at v1.0.0. Check the world's pack list before anything else.
+        </p>
+
+        <h3>"I placed a mailbox but I can't open it"</h3>
+        <p>
+          Make sure you're the player who placed it. Mailboxes are owned by the
+          player who placed the block, and only the owner or an admin can open
+          one. If an admin placed it for testing, the admin will see a Claim or
+          Grant form the next time they open it, where they can assign it to
+          you.
+        </p>
+
+        <h3>"My mail never arrived"</h3>
+        <p>
+          Check the delivery schedule under Admin Settings. If the server is on
+          the default Noon schedule, mailbox outboxes only process once per
+          in-game day at noon. Deposit Box sends always fire instantly, so try
+          sending from a deposit box to confirm the pipeline works. If the
+          recipient's inbox is full (60 entries), new mail waits and is returned
+          to sender after 3 failed pickups.
+        </p>
+
+        <h3>"The package shows as closed when I didn't close it"</h3>
+        <p>
+          An Open Package automatically swaps to a "closed" model when it has
+          items inside, and reopens visually when emptied. This is cosmetic so
+          you can tell at a glance which packages still have stuff in them. It
+          doesn't change how you interact with the block.
+        </p>
+
+        <h3>"I can't send an item, the UI says it's blocked"</h3>
+        <p>
+          That item is on the blacklist. Some items are blocked by default
+          (containers, maps, some addon items) because they don't serialize
+          safely. An admin can review the blacklist under Admin Controls and
+          remove the entry if it's safe to mail.
+        </p>
+
+        <h3>"I'm hitting a send cooldown"</h3>
+        <p>
+          The default cooldown is 3 seconds between sends per player. Admins can
+          change it under Settings (0 to 60 seconds, 0 disables it) and admins
+          themselves always bypass the cooldown.
+        </p>
+
+        <h3>"I lost my Guide Book"</h3>
+        <p>
+          Craft a new one with a single sheet of paper at any crafting table.
+          The one-time hand-out only fires once per player per world, but the
+          recipe is always available.
+        </p>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">More help</span>
+            <p>
+              For questions not covered here, visit my
+              <a href="https://discord.gg/ZsrM5HqHdS" target="_blank">Discord</a
+              >.
+            </p>
+          </div>
+        </div>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+        <hr class="section-divider" />
+
+        <!-- ======================== Compatibility ======================== -->
+
+        <h2 id="compatibility">Compatibility</h2>
+        <ul>
+          <li>
+            <strong>Bedrock version:</strong> 1.26.0 or newer (from manifest
+            <code>min_engine_version</code>)
+          </li>
+          <li>
+            <strong>Script API modules used:</strong>
+            <code>@minecraft/server 2.6.0</code>,
+            <code>@minecraft/server-ui 2.0.0</code>
+          </li>
+          <li>
+            <strong>No experiments needed:</strong> works on vanilla worlds and
+            realms
+          </li>
+          <li>
+            <strong>Achievements:</strong> Safe. Using this addon does not
+            disable achievements
+          </li>
+          <li>
+            <strong>Cheats:</strong> Not required. Mail Delivery works in worlds
+            with cheats off
+          </li>
+          <li>
+            <strong>Multiplayer:</strong> Designed for it. Session state is
+            cleaned up when players leave, and mail is stored in world dynamic
+            properties shared across all players.
+          </li>
+          <li>
+            <strong>Other JM addons:</strong> No known conflicts. Mail Delivery
+            uses the <code>jm_md:</code> namespace exclusively for item IDs,
+            block IDs, and dynamic properties.
+          </li>
+          <li>
+            <strong>Custom blocks:</strong> Mail Delivery adds 22 block IDs (20
+            mailbox variants including tops and bottoms, 2 deposit box halves, 2
+            package states, and 1 wall mailbox). None overlap with vanilla.
+          </li>
+          <li>
+            <strong>Worlds:</strong> All mail, ownership, friends lists, and
+            settings persist across world saves and restarts via dynamic
+            properties.
+          </li>
+        </ul>
+
+        <a href="#" class="back-to-top">↑ Back to top</a>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-logo">JM Addons</span>
+        <span class="footer-copy"
+          >Minecraft Bedrock · Not affiliated with Mojang</span
+        >
+        <div class="footer-links">
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            target="_blank"
+            >CurseForge</a
+          >
+          <span class="footer-sep">|</span>
+          <a href="https://discord.gg/ZsrM5HqHdS" target="_blank">Discord</a>
+          <span class="footer-sep">|</span>
+          <a href="https://buymeacoffee.com/jm1775" target="_blank">Donate</a>
+        </div>
+      </div>
+      <span class="site-version">v0.1.12</span>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".nav-toggle")
+        ?.addEventListener("click", function () {
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", String(!expanded));
+          document.querySelector(".top-nav").classList.toggle("open");
+        });
+
+      // Collapsible sidebar sections
+      document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
+        if (li.querySelector(".sidebar-subnav")) {
+          li.classList.add("has-children");
+          li.querySelector(":scope > a").addEventListener(
+            "click",
+            function (e) {
+              e.preventDefault();
+              li.classList.toggle("open");
+            },
+          );
+        }
+      });
+
+      // Active section tracking via scroll position
+      (function () {
+        var sidebarLinks = document.querySelectorAll(
+          ".sidebar-nav a[href^='#']",
+        );
+        var idToLink = {};
+        sidebarLinks.forEach(function (link) {
+          idToLink[link.getAttribute("href").slice(1)] = link;
+        });
+
+        var headings = [];
+        document
+          .querySelectorAll(".doc-content h2[id], .doc-content h3[id]")
+          .forEach(function (el) {
+            if (idToLink[el.id]) headings.push(el);
+          });
+
+        var currentId = null;
+
+        function setActive(id) {
+          if (id === currentId) return;
+          currentId = id;
+          sidebarLinks.forEach(function (l) {
+            l.classList.remove("active");
+          });
+          var link = idToLink[id];
+          if (link) {
+            link.classList.add("active");
+            var parentLi = link.closest("li.has-children");
+            if (!parentLi) {
+              var subnav = link.closest(".sidebar-subnav");
+              if (subnav) parentLi = subnav.closest("li.has-children");
+            }
+            document
+              .querySelectorAll(".sidebar-nav > li.has-children")
+              .forEach(function (li) {
+                if (li === parentLi) {
+                  li.classList.add("open");
+                } else {
+                  li.classList.remove("open");
+                }
+              });
+          }
+        }
+
+        function onScroll() {
+          var scrollTop = window.scrollY + 100;
+          var active = null;
+          for (var i = 0; i < headings.length; i++) {
+            if (headings[i].offsetTop <= scrollTop) {
+              active = headings[i].id;
+            } else {
+              break;
+            }
+          }
+          if (active) setActive(active);
+        }
+
+        var ticking = false;
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            requestAnimationFrame(function () {
+              onScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+        onScroll();
+      })();
+    </script>
+    <script defer src="../search.js"></script>
+  </body>
+</html>

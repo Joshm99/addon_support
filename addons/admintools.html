@@ -220,7 +220,7 @@
               <a href="#player-features">Player Features</a>
               <ul class="sidebar-subnav">
                 <li><a href="#player-tool">Player Tool Menu</a></li>
-                <li><a href="#tickets-warnings">Tickets & Warnings</a></li>
+                <li><a href="#tickets-warnings">Tickets/Warnings</a></li>
                 <li><a href="#homes">Homes</a></li>
                 <li><a href="#warps">Warps</a></li>
                 <li><a href="#tpa">TPA</a></li>
@@ -291,7 +291,6 @@
 
       <main class="doc-content">
         <div class="doc-header">
-          <p class="doc-eyebrow">Admin · Server</p>
           <h1 class="doc-title">Admin Tools</h1>
           <p class="doc-desc">
             A complete in-game admin toolkit for Minecraft Bedrock, covering player
@@ -510,7 +509,7 @@
 
         <ol class="steps">
           <li><span><strong>Player:</strong> All players. Can use the Player Tool to submit tickets, manage homes, use warps, TPA, deathback, view stats, and create land claims.</span></li>
-          <li><span><strong>Moderator:</strong> Assigned by admins via <code>Admin Tool → Players → [select player] → Assign Moderator</code>. Sees a limited "Moderator Panel" based on their privileges. Cannot be an operator.</span></li>
+          <li><span><strong>Moderator:</strong> Assigned by admins via <code>Admin Tool → Players → [select player] → Actions → Assign as Moderator</code>. Sees a limited "Moderator Panel" based on their privileges. Cannot be an operator.</span></li>
           <li><span><strong>Admin:</strong> Anyone with operator permissions (op level &gt; 0), a player permission level above Member, or the <code>admin</code> tag. Full access to the Admin Panel.</span></li>
           <li><span><strong>Owner:</strong> The first admin to open the Admin Tool. One owner at a time. Has exclusive abilities like changing their own gamemode and clearing the admin log.</span></li>
         </ol>
@@ -549,7 +548,7 @@
         </p>
         <p>
           <strong>Per-moderator overrides:</strong>
-          <code>Admin Tool → Players → [select mod] → Manage Privileges</code>
+          <code>Admin Tool → Players → [select mod] → Actions → Manage Privileges</code>
         </p>
 
         <p><strong>Enabled by default:</strong></p>
@@ -604,16 +603,16 @@
           automatically on first join.
         </p>
         <p>
-          The menu contains buttons for: <strong>Tickets & Warnings</strong>,
+          The menu contains buttons for: <strong>Tickets/Warnings</strong>,
           <strong>Homes</strong>, <strong>Warps</strong>, <strong>TPA</strong>,
           <strong>Deathback</strong>, <strong>My Stats</strong>, and
           <strong>Info</strong>.
         </p>
 
-        <h3 id="tickets-warnings">Tickets & Warnings</h3>
+        <h3 id="tickets-warnings">Tickets/Warnings</h3>
         <p>
           <strong>Submitting a ticket:</strong>
-          <code>Player Tool → Tickets & Warnings → Submit Ticket</code>.
+          <code>Player Tool → Tickets/Warnings → Submit Ticket</code>.
           Pick a category, describe the issue, and submit. Categories are
           configurable by admins at
           <code>Admin Tool → Control Panel → Ticket Settings → Manage Categories</code>.
@@ -631,7 +630,7 @@
         </ol>
         <p>
           <strong>Viewing warnings:</strong>
-          <code>Player Tool → Tickets & Warnings</code>. View active
+          <code>Player Tool → Tickets/Warnings</code>. View active
           warnings, acknowledge them, and submit appeals. Admins review appeals
           and can accept or deny them.
         </p>
@@ -990,7 +989,7 @@
 
         <h3 id="actions-moderation">Actions & Moderation</h3>
         <p>
-          From a player's profile, you can perform the following actions:
+          From a player's profile, tap <strong>Actions</strong> to access moderation tools:
         </p>
 
         <div class="table-wrap">
@@ -1059,7 +1058,7 @@
                 <td>Admin</td>
               </tr>
               <tr>
-                <td><strong>Assign / Remove Moderator</strong></td>
+                <td><strong>Assign as Moderator / Remove Moderator</strong></td>
                 <td>Grant or revoke moderator role</td>
                 <td>Admin only</td>
               </tr>
@@ -1088,7 +1087,7 @@
         <h3 id="spy-camera">Spy Camera</h3>
         <p>
           <strong>Path:</strong>
-          <code>Admin Tool → Players → [select player] → Spy Camera</code>
+          <code>Admin Tool → Players → [select player] → Actions → Spy (Camera)</code>
         </p>
         <p>
           Silently orbit around a target player in spectator mode. Look around
@@ -1101,13 +1100,13 @@
         <h3 id="inventory-viewer">Inventory Viewer</h3>
         <p>
           <strong>Path:</strong>
-          <code>Admin Tool → Players → [select player] → View Inventory</code>
+          <code>Admin Tool → Players → [select player] → Actions → View Inventory &amp; Ender Chest</code>
         </p>
         <p>
           View a player's hotbar and armor slots. Ender chest contents are
-          also available: a snapshot is taken when the player opens their
-          ender chest, viewable through
-          <code>Admin Tool → Players → [select player] → View Ender Chest</code>.
+          also available from the same screen: a snapshot is taken when the
+          player opens their ender chest, then viewable via the
+          <strong>Ender Chest</strong> button inside the Inventory Viewer.
         </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
