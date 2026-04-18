@@ -56,15 +56,13 @@
         background: var(--text-muted);
       }
       @media (max-width: 800px) {
-        .table-wrap { position: relative; }
-        .table-wrap::after {
-          content: '';
-          position: absolute;
-          top: 0; right: 0; bottom: 0;
-          width: 2.5rem;
-          background: linear-gradient(to right, transparent, var(--bg-code, #141825));
-          pointer-events: none;
-          border-radius: 0 var(--radius-lg, 16px) var(--radius-lg, 16px) 0;
+        .table-wrap {
+          background:
+            linear-gradient(to right, #141825, #141825) left / 16px 100% no-repeat,
+            linear-gradient(to left,  #141825, #141825) right / 16px 100% no-repeat,
+            linear-gradient(to right, rgba(0,0,0,0.35), transparent) left / 40px 100% no-repeat,
+            linear-gradient(to left,  rgba(0,0,0,0.35), transparent) right / 40px 100% no-repeat;
+          background-attachment: local, local, scroll, scroll;
         }
       }
       .doc-content table {
