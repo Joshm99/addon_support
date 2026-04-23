@@ -32,5 +32,5 @@ images/                 — Logos, icons, and hero images
 ## Links
 
 - Site: [jmaddons.support](https://jmaddons.support/)
-- CurseForge: [curseforge.com/members/jm_1775/projects](https://www.curseforge.com/members/jm_1775/projects)
+- CurseForge: [curseforge.com/members/jm_1775/projects](https://www.curseforge.com/members/jm_addons/projects)
 - Discord: [discord.gg/ZsrM5HqHdS](https://discord.gg/ZsrM5HqHdS)
