@@ -24,7 +24,7 @@ images/                 — Logos, icons, and hero images
 
 | Addon                                      | Version | Description                                                            |
 | ------------------------------------------ | ------- | ---------------------------------------------------------------------- |
-| [AdminTools](addons/admintools.html)       | v2.0.13 | Full admin toolkit — moderation, claims, ranks, and more               |
+| [AdminTools](addons/admintools.html)       | v2.1.0  | Full admin toolkit — moderation, claims, ranks, and more               |
 | [Notice Board](addons/notice-board.html)   | v1.0.4  | In-game community notice board with categories, search, and comments   |
 | [Mail Delivery](addons/mail-delivery.html) | v1.0.0  | Postal system for sending items, packages, and letters between players |
 | [Tag Tool](addons/tag-tool.html)           | v1.0.0  | Lightweight in-game player tagging utility                             |

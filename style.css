@@ -208,6 +208,28 @@ img { display: block; max-width: 100%; }
   transform: translateY(-7px) rotate(-45deg);
 }
 
+.nav-curseforge {
+  color: #F16436 !important;
+  border-color: rgba(241, 100, 54, 0.25);
+}
+
+.nav-curseforge:hover {
+  color: #f5835f !important;
+  background: rgba(241, 100, 54, 0.08) !important;
+  border-color: rgba(241, 100, 54, 0.4);
+}
+
+.nav-discord {
+  color: #9BA8F0 !important;
+  border-color: rgba(155, 168, 240, 0.25);
+}
+
+.nav-discord:hover {
+  color: #b5bef5 !important;
+  background: rgba(155, 168, 240, 0.08) !important;
+  border-color: rgba(155, 168, 240, 0.4);
+}
+
 .nav-donate {
   color: var(--amber) !important;
   background: var(--amber-glow);
@@ -487,6 +509,22 @@ img { display: block; max-width: 100%; }
   border-radius: 100px;
 }
 
+.card-new {
+  font-family: var(--font-pixel);
+  font-size: 0.45rem;
+  letter-spacing: 0.08em;
+  color: #0a1f12;
+  background: #7EC9A0;
+  padding: 2px 7px;
+  border-radius: 100px;
+  animation: pulse-new 2s ease-in-out infinite;
+}
+
+@keyframes pulse-new {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.65; }
+}
+
 .card-name {
   font-family: var(--font-body);
   font-weight: 700;
@@ -687,7 +725,7 @@ img { display: block; max-width: 100%; }
   font-size: 0.75rem;
   color: var(--text-muted);
   padding: 0.25rem 0.6rem;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid var(--border-mid);
   border-radius: 0;
 }
 
@@ -714,6 +752,46 @@ img { display: block; max-width: 100%; }
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.doc-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.doc-title-row .doc-title {
+  margin-bottom: 0;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  padding: 0.55rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1a0e00;
+  background: #F16436;
+  border: 1px solid #F16436;
+  border-radius: 8px;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.download-btn:hover {
+  background: #f5835f;
+  border-color: #f5835f;
+}
+
+.doc-content .download-btn,
+.doc-content .download-btn:hover {
+  color: #1a0e00;
+  text-decoration: none;
 }
 
 .doc-eyebrow {
@@ -796,6 +874,80 @@ img { display: block; max-width: 100%; }
 .doc-content h2::before {
   display: none;
 }
+
+/* Per-section heading colors — h2 and h3 share the same hue, h3 is dimmed */
+#overview                          { color: #FFC857; text-shadow: 0 0 18px rgba(255, 200, 87, 0.25); }
+#getting-started                   { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+#roles-permissions                 { color: #B48EFF; text-shadow: 0 0 18px rgba(180, 142, 255, 0.25); }
+#player-features                   { color: #5BB8FF; text-shadow: 0 0 18px rgba(91, 184, 255, 0.25); }
+#land-claims                       { color: #D4A55A; text-shadow: 0 0 18px rgba(212, 165, 90, 0.25); }
+#admin-panel                       { color: #FFC857; text-shadow: 0 0 18px rgba(255, 200, 87, 0.25); }
+#server-controls                   { color: #FF8FA3; text-shadow: 0 0 18px rgba(255, 143, 163, 0.25); }
+#ranks-progression                 { color: #A78BFA; text-shadow: 0 0 18px rgba(167, 139, 250, 0.25); }
+#broadcasts-logging                { color: #60C8E8; text-shadow: 0 0 18px rgba(96, 200, 232, 0.25); }
+#holograms                         { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+#chest-sorter                      { color: #D4A55A; text-shadow: 0 0 18px rgba(212, 165, 90, 0.25); }
+#afk-detection                     { color: #FF8FA3; text-shadow: 0 0 18px rgba(255, 143, 163, 0.25); }
+#custom-commands                   { color: #F16436; text-shadow: 0 0 18px rgba(241, 100, 54, 0.25); }
+#troubleshooting                   { color: #FF6B6B; text-shadow: 0 0 18px rgba(255, 107, 107, 0.25); }
+
+/* Notice Board section colors */
+#getting-the-board                 { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+#opening                           { color: #5BB8FF; text-shadow: 0 0 18px rgba(91, 184, 255, 0.25); }
+#main-menu                         { color: #B48EFF; text-shadow: 0 0 18px rgba(180, 142, 255, 0.25); }
+#creating-a-post                   { color: #FFC857; text-shadow: 0 0 18px rgba(255, 200, 87, 0.25); }
+#post-detail                       { color: #60C8E8; text-shadow: 0 0 18px rgba(96, 200, 232, 0.25); }
+#categories                        { color: #A78BFA; text-shadow: 0 0 18px rgba(167, 139, 250, 0.25); }
+#admin-guide                       { color: #FF8FA3; text-shadow: 0 0 18px rgba(255, 143, 163, 0.25); }
+#board-controls                    { color: #F16436; text-shadow: 0 0 18px rgba(241, 100, 54, 0.25); }
+#modes                             { color: #D4A55A; text-shadow: 0 0 18px rgba(212, 165, 90, 0.25); }
+#limits                            { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+#reference                         { color: #5BB8FF; text-shadow: 0 0 18px rgba(91, 184, 255, 0.25); }
+#compatibility                     { color: #A78BFA; text-shadow: 0 0 18px rgba(167, 139, 250, 0.25); }
+
+/* Notice Board h3s */
+#recipe, #placing, #breaking                                                                           { color: rgba(126, 201, 160, 0.75); }
+#main-categories, #main-search, #main-saved, #main-info, #main-add                                    { color: rgba(180, 142, 255, 0.75); }
+#post-fields, #post-expiration, #post-templates, #post-approval                                       { color: rgba(255, 200, 87, 0.75); }
+#comments, #saved-posts                                                                                { color: rgba(96, 200, 232, 0.75); }
+#default-categories, #unread-badges                                                                    { color: rgba(167, 139, 250, 0.75); }
+#admin-access, #admin-notices, #admin-pin, #admin-lock, #admin-edit-delete                            { color: rgba(255, 143, 163, 0.75); }
+#bc-settings, #bc-pending, #bc-categories, #bc-templates, #bc-log, #bc-archive, #bc-reset             { color: rgba(241, 100, 54, 0.75); }
+
+/* Mail Delivery section colors */
+#mailboxes                         { color: #5BB8FF; text-shadow: 0 0 18px rgba(91, 184, 255, 0.25); }
+#deposit-box                       { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+#packages                          { color: #B48EFF; text-shadow: 0 0 18px rgba(180, 142, 255, 0.25); }
+#letters                           { color: #FFC857; text-shadow: 0 0 18px rgba(255, 200, 87, 0.25); }
+#friends                           { color: #FF8FA3; text-shadow: 0 0 18px rgba(255, 143, 163, 0.25); }
+#delivery                          { color: #60C8E8; text-shadow: 0 0 18px rgba(96, 200, 232, 0.25); }
+#receiving                         { color: #A78BFA; text-shadow: 0 0 18px rgba(167, 139, 250, 0.25); }
+
+/* Mail Delivery h3s */
+#guide-book, #recipes                                                                                  { color: rgba(126, 201, 160, 0.75); }
+#mailbox-variants, #mailbox-ownership, #mailbox-menu                                                   { color: rgba(91, 184, 255, 0.75); }
+#open-package, #sealed-package                                                                         { color: rgba(180, 142, 255, 0.75); }
+#admin-settings, #admin-blacklist, #admin-audit, #admin-mailbox-tools, #admin-broadcast                { color: rgba(255, 143, 163, 0.75); }
+
+/* Tag Tool section colors */
+#usage                             { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+#commands                          { color: #5BB8FF; text-shadow: 0 0 18px rgba(91, 184, 255, 0.25); }
+#changelog                         { color: #A78BFA; text-shadow: 0 0 18px rgba(167, 139, 250, 0.25); }
+
+/* Shared across pages */
+#installation                      { color: #7EC9A0; text-shadow: 0 0 18px rgba(126, 201, 160, 0.25); }
+
+/* h3s match their section h2 color at reduced opacity */
+#installation, #first-launch, #items-recipes, #elevator-block                                          { color: rgba(126, 201, 160, 0.75); }
+#permission-tiers, #moderator-privileges, #owner-menu-visibility                                       { color: rgba(180, 142, 255, 0.75); }
+#player-tool, #tickets-warnings, #homes, #warps, #tpa, #deathback, #player-stats                      { color: rgba(91, 184, 255, 0.75); }
+#creating-claims, #claim-viewer, #protections, #members-trusted, #sub-claims,
+#expand-extend, #budgets, #admin-claims, #claim-log                                                    { color: rgba(212, 165, 90, 0.75); }
+#tickets-admin, #player-management, #player-profiles, #actions-moderation,
+#spy-camera, #inventory-viewer, #customize-menu                                                        { color: rgba(255, 200, 87, 0.75); }
+#control-panel, #server-lock, #dimension-locks, #config-editor, #item-watch, #storage-health          { color: rgba(255, 143, 163, 0.75); }
+#rank-database, #bulk-assign, #staff-tags, #playtime-ranks                                             { color: rgba(167, 139, 250, 0.75); }
+#broadcasts, #admin-log, #saved-commands, #quick-run                                                   { color: rgba(96, 200, 232, 0.75); }
 
 .doc-content h3 {
   font-family: var(--font-body);

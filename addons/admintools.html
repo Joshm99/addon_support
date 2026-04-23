@@ -3,22 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AdminTools | JM Addons</title>
-    <meta name="description" content="AdminTools is a complete in-game admin toolkit for Minecraft Bedrock — moderation, claims, ranks, and more, all configurable without editing files." />
-    <link rel="canonical" href="https://jmaddons.support/addons/admintools.html" />
+    <title>Admin Tools | JM Addons</title>
+    <meta
+      name="description"
+      content="Admin Tools is a complete in-game admin toolkit for Minecraft Bedrock — moderation, claims, ranks, and more, all configurable without editing files."
+    />
+    <link
+      rel="canonical"
+      href="https://jmaddons.support/addons/admintools.html"
+    />
     <meta name="theme-color" content="#1e8fff" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="JM Addons" />
-    <meta property="og:title" content="AdminTools | JM Addons" />
-    <meta property="og:description" content="AdminTools is a complete in-game admin toolkit for Minecraft Bedrock — moderation, claims, ranks, and more, all configurable without editing files." />
-    <meta property="og:url" content="https://jmaddons.support/addons/admintools.html" />
-    <meta property="og:image" content="https://jmaddons.support/images/og-banner.png" />
+    <meta property="og:title" content="Admin Tools | JM Addons" />
+    <meta
+      property="og:description"
+      content="Admin Tools is a complete in-game admin toolkit for Minecraft Bedrock — moderation, claims, ranks, and more, all configurable without editing files."
+    />
+    <meta
+      property="og:url"
+      content="https://jmaddons.support/addons/admintools.html"
+    />
+    <meta
+      property="og:image"
+      content="https://jmaddons.support/images/og-banner.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AdminTools | JM Addons" />
-    <meta name="twitter:description" content="AdminTools is a complete in-game admin toolkit for Minecraft Bedrock — moderation, claims, ranks, and more, all configurable without editing files." />
-    <meta name="twitter:image" content="https://jmaddons.support/images/og-banner.png" />
+    <meta name="twitter:title" content="Admin Tools | JM Addons" />
+    <meta
+      name="twitter:description"
+      content="Admin Tools is a complete in-game admin toolkit for Minecraft Bedrock — moderation, claims, ranks, and more, all configurable without editing files."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jmaddons.support/images/og-banner.png"
+    />
     <link rel="apple-touch-icon" href="../images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,10 +79,14 @@
       @media (max-width: 800px) {
         .table-wrap {
           background:
-            linear-gradient(to right, #141825, #141825) left / 16px 100% no-repeat,
-            linear-gradient(to left,  #141825, #141825) right / 16px 100% no-repeat,
-            linear-gradient(to right, rgba(0,0,0,0.35), transparent) left / 40px 100% no-repeat,
-            linear-gradient(to left,  rgba(0,0,0,0.35), transparent) right / 40px 100% no-repeat;
+            linear-gradient(to right, #141825, #141825) left / 16px 100%
+              no-repeat,
+            linear-gradient(to left, #141825, #141825) right / 16px 100%
+              no-repeat,
+            linear-gradient(to right, rgba(0, 0, 0, 0.35), transparent) left /
+              40px 100% no-repeat,
+            linear-gradient(to left, rgba(0, 0, 0, 0.35), transparent) right /
+              40px 100% no-repeat;
           background-attachment: local, local, scroll, scroll;
         }
       }
@@ -84,6 +109,7 @@
         padding: 0.75rem 1rem;
         border-bottom: 1px solid var(--border-mid);
         background: var(--bg-raised);
+        white-space: nowrap;
       }
       .doc-content td {
         padding: 0.6rem 1rem;
@@ -127,7 +153,7 @@
         cursor: pointer;
       }
       .sidebar-nav > li.has-children > a::after {
-        content: '';
+        content: "";
         width: 6px;
         height: 6px;
         border-right: 1.5px solid var(--text-muted);
@@ -149,7 +175,12 @@
       .section-divider {
         border: none;
         height: 1px;
-        background: linear-gradient(to right, var(--gold), var(--blue), transparent);
+        background: linear-gradient(
+          to right,
+          var(--gold),
+          var(--blue),
+          transparent
+        );
         margin: 3rem 0 0;
         opacity: 0.4;
       }
@@ -165,11 +196,36 @@
         </a>
         <div class="search-wrapper">
           <div class="search-input-wrap">
-            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" class="search-input" placeholder="Search docs..." aria-label="Search documentation" aria-expanded="false" autocomplete="off" />
+            <svg
+              class="search-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search docs..."
+              aria-label="Search documentation"
+              aria-expanded="false"
+              autocomplete="off"
+            />
             <kbd class="search-kbd">/</kbd>
           </div>
-          <div class="search-results" role="listbox" aria-label="Search results" hidden></div>
+          <div
+            class="search-results"
+            role="listbox"
+            aria-label="Search results"
+            hidden
+          ></div>
         </div>
         <button
           class="nav-toggle"
@@ -184,17 +240,17 @@
           <a href="../index.html" class="nav-link active">Docs</a>
           <a
             href="https://www.curseforge.com/members/jm_1775/projects"
-            class="nav-link"
+            class="nav-link nav-curseforge"
             target="_blank"
             rel="noopener noreferrer"
-            >CurseForge</a
+            >CurseForge</
           >
           <a
             href="https://discord.gg/ZsrM5HqHdS"
-            class="nav-link"
+            class="nav-link nav-discord"
             target="_blank"
             rel="noopener noreferrer"
-            >Discord</a
+            >Discord</
           >
           <a
             href="https://buymeacoffee.com/jm1775"
@@ -221,13 +277,19 @@
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="#first-launch">First Launch</a></li>
                 <li><a href="#items-recipes">Items & Recipes</a></li>
+                <li><a href="#elevator-block">Elevator Block</a></li>
               </ul>
             </li>
             <li>
               <a href="#roles-permissions">Roles & Permissions</a>
               <ul class="sidebar-subnav">
                 <li><a href="#permission-tiers">Permission Tiers</a></li>
-                <li><a href="#moderator-privileges">Moderator Privileges</a></li>
+                <li>
+                  <a href="#moderator-privileges">Moderator Privileges</a>
+                </li>
+                <li>
+                  <a href="#owner-menu-visibility">Owner Menu Visibility</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -237,7 +299,7 @@
                 <li><a href="#tickets-warnings">Tickets/Warnings</a></li>
                 <li><a href="#homes">Homes</a></li>
                 <li><a href="#warps">Warps</a></li>
-                <li><a href="#tpa">TPA</a></li>
+                <li><a href="#tpa">Teleport</a></li>
                 <li><a href="#deathback">Deathback</a></li>
                 <li><a href="#player-stats">Player Stats</a></li>
               </ul>
@@ -253,6 +315,7 @@
                 <li><a href="#expand-extend">Expanding & Extending</a></li>
                 <li><a href="#budgets">Budgets & Chunks</a></li>
                 <li><a href="#admin-claims">Admin Claims</a></li>
+                <li><a href="#claim-log">Claim Log</a></li>
               </ul>
             </li>
             <li>
@@ -264,6 +327,7 @@
                 <li><a href="#actions-moderation">Actions & Moderation</a></li>
                 <li><a href="#spy-camera">Spy Camera</a></li>
                 <li><a href="#inventory-viewer">Inventory Viewer</a></li>
+                <li><a href="#customize-menu">Customize Menu</a></li>
               </ul>
             </li>
             <li>
@@ -290,8 +354,9 @@
               <a href="#broadcasts-logging">Broadcasts & Logging</a>
               <ul class="sidebar-subnav">
                 <li><a href="#broadcasts">Broadcasts</a></li>
-                <li><a href="#admin-log">Admin Log</a></li>
+                <li><a href="#admin-log">Action Log</a></li>
                 <li><a href="#saved-commands">Saved Commands</a></li>
+                <li><a href="#quick-run">Quick Run</a></li>
               </ul>
             </li>
             <li><a href="#holograms">Holograms</a></li>
@@ -305,21 +370,26 @@
 
       <main class="doc-content">
         <div class="doc-header">
-          <h1 class="doc-title">Admin Tools</h1>
+          <div class="doc-title-row">
+            <h1 class="doc-title">Admin Tools</h1>
+            <a
+              href="https://www.curseforge.com/members/jm_1775/projects"
+              class="download-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >↓ Download on CurseForge</a
+            >
+          </div>
           <p class="doc-desc">
-            A complete in-game admin toolkit for Minecraft Bedrock, covering player
-            moderation, ticketing, land claims, ranks, teleportation, and server
-            management. Everything is configurable in-game, with no config files needed.
-            Achievement friendly.
-          </p>
-          <p class="doc-desc">
-            Don't have the addon yet?
-            <a href="https://www.curseforge.com/members/jm_1775/projects" target="_blank" rel="noopener noreferrer">Click here to get it!</a>
+            A complete in-game admin toolkit for Minecraft Bedrock, covering
+            player moderation, ticketing, land claims, ranks, teleportation, and
+            server management. Everything is configurable in-game, with no
+            config files needed. Achievement friendly.
           </p>
           <div class="doc-meta">
             <div class="meta-pill">
               <span class="meta-label">Version</span>
-              <span class="meta-value">2.0.13</span>
+              <span class="meta-value">2.1</span>
             </div>
             <div class="meta-pill">
               <span class="meta-label">Namespace</span>
@@ -331,7 +401,9 @@
             </div>
             <div class="meta-pill">
               <span class="meta-label">Script API</span>
-              <span class="meta-value">@minecraft/server 2.6.0, @minecraft/server-ui 2.0.0</span>
+              <span class="meta-value"
+                >@minecraft/server 2.6.0, @minecraft/server-ui 2.0.0</span
+              >
             </div>
           </div>
         </div>
@@ -342,9 +414,9 @@
         <p>
           Admin Tools is a complete in-game admin panel for Minecraft Bedrock
           servers and realms. It gives you full control over player moderation,
-          ticketing, land claims, ranks, teleportation, and server settings,
-          all through clean in-game menus. No config files, no command
-          memorization, no external tools.
+          ticketing, land claims, ranks, teleportation, and server settings, all
+          through clean in-game menus. No config files, no command memorization,
+          no external tools.
         </p>
         <p>
           Everything runs on the Script API with zero experimental features.
@@ -353,10 +425,10 @@
           management side so you can focus on your world.
         </p>
         <p>
-          New in v2.0: land claims with full protection controls, a rank
-          system with playtime-based auto-promotion, AFK detection, floating
-          holograms, player search, storage health monitoring, player stats
-          tracking, and a reworked spy camera that works on all platforms.
+          v2.1 adds: the Elevator Block, co-owner trust level, sub-sub-claims,
+          Quick Run, Customize Menu, owner-controlled server-wide menu
+          visibility, a reworked action log, pinned warps, mount carry on
+          teleport, hologram limit raised to 100, and more.
         </p>
 
         <div class="callout">
@@ -378,7 +450,12 @@
             <p>
               This is a large addon with a lot of features. If you run into
               trouble or have questions not covered here, visit my
-              <a href="https://discord.gg/ZsrM5HqHdS" target="_blank" rel="noopener noreferrer">Discord</a>.
+              <a
+                href="https://discord.gg/ZsrM5HqHdS"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Discord</a
+              >.
             </p>
           </div>
         </div>
@@ -405,11 +482,35 @@
         </div>
 
         <ol class="steps">
-          <li><span>Download the <code>.mcaddon</code> file from CurseForge.</span></li>
-          <li><span>Open it. Minecraft imports both the behavior pack and resource pack automatically.</span></li>
-          <li><span>Create or open a world → Add-Ons → Enable both "Admin Tools (BP)" and "Admin Tools (RP)".</span></li>
-          <li><span>Load in. Operators receive the <strong>Admin Tool</strong> automatically on first join.</span></li>
-          <li><span>The first admin to open the Admin Tool becomes the <strong>Owner</strong>.</span></li>
+          <li>
+            <span
+              >Download the <code>.mcaddon</code> file from CurseForge.</span
+            >
+          </li>
+          <li>
+            <span
+              >Open it. Minecraft imports both the behavior pack and resource
+              pack automatically.</span
+            >
+          </li>
+          <li>
+            <span
+              >Create or open a world → Add-Ons → Enable both "Admin Tools (BP)"
+              and "Admin Tools (RP)".</span
+            >
+          </li>
+          <li>
+            <span
+              >Load in. Operators receive the
+              <strong>Admin Tool</strong> automatically on first join.</span
+            >
+          </li>
+          <li>
+            <span
+              >The first admin to open the Admin Tool becomes the
+              <strong>Owner</strong>.</span
+            >
+          </li>
         </ol>
 
         <div class="callout">
@@ -435,7 +536,8 @@
         <h3 id="first-launch">First Launch</h3>
         <p>
           When you first load into a world with Admin Tools enabled, operators
-          receive the <strong>Admin Tool</strong> and <strong>Player Tool</strong>
+          receive the <strong>Admin Tool</strong> and
+          <strong>Player Tool</strong>
           automatically. All players receive the Player Tool on first join.
         </p>
         <p>
@@ -446,15 +548,16 @@
         </p>
         <p>
           The resource pack includes a subpack option for button styling: choose
-          between <strong>Default Buttons</strong> and <strong>Smooth Buttons</strong>
+          between <strong>Default Buttons</strong> and
+          <strong>Smooth Buttons</strong>
           in your world's resource pack settings. This changes the look of
           in-game form buttons.
         </p>
 
         <h3 id="items-recipes">Items & Recipes</h3>
         <p>
-          Admin Tools adds six custom items. All recipes are also viewable in-game
-          through the Info pages on both the Admin Tool and Player Tool.
+          Admin Tools adds seven custom items. All recipes are also viewable
+          in-game through the Info pages on both the Admin Tool and Player Tool.
         </p>
 
         <div class="table-wrap">
@@ -478,7 +581,10 @@
                 <td><strong>Player Tool</strong></td>
                 <td>Paper + Redstone (shaped, vertical)</td>
                 <td>All players</td>
-                <td>Opens the Player Menu (tickets, homes, warps, TPA, deathback, stats)</td>
+                <td>
+                  Opens the Player Menu (tickets, homes, warps, TPA, deathback,
+                  stats)
+                </td>
               </tr>
               <tr>
                 <td><strong>Claim Tool</strong></td>
@@ -504,9 +610,37 @@
                 <td>All players</td>
                 <td>Sort any chest's contents alphabetically</td>
               </tr>
+              <tr>
+                <td><strong>Elevator Block</strong></td>
+                <td>4× Iron Ingot + Piston (shaped, diamond pattern)</td>
+                <td>All players</td>
+                <td>Teleport vertically between stacked elevator pads</td>
+              </tr>
             </tbody>
           </table>
         </div>
+
+        <h3 id="elevator-block">Elevator Block</h3>
+        <p>
+          The Elevator Block is a craftable block that lets players move
+          vertically between floors without stairs or ladders. Jump while
+          standing on a pad to go up; sneak while standing on a pad to go down.
+        </p>
+        <p>
+          Stack two or more pads in the same column and the block handles the
+          rest. The maximum distance between pads is 128 blocks. If no pad is
+          found within that range in the triggered direction, nothing happens.
+        </p>
+        <p>
+          Recipe: <strong>4× Iron Ingot + Piston</strong> (shaped, diamond
+          pattern). Also viewable in-game through the Info menus on both the
+          Admin Tool and Player Tool.
+        </p>
+        <p>
+          No special claim rules apply. The Elevator Block breaks like any other
+          block and respects claim protection — players without build access
+          cannot break or place pads inside a protected claim.
+        </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
         <hr class="section-divider" />
@@ -522,33 +656,43 @@
         </p>
 
         <ol class="steps">
-          <li><span><strong>Player:</strong> All players. Can use the Player Tool to submit tickets, manage homes, use warps, TPA, deathback, view stats, and create land claims.</span></li>
-          <li><span><strong>Moderator:</strong> Assigned by admins via <code>Admin Tool → Players → [select player] → Actions → Assign as Moderator</code>. Sees a limited "Moderator Panel" based on their privileges. Cannot be an operator.</span></li>
-          <li><span><strong>Admin:</strong> Anyone with operator permissions (op level &gt; 0), a player permission level above Member, or the <code>admin</code> tag. Full access to the Admin Panel.</span></li>
-          <li><span><strong>Owner:</strong> The first admin to open the Admin Tool. One owner at a time. Has exclusive abilities like changing their own gamemode and clearing the admin log.</span></li>
+          <li>
+            <span
+              ><strong>Player:</strong> All players. Can use the Player Tool to
+              submit tickets, manage homes, use warps, TPA, deathback, view
+              stats, and create land claims.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Moderator:</strong> Assigned by admins via
+              <code
+                >Admin Tool → Players → [select player] → Actions → Assign as
+                Moderator</code
+              >. Sees a limited "Moderator Panel" based on their privileges.
+              Cannot be an operator.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Admin:</strong> Anyone with operator permissions (op
+              level &gt; 0), a player permission level above Member, or the
+              <code>admin</code> tag. Admins can be assigned via
+              <code
+                >Admin Tool → Players → [select player] → Actions → Make
+                Admin</code
+              >. Admins have full access to the Admin Panel.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Owner:</strong> The first admin to open the Admin Tool.
+              One owner at a time. Has exclusive abilities and protections like
+              disabling the game mode button, clearing the admin log, ban/spy
+              protection, and more.</span
+            >
+          </li>
         </ol>
-
-        <div class="callout">
-          <span class="callout-icon">★</span>
-          <div class="callout-body">
-            <span class="callout-label">Tip</span>
-            <p>
-              Admins are determined by Minecraft's built-in operator system,
-              so no addon configuration is needed.
-            </p>
-          </div>
-        </div>
-
-        <div class="callout warn">
-          <span class="callout-icon">⚠</span>
-          <div class="callout-body">
-            <span class="callout-label">Important</span>
-            <p>
-              The Owner cannot be kicked, banned, frozen, or warned by other
-              staff.
-            </p>
-          </div>
-        </div>
 
         <h3 id="moderator-privileges">Moderator Privileges</h3>
         <p>
@@ -558,11 +702,16 @@
         </p>
         <p>
           <strong>Global defaults:</strong>
-          <code>Admin Tool → Control Panel → Config Editor → Mod Privileges</code>
+          <code
+            >Admin Tool → Control Panel → Config Editor → Mod Privileges</code
+          >
         </p>
         <p>
           <strong>Per-moderator overrides:</strong>
-          <code>Admin Tool → Players → [select mod] → Actions → Manage Privileges</code>
+          <code
+            >Admin Tool → Players → [select mod] → Actions → Manage
+            Privileges</code
+          >
         </p>
 
         <p><strong>Enabled by default:</strong></p>
@@ -598,6 +747,19 @@
           <li>Claim Bypass</li>
         </ul>
 
+        <h3 id="owner-menu-visibility">Owner Menu Visibility</h3>
+        <p>
+          The server owner can hide optional top-level buttons from the Admin
+          Tool main page server-wide. A hidden button disappears from every
+          admin's main page, not just the owner's.
+        </p>
+        <p>
+          Separately, disabling a player-facing feature (Tickets, Warps, etc.)
+          through the Config Editor now also hides that button from every
+          player's Player Tool menu automatically. Previously the button stayed
+          visible even when the feature was turned off.
+        </p>
+
         <a href="#" class="back-to-top">↑ Back to top</a>
         <hr class="section-divider" />
 
@@ -626,10 +788,13 @@
         <h3 id="tickets-warnings">Tickets/Warnings</h3>
         <p>
           <strong>Submitting a ticket:</strong>
-          <code>Player Tool → Tickets/Warnings → Submit Ticket</code>.
-          Pick a category, describe the issue, and submit. Categories are
-          configurable by admins at
-          <code>Admin Tool → Control Panel → Ticket Settings → Manage Categories</code>.
+          <code>Player Tool → Tickets/Warnings → Submit Ticket</code>. Pick a
+          category, describe the issue, and submit. Categories are configurable
+          by admins at
+          <code
+            >Admin Tool → Control Panel → Ticket Settings → Manage
+            Categories</code
+          >.
         </p>
         <p>
           There's a cooldown between submissions (default 2 minutes) and a
@@ -637,16 +802,31 @@
         </p>
         <p><strong>Ticket lifecycle:</strong></p>
         <ol class="steps">
-          <li><span><strong>Open:</strong> Ticket submitted, waiting for staff.</span></li>
-          <li><span><strong>Claimed:</strong> A staff member has picked it up.</span></li>
-          <li><span><strong>Resolved:</strong> Staff marked it as resolved.</span></li>
-          <li><span><strong>Closed:</strong> Player viewed the resolution, ticket auto-closes.</span></li>
+          <li>
+            <span
+              ><strong>Open:</strong> Ticket submitted, waiting for staff.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Claimed:</strong> A staff member has picked it up.</span
+            >
+          </li>
+          <li>
+            <span><strong>Resolved:</strong> Staff marked it as resolved.</span>
+          </li>
+          <li>
+            <span
+              ><strong>Closed:</strong> Player viewed the resolution, ticket
+              auto-closes.</span
+            >
+          </li>
         </ol>
         <p>
           <strong>Viewing warnings:</strong>
-          <code>Player Tool → Tickets/Warnings</code>. View active
-          warnings, acknowledge them, and submit appeals. Admins review appeals
-          and can accept or deny them.
+          <code>Player Tool → Tickets/Warnings</code>. View active warnings,
+          acknowledge them, and submit appeals. Admins review appeals and can
+          accept or deny them.
         </p>
 
         <div class="callout">
@@ -658,19 +838,27 @@
         </div>
 
         <h3 id="homes">Homes</h3>
-        <p>
-          <strong>Path:</strong> <code>Player Tool → Homes</code>
-        </p>
+        <p><strong>Path:</strong> <code>Player Tool → Homes</code></p>
         <p>
           Save locations as named home points, then teleport back to them
           anytime. Players can save up to a configurable number of homes
-          (default 3, max 20). Each home can be assigned one of 11 color
-          icons for organization.
+          (default 3, max 20). Each home can be assigned one of 11 color icons
+          for organization.
         </p>
         <p>
-          You can also teleport to your bed spawn from the Homes menu. There's
-          a short teleport delay, and teleportation cancels if you move during
-          the countdown.
+          You can also teleport to your bed spawn from the Homes menu. There's a
+          short teleport delay (3 seconds by default but can be configured), and
+          teleportation cancels if you move during the countdown.
+        </p>
+        <p>
+          The <strong>Update Home</strong> button on each home's detail view
+          moves the saved home to your current location without deleting and
+          recreating it.
+        </p>
+        <p>
+          Teleporting to a home brings your mount (horse, mule, camel, llama,
+          pig, or strider) and nearby parrots along with you. This also applies
+          to warps, TPA, summon, and dimension-lock ejection.
         </p>
         <p>
           Admins can enable or disable homes at
@@ -678,56 +866,85 @@
         </p>
 
         <h3 id="warps">Warps</h3>
-        <p>
-          <strong>Path:</strong> <code>Player Tool → Warps</code>
-        </p>
+        <p><strong>Path:</strong> <code>Player Tool → Warps</code></p>
         <p>
           Server-wide teleport points created by admins at
           <code>Admin Tool → Warps</code>. Players can browse and teleport to
           any public warp. Warps show dimension icons so you know where you're
           going, and staff-only warps are hidden from regular players.
-          Teleportation to locked dimensions is blocked.
+          Teleportation to locked dimensions is blocked. Mount carry applies
+          here too (see <a href="#homes">Homes</a>).
+        </p>
+        <p>
+          Warps can be <strong>pinned</strong> so they always appear at the top
+          of the list. Pinned warps are useful for spawn or other
+          frequently-used destinations. Both pinned and unpinned warps can be
+          reordered within their respective groups.
         </p>
 
-        <h3 id="tpa">TPA</h3>
-        <p>
-          <strong>Path:</strong> <code>Player Tool → TPA</code>
-        </p>
+        <h3 id="tpa">Teleport</h3>
+        <p><strong>Path:</strong> <code>Player Tool → Teleport</code></p>
         <p>
           Send teleport requests to other online players. Requests expire after
           60 seconds. Both players must stay still during the teleport
-          countdown; moving cancels the teleport.
+          countdown; moving cancels the teleport. Mount carry applies here too
+          (see <a href="#homes">Homes</a>).
         </p>
         <p>
-          Admins can enable or disable TPA at
-          <code>Admin Tool → Control Panel → Config Editor → Teleport Settings</code>.
+          The <strong>Last Location</strong> button inside the Teleport submenu
+          sends you back to your most recent location before your last teleport.
+        </p>
+        <p>
+          The countdown now cleanly cancels if the requesting player moves or
+          disconnects. Previously there were edge cases where it could continue
+          after they had left.
+        </p>
+        <p>
+          Admins can enable or disable this feature at
+          <code
+            >Admin Tool → Control Panel → Config Editor → Teleport
+            Settings</code
+          >.
         </p>
 
         <h3 id="deathback">Deathback</h3>
-        <p>
-          <strong>Path:</strong> <code>Player Tool → Deathback</code>
-        </p>
+        <p><strong>Path:</strong> <code>Player Tool → Deathback</code></p>
         <p>
           Return to the location where you last died. The addon tracks your
-          death point automatically. There's an optional tool restore feature
-          that re-gives your Player Tool and Admin Tool on respawn if you had
-          them when you died. If the death location is unsafe (lava, fire,
-          void), you'll see a warning before teleporting.
+          death point automatically. If the death location is unsafe (lava,
+          fire, void), you'll see a warning before teleporting.
         </p>
         <p>
-          Admins can configure deathback at
+          The tool restore setting is now a three-way option instead of a simple
+          on/off toggle:
+        </p>
+        <ul>
+          <li><strong>Never:</strong> tools are never re-given on respawn</li>
+          <li>
+            <strong>Always:</strong> the Player Tool and Admin Tool are always
+            re-given
+          </li>
+          <li>
+            <strong>Only if held at death:</strong> tools are only re-given if
+            you were holding them when you died
+          </li>
+        </ul>
+        <p>
+          Configure at
           <code>Admin Tool → Control Panel → Config Editor → Deathback</code>.
         </p>
 
         <h3 id="player-stats">Player Stats</h3>
+        <p><strong>Path:</strong> <code>Player Tool → My Stats</code></p>
         <p>
-          <strong>Path:</strong> <code>Player Tool → My Stats</code>
+          Stats are tracked automatically for every player: playtime, mob kills,
+          player kills, deaths, blocks mined, blocks placed, and distance
+          traveled. Your stats are visible to you through "My Stats" and to
+          admins through player profiles.
         </p>
         <p>
-          Stats are tracked automatically for every player: playtime, mob
-          kills, player kills, deaths, blocks mined, blocks placed, and
-          distance traveled. Your stats are visible to you through "My Stats"
-          and to admins through player profiles.
+          <strong>Note:</strong> Stats are only tracked while the Admin Tools
+          addon is enabled in the world.
         </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
@@ -746,15 +963,37 @@
 
         <h3 id="creating-claims">Creating Claims</h3>
         <ol class="steps">
-          <li><span>Hold the <strong>Claim Tool</strong>.</span></li>
-          <li><span><strong>Crouch + Hit</strong> a block to set Corner 1.</span></li>
-          <li><span><strong>Crouch + Interact</strong> on a block to set Corner 2.</span></li>
-          <li><span>Open the Claim Tool (use it normally, without crouching) to open the Claims menu.</span></li>
-          <li><span>Tap <strong>Confirm Pending Claim</strong>.</span></li>
+          <li>
+            <span>Hold the <strong>Claim Tool</strong>.</span>
+          </li>
+          <li>
+            <span><strong>Crouch + Hit</strong> a block to set Corner 1.</span>
+          </li>
+          <li>
+            <span
+              ><strong>Crouch + Interact</strong> on a block to set Corner
+              2.</span
+            >
+          </li>
+          <li>
+            <span
+              >Open the Claim Tool (use it normally, without crouching) to open
+              the Claims menu.</span
+            >
+          </li>
+          <li>
+            <span>Tap <strong>Confirm Pending Claim</strong>.</span>
+          </li>
         </ol>
         <p>
           The system auto-detects if your selection is inside, around, or
           bordering an existing claim and handles it accordingly.
+        </p>
+        <p>
+          In any claims list view (My Claims, Admin Claims, Browse All), a
+          <strong>Current Claim</strong> button instantly selects the claim you
+          are physically standing inside. This speeds up managing whichever
+          claim you are currently in without having to scroll the list.
         </p>
 
         <div class="callout">
@@ -772,19 +1011,27 @@
         <h3 id="claim-viewer">Claim Viewer</h3>
         <p>
           Hold the Claim Viewer in your offhand and the action bar will display
-          info about the claim you're standing in. Crouch while holding it
-          in either hand to show boundary particles in a 20-block range
-          around you.
+          info about the claim you're standing in. Crouch while holding it in
+          either hand to show boundary particles in a 20-block range around you.
+        </p>
+        <p>
+          Boundary particles are only visible to you. Other players nearby do
+          not see them.
         </p>
 
         <h3 id="protections">Protections</h3>
         <p>
-          Each claim has 12 individual protection toggles. All protections
-          except Eject Players are enabled by default on new claims. Admins
-          set the default protections for new claims at
-          <code>Claim Tool → Claims → All Claims / Settings → Claim Defaults</code>
+          Each claim has 13 individual protection toggles. All protections
+          except Eject Players are enabled by default on new claims. Admins set
+          the default protections for new claims at
+          <code
+            >Claim Tool → Claims → All Claims / Settings → Claim Defaults</code
+          >
           and control which protections players can toggle themselves at
-          <code>Claim Tool → Claims → All Claims / Settings → Player Abilities</code>.
+          <code
+            >Claim Tool → Claims → All Claims / Settings → Player
+            Abilities</code
+          >.
         </p>
 
         <div class="table-wrap">
@@ -806,7 +1053,7 @@
               </tr>
               <tr>
                 <td><strong>Entities</strong></td>
-                <td>Protects mobs, armor stands, and item frames</td>
+                <td>Protects mobs, armor stands, etc.</td>
               </tr>
               <tr>
                 <td><strong>PvP</strong></td>
@@ -814,11 +1061,16 @@
               </tr>
               <tr>
                 <td><strong>Interactions</strong></td>
-                <td>Restricts doors, buttons, levers, trapdoors, and fence gates</td>
+                <td>
+                  Restricts doors, buttons, levers, trapdoors, and fence gates
+                </td>
               </tr>
               <tr>
                 <td><strong>Item Use</strong></td>
-                <td>Blocks buckets, flint & steel, fire charges, bone meal, and spawn eggs</td>
+                <td>
+                  Blocks buckets, flint & steel, fire charges, bone meal, and
+                  spawn eggs
+                </td>
               </tr>
               <tr>
                 <td><strong>Explosions</strong></td>
@@ -844,6 +1096,13 @@
                 <td><strong>Eject Players</strong></td>
                 <td>Auto-teleports non-members out of the claim</td>
               </tr>
+              <tr>
+                <td><strong>Allow Vehicles</strong></td>
+                <td>
+                  Exempts minecarts, boats, and addon vehicles from entity
+                  protection. Off by default.
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -851,7 +1110,43 @@
         <p>
           <strong>Mob Blacklist:</strong> Specific mob types that are always
           removed when hostile mob protection is on. Configure at
-          <code>Claim Tool → Claims → All Claims / Settings → Mob Blacklist</code>.
+          <code
+            >Claim Tool → Claims → All Claims / Settings → Mob Blacklist</code
+          >.
+        </p>
+        <p>
+          <strong>Mob Whitelist:</strong> A global list of mob types that are
+          allowed to spawn inside the claim even when hostile mob protection is
+          enabled. Manage it through the claim's protection settings, or via
+          command:
+          <code
+            >/jm_at:mobwhitelist &lt;add|remove|list&gt;
+            &lt;entity_type_id&gt;</code
+          >.
+        </p>
+        <p>
+          <strong>Container protection note:</strong> Breaking a container
+          (chest, shulker box, barrel, furnace, etc.) inside a claim with
+          container protection enabled is now blocked. Previously, the
+          open-container check could be bypassed by breaking the block instead
+          of opening it.
+        </p>
+        <p>
+          <strong>Shulker box contents:</strong> Placing a shulker box inside a
+          protected claim now returns its contents to the player's inventory
+          rather than voiding them. Due to Bedrock limitations, contents are
+          returned to the inventory rather than back into the shulker itself.
+        </p>
+        <p>
+          <strong>Fire Spread protection note:</strong> Fire spread protection
+          no longer incorrectly extinguishes fires on netherrack, soul sand, or
+          soul soil.
+        </p>
+        <p>
+          <strong>Hostile mob safe-list:</strong> Claim hostile mob protection
+          now correctly leaves copper golems, nautiluses, happy ghasts, skeleton
+          horses, and <code>minecraft:sulfur_cube</code> alone. If you maintain
+          a manual mob whitelist, these types do not need to be included.
         </p>
 
         <div class="callout warn">
@@ -859,20 +1154,26 @@
           <div class="callout-body">
             <span class="callout-label">Warning</span>
             <p>
-              Eject Players is disabled by default. Enable it carefully: it
-              will teleport anyone without access out of the claim every 250ms.
+              Eject Players is disabled by default. Enable it carefully: it will
+              teleport anyone without access out of the claim every 250ms.
             </p>
           </div>
         </div>
 
         <h3 id="members-trusted">Members & Trusted Ranks</h3>
-        <p>
-          Each claim has three member roles:
-        </p>
+        <p>Each claim has four member roles:</p>
         <ul>
           <li><strong>Visitor:</strong> can enter the claim only</li>
-          <li><strong>Member:</strong> can interact with doors, buttons, and levers</li>
+          <li>
+            <strong>Member:</strong> can interact with doors, buttons, and
+            levers
+          </li>
           <li><strong>Builder:</strong> full access to build and interact</li>
+          <li>
+            <strong>Co-owner:</strong> full claim management permissions — can
+            edit settings, manage members, and create sub-claims. Cannot delete
+            the main claim itself.
+          </li>
         </ul>
         <p>
           Add individual members by name, with optional expiring access (15
@@ -886,7 +1187,19 @@
           Sub-claims are zones inside a parent claim with independent
           protections and member lists. You can have up to 10 sub-claims per
           claim. Create one by selecting an area inside an existing claim with
-          the Claim Tool. Sub-claims cannot be nested inside other sub-claims.
+          the Claim Tool.
+        </p>
+        <p>
+          The claim hierarchy now supports three levels: a parent claim can
+          contain sub-claims, and each sub-claim can contain sub-sub-claims. For
+          example: a city claim can have district sub-claims, and each district
+          can have individual house sub-sub-claims with their own protections
+          and member lists.
+        </p>
+        <p>
+          The global claim limit pool is shared across all three levels, so
+          parent claims, sub-claims, and sub-sub-claims all draw from the same
+          total capacity.
         </p>
 
         <h3 id="expand-extend">Expanding & Extending</h3>
@@ -902,25 +1215,40 @@
           </li>
         </ul>
         <p>
-          Expanding an extended claim merges everything into one rectangle.
+          Expanding an extended claim merges everything into one claim,
+          resetting the extensions available.
         </p>
 
         <h3 id="budgets">Budgets & Chunks</h3>
         <p>
           Claim cost is measured in <strong>chunks</strong> (1 chunk = 16×16 =
-          256 blocks of XZ area). Claims can be any shape; cost is based on
-          total block area.
+          256 blocks of XZ area). Despite the "Chunk" name, claims can be any
+          size; cost is based on total block area.
         </p>
         <ul>
-          <li><strong>Starting budget:</strong> 5 chunks (default)</li>
-          <li><strong>Earned budget:</strong> +1 chunk per 60 minutes of playtime (configurable)</li>
-          <li><strong>Max budget cap:</strong> 15 chunks (default, before bonus)</li>
-          <li><strong>Bonus chunks:</strong> Admins can grant extra chunks to players at <code>Claim Tool → Claims → All Claims / Settings → Add/Remove Chunks</code></li>
+          <li><strong>Starting budget:</strong> 5 chunks (configurable)</li>
+          <li>
+            <strong>Earned budget:</strong> +1 chunk per 60 minutes of playtime
+            (configurable)
+          </li>
+          <li>
+            <strong>Max budget cap:</strong> 15 chunks (default, before bonus)
+          </li>
+          <li>
+            <strong>Bonus chunks:</strong> Admins can grant extra chunks to
+            players at
+            <code
+              >Claim Tool → Claims → All Claims / Settings → Add/Remove
+              Chunks</code
+            >
+          </li>
         </ul>
         <p>
           Budget formula: <code>min(start + earned + bonus, max + bonus)</code>.
           All budget and area settings are configurable at
-          <code>Claim Tool → Claims → All Claims / Settings → Claims Config</code>.
+          <code
+            >Claim Tool → Claims → All Claims / Settings → Claims Config</code
+          >.
         </p>
 
         <div class="callout">
@@ -928,8 +1256,8 @@
           <div class="callout-body">
             <span class="callout-label">Tip</span>
             <p>
-              Sub-claims don't cost extra budget. Extensions use the same
-              budget as expanding.
+              Sub-claims don't cost extra budget. Extensions use the same budget
+              as expanding.
             </p>
           </div>
         </div>
@@ -941,6 +1269,31 @@
           areas, shops, arenas, and other shared builds. Admin claims display
           the creating admin's name.
         </p>
+        <p>
+          Transfer Ownership, Force Delete, Edit Protections, and Adjust Height
+          are now available through every claim access path: My Claims, Admin
+          Claims, and Browse All Claims. Previously some of these controls only
+          appeared from certain paths.
+        </p>
+
+        <h3 id="claim-log">Claim Log</h3>
+        <p>
+          The admin claim log was overhauled in v2.1. Entries now display as
+          inline body text rather than one button per entry. Page size increased
+          from 10 to 15 entries per page.
+        </p>
+        <p>
+          Event type labels now use a bracketed color-coded format, for example:
+          <code>[Member Added]</code>, <code>[Deleted by Admin]</code>,
+          <code>[Transfer]</code>. Claim expansions, extensions, and transfers
+          previously had no label; they now have their own tags.
+        </p>
+        <p>
+          New filter controls let you narrow the log by player (type a name or
+          pick from the registry dropdown) or by action type (dropdown of all
+          event types). Active filters are shown inline. A Clear Filters button
+          appears only when filters are applied.
+        </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
         <hr class="section-divider" />
@@ -949,8 +1302,8 @@
 
         <h2 id="admin-panel">Admin Panel</h2>
         <p>
-          The Admin Panel is the central hub for server management. Open it
-          with the <strong>Admin Tool</strong>. Top-level buttons include:
+          The Admin Panel is the central hub for server management. Open it with
+          the <strong>Admin Tool</strong>. Top-level buttons include:
           <strong>Search</strong>, <strong>Tickets</strong>,
           <strong>Players</strong>, <strong>Control Panel</strong>,
           <strong>Commands</strong>, <strong>Warps</strong>,
@@ -960,9 +1313,7 @@
         </p>
 
         <h3 id="tickets-admin">Tickets: Admin View</h3>
-        <p>
-          <strong>Path:</strong> <code>Admin Tool → Tickets</code>
-        </p>
+        <p><strong>Path:</strong> <code>Admin Tool → Tickets</code></p>
         <p>
           View tickets across four tabs: <strong>Open</strong>,
           <strong>Claimed</strong>, <strong>Resolved</strong>, and
@@ -978,14 +1329,11 @@
         </p>
 
         <h3 id="player-management">Player Management</h3>
-        <p>
-          <strong>Path:</strong> <code>Admin Tool → Players</code>
-        </p>
+        <p><strong>Path:</strong> <code>Admin Tool → Players</code></p>
         <p>
           Browse players in three views: <strong>Online</strong> players,
-          <strong>Offline</strong> records, and <strong>Search</strong> by
-          name. Select any player to open their profile and access moderation
-          actions.
+          <strong>Offline</strong> records, and <strong>Search</strong> by name.
+          Select any player to open their profile and access moderation actions.
         </p>
 
         <h3 id="player-profiles">Player Profiles</h3>
@@ -996,14 +1344,22 @@
         <p>
           Each player profile includes tabs for: <strong>View Tickets</strong>,
           <strong>Punishment History</strong>, <strong>Warnings</strong> (with
-          appeals), <strong>Spy History</strong>, <strong>Admin Notes</strong>
-          (up to 20 per player), and <strong>Rank</strong>. Player stats
-          (playtime, kills, deaths, blocks, distance) are also visible here.
+          appeals), <strong>Spy History</strong>,
+          <strong>Admin Notes</strong> (up to 20 per player), and
+          <strong>Rank</strong>. Player stats (playtime, kills, deaths, blocks,
+          distance) are also visible here.
+        </p>
+        <p>
+          The admin home detail view on a player's profile is now an action
+          form. From here you can <strong>Teleport</strong> directly to that
+          home, <strong>Delete</strong> it, or close/go back. Previously this
+          view was read-only.
         </p>
 
         <h3 id="actions-moderation">Actions & Moderation</h3>
         <p>
-          From a player's profile, tap <strong>Actions</strong> to access moderation tools:
+          From a player's profile, tap <strong>Actions</strong> to access
+          moderation tools:
         </p>
 
         <div class="table-wrap">
@@ -1091,9 +1447,12 @@
             <span class="callout-label">Tip</span>
             <p>
               The warn threshold is configurable. Staff are alerted when a
-              player reaches the threshold (default 3 active warnings).
-              Change it at
-              <code>Admin Tool → Control Panel → Config Editor → Warn Flag Threshold</code>.
+              player reaches the threshold (default 3 active warnings). Change
+              it at
+              <code
+                >Admin Tool → Control Panel → Config Editor → Warn Flag
+                Threshold</code
+              >.
             </p>
           </div>
         </div>
@@ -1101,26 +1460,50 @@
         <h3 id="spy-camera">Spy Camera</h3>
         <p>
           <strong>Path:</strong>
-          <code>Admin Tool → Players → [select player] → Actions → Spy (Camera)</code>
+          <code
+            >Admin Tool → Players → [select player] → Actions → Spy
+            (Camera)</code
+          >
         </p>
         <p>
           Silently orbit around a target player in spectator mode. Look around
           to orbit, walk to adjust distance, and crouch to stop. Each spy
-          session is logged in the player's profile. The v2.0 spy camera has
-          been reworked to function on all platforms, including consoles and
-          Realms.
+          session is logged in the player's profile. Works on all platforms,
+          including consoles and Realms.
+        </p>
+        <p>
+          Spy mode now uses spectator mode under the hood. This fixes held items
+          showing incorrectly on the spied player and prevents potential save
+          failures for enchanted items. The experience from the spying admin's
+          perspective is unchanged.
         </p>
 
         <h3 id="inventory-viewer">Inventory Viewer</h3>
         <p>
           <strong>Path:</strong>
-          <code>Admin Tool → Players → [select player] → Actions → View Inventory &amp; Ender Chest</code>
+          <code
+            >Admin Tool → Players → [select player] → Actions → View Inventory
+            &amp; Ender Chest</code
+          >
         </p>
         <p>
-          View a player's hotbar and armor slots. Ender chest contents are
-          also available from the same screen: a snapshot is taken when the
-          player opens their ender chest, then viewable via the
+          View a player's hotbar and armor slots. Ender chest contents are also
+          available from the same screen: a snapshot is taken when the player
+          opens their ender chest, then viewable via the
           <strong>Ender Chest</strong> button inside the Inventory Viewer.
+        </p>
+
+        <h3 id="customize-menu">Customize Menu</h3>
+        <p><strong>Path:</strong> <code>Admin Tool → Customize</code></p>
+        <p>
+          Each admin can customize which buttons appear on their own Admin Tool
+          main page. Buttons you rarely use can be hidden, and sub-menu items
+          buried one or two menus deep can be promoted as shortcuts directly
+          onto the main page.
+        </p>
+        <p>
+          These changes only affect your own view of the Admin Tool. Other
+          admins each manage their own layout independently.
         </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
@@ -1131,15 +1514,14 @@
         <h2 id="server-controls">Server Controls</h2>
 
         <h3 id="control-panel">Control Panel Overview</h3>
+        <p><strong>Path:</strong> <code>Admin Tool → Control Panel</code></p>
         <p>
-          <strong>Path:</strong> <code>Admin Tool → Control Panel</code>
-        </p>
-        <p>
-          The Control Panel contains all server-level configuration. Sub-sections
-          include: <strong>Config Editor</strong>, <strong>Item Watch</strong>,
-          <strong>Ticket Settings</strong>, <strong>Dimension Locks</strong>,
-          <strong>Server Controls</strong>, <strong>Storage Health</strong>,
-          and <strong>Restore Holograms</strong>.
+          The Control Panel contains all server-level configuration.
+          Sub-sections include: <strong>Config Editor</strong>,
+          <strong>Item Watch</strong>, <strong>Ticket Settings</strong>,
+          <strong>Dimension Locks</strong>, <strong>Server Controls</strong>,
+          and <strong>Restore Holograms</strong>. Storage Health moved to the
+          Action Log &amp; Reports hub in v2.1.
         </p>
 
         <h3 id="server-lock">Server Lock & Whitelist</h3>
@@ -1150,12 +1532,11 @@
         <ul>
           <li>
             <strong>Server Lock:</strong> Prevents non-staff from joining the
-            server. Toggle via the UI or with
-            <code>/jm_at:lockserver</code>.
+            server. Toggle via the UI or with <code>/jm_at:lockserver</code>.
           </li>
           <li>
-            <strong>Whitelist:</strong> Only approved players can connect (up
-            to 200 players). Toggle via the UI or with
+            <strong>Whitelist:</strong> Only approved players can connect (up to
+            200 players). Toggle via the UI or with
             <code>/jm_at:whitelist</code>.
           </li>
         </ul>
@@ -1168,8 +1549,8 @@
         <p>
           Lock any dimension instantly, or schedule a lock with countdown
           announcements (5 min, 1 min, 30 sec). Players inside a locked
-          dimension are sent to spawn. All teleportation to locked dimensions
-          is blocked.
+          dimension are sent to spawn. All teleportation to locked dimensions is
+          blocked.
         </p>
 
         <h3 id="config-editor">Config Editor</h3>
@@ -1178,17 +1559,27 @@
           <code>Admin Tool → Control Panel → Config Editor</code>
         </p>
         <p>
-          All addon settings in one place. Changes take effect immediately,
-          with no restart needed. Available sub-sections:
+          All addon settings in one place. Changes take effect immediately, with
+          no restart needed. Available sub-sections:
         </p>
         <ul>
           <li><code>→ Homes</code>: enable/disable, max homes per player</li>
-          <li><code>→ Teleport Settings</code>: enable/disable TPA, teleport delay</li>
+          <li>
+            <code>→ Teleport Settings</code>: enable/disable TPA, teleport delay
+          </li>
           <li><code>→ Deathback</code>: enable/disable, tool restore toggle</li>
-          <li><code>→ Warn Flag Threshold</code>: number of warnings before staff alert</li>
+          <li>
+            <code>→ Warn Flag Threshold</code>: number of warnings before staff
+            alert
+          </li>
           <li><code>→ Gamemode Access</code>: owner only vs. all admins</li>
-          <li><code>→ AFK Settings</code>: enable/disable, warn timer, kick timer, staff exemption</li>
-          <li><code>→ Mod Privileges</code>: global defaults for all moderators</li>
+          <li>
+            <code>→ AFK Settings</code>: enable/disable, warn timer, kick timer,
+            staff exemption
+          </li>
+          <li>
+            <code>→ Mod Privileges</code>: global defaults for all moderators
+          </li>
         </ul>
 
         <h3 id="item-watch">Item Watch</h3>
@@ -1206,20 +1597,42 @@
             more than the configured threshold.
           </li>
         </ul>
+        <p>
+          Item Watch now keeps a persistent <strong>offline log</strong> of
+          flagged item events. Staff can review events that fired while they
+          were offline. The log lives under the Action Log &amp; Reports hub
+          alongside the other monitoring views.
+        </p>
 
         <h3 id="storage-health">Storage Health</h3>
         <p>
           <strong>Path:</strong>
-          <code>Admin Tool → Control Panel → Storage Health</code> (admin only)
+          <code>Admin Tool → Admin Log → Storage Health</code> (admin only)
         </p>
         <p>
-          Monitors dynamic property storage usage across tickets, claims,
-          admin log, and the player registry (up to 300 players; when the
-          limit is reached the oldest entries by last-seen date are removed to
-          make room). Automatic alerts appear on admin join when storage
-          approaches capacity. You can also run an on-demand
-          check from the Control Panel.
+          Storage Health moved from the Control Panel to the Action Log &amp;
+          Reports hub, where it sits alongside other read-only monitoring views.
         </p>
+        <p>
+          Monitors dynamic property storage usage across tickets, claims, the
+          admin log, and the player registry. Automatic alerts appear on admin
+          join when storage approaches capacity. You can also run an on-demand
+          check from this view.
+        </p>
+        <p>Current capacity limits:</p>
+        <ul>
+          <li>
+            <strong>Claims:</strong> 3,000 (100 pages × 30 per page). Sub-claims
+            and sub-sub-claims share this pool.
+          </li>
+          <li><strong>Tickets:</strong> 500 (20 pages × 25 per page)</li>
+          <li><strong>Admin log:</strong> 800 (20 pages × 40 per page)</li>
+          <li>
+            <strong>Player registry:</strong> 500 players. Eviction warning
+            threshold is at 450 (90%). When the limit is reached, the oldest
+            entries by last-seen date are removed to make room.
+          </li>
+        </ul>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
         <hr class="section-divider" />
@@ -1234,16 +1647,19 @@
           <code>Admin Tool → Players → Rank Manager</code>
         </p>
         <p>
-          Create up to 100 named ranks with custom colored name tags. Each
-          rank has an internal name (up to 20 characters) and a display tag
-          (up to 40 characters with Minecraft § color/style codes). Add, edit,
-          and remove ranks from the Rank Manager.
+          Create up to 100 named ranks with custom colored name tags. Each rank
+          has an internal name (up to 20 characters) and a display tag (up to 40
+          characters with Minecraft § color/style codes). Add, edit, and remove
+          ranks from the Rank Manager.
         </p>
 
         <h3 id="bulk-assign">Bulk Assign / Remove</h3>
         <p>
           <strong>Path:</strong>
-          <code>Admin Tool → Players → Rank Manager → Bulk Assign / Bulk Remove</code>
+          <code
+            >Admin Tool → Players → Rank Manager → Bulk Assign / Bulk
+            Remove</code
+          >
         </p>
         <p>
           Assign a rank to many players at once (including offline players), or
@@ -1256,8 +1672,8 @@
           <code>Admin Tool → Players → Rank Manager → Staff Rank Settings</code>
         </p>
         <p>
-          Customize the default [Admin] and [Mod] name tags. You can also
-          toggle per-staff custom rank display.
+          Customize the default [Admin] and [Mod] name tags. You can also toggle
+          per-staff custom rank display.
         </p>
 
         <h3 id="playtime-ranks">Playtime Ranks</h3>
@@ -1268,8 +1684,8 @@
         <p>
           Automatically promote players based on playtime thresholds (up to 20
           tiers). Optionally override manually assigned ranks. Use the bonus
-          playtime feature to credit untracked time to players who played
-          before the addon was installed.
+          playtime feature to credit untracked time to players who played before
+          the addon was installed.
         </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
@@ -1280,34 +1696,74 @@
         <h2 id="broadcasts-logging">Broadcasts & Logging</h2>
 
         <h3 id="broadcasts">Broadcasts</h3>
-        <p>
-          <strong>Path:</strong> <code>Admin Tool → Broadcasts</code>
-        </p>
+        <p><strong>Path:</strong> <code>Admin Tool → Broadcasts</code></p>
         <p>
           Send one-time multi-line announcements to all players, or set up
           scheduled recurring broadcasts (up to 5 active at a time).
         </p>
 
-        <h3 id="admin-log">Admin Log</h3>
-        <p>
-          <strong>Path:</strong> <code>Admin Tool → Admin Log</code>
-        </p>
+        <h3 id="admin-log">Action Log</h3>
+        <p><strong>Path:</strong> <code>Admin Tool → Admin Log</code></p>
         <p>
           All moderation actions are logged with timestamps and staff names.
-          Browse through sub-views such as <strong>Action Log</strong> (filter by
-          action type), <strong>Rollcall</strong> (session join/leave log),
-          and <strong>Staff Activity</strong> (grouped by staff member). The
-          Owner can clear the log from the log hub.
+          Sub-views include <strong>Action Log</strong>,
+          <strong>Rollcall</strong> (session join/leave log),
+          <strong>Staff Activity</strong> (grouped by staff member),
+          <strong>Storage Health</strong>, and <strong>Item Watch Log</strong>.
+        </p>
+        <p>
+          <strong>Entry format:</strong> Entries use bracketed italic
+          timestamps, color-coded source tags (<code>[ADM]</code>,
+          <code>[PLR]</code>, <code>[SYS]</code>), and blank lines between
+          entries for readability.
+        </p>
+        <p>
+          <strong>PvP kills</strong> are now logged with the tag
+          <code>PVP_KILL</code>, showing both the killer and victim names.
+        </p>
+        <p>
+          <strong>Filters:</strong> The three separate filter buttons (player,
+          action type, source) were replaced with a single Filters button that
+          opens a modal containing all three inputs. A Clear Filters button
+          appears only when filters are active.
+        </p>
+        <p>
+          <strong>Clear Log:</strong> The owner-only Clear Action Log button
+          moved from the log hub into the Action Log view itself, alongside Back
+          and Close.
+        </p>
+        <p>
+          <strong>Silent eviction:</strong> When the oldest log entries roll off
+          to make room for new ones, there is no longer a chat broadcast about
+          it.
+        </p>
+        <p>
+          <strong>Rollcall and Staff Activity:</strong> Back and Close buttons
+          now have icons consistent with the rest of the admin UI. No functional
+          change.
         </p>
 
         <h3 id="saved-commands">Saved Commands</h3>
+        <p><strong>Path:</strong> <code>Admin Tool → Commands</code></p>
         <p>
-          <strong>Path:</strong> <code>Admin Tool → Commands</code>
+          Save and run custom slash commands from a personal list. Each admin
+          has their own command list (up to 50 saved commands).
         </p>
         <p>
-          Save and run custom slash commands. Supports one-time execution and
-          repeating scheduled commands. Each admin has their own command list
-          (up to 50 saved commands).
+          <strong>Adding or editing a command</strong> now uses a single modal
+          covering the name, command text, repeat toggle, and delay in one step.
+          If the repeat toggle is on, a second step appears for repeat settings.
+          The old three-step flow is gone.
+        </p>
+        <p>
+          <strong>Deleting a command</strong> is done from that command's detail
+          page. There is no longer a separate Remove Command page with its own
+          list.
+        </p>
+        <p>
+          <strong>One-shot commands</strong> with no delay now execute
+          immediately when you tap Run. Previously they waited for the next
+          scheduler tick.
         </p>
 
         <div class="callout">
@@ -1315,11 +1771,22 @@
           <div class="callout-body">
             <span class="callout-label">Note</span>
             <p>
-              Some saved commands may require cheats to be enabled on the
-              world, depending on the command.
+              Some saved commands may require cheats to be enabled on the world,
+              depending on the command.
             </p>
           </div>
         </div>
+
+        <h3 id="quick-run">Quick Run</h3>
+        <p>
+          <strong>Path:</strong> <code>Admin Tool → Commands → Quick Run</code>
+        </p>
+        <p>
+          Quick Run opens a single text field where you can type and run a
+          command immediately. It does not save the command to your list, so it
+          is useful for one-off commands that do not need to be kept. The action
+          is logged in the Action Log like any other admin command.
+        </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
         <hr class="section-divider" />
@@ -1333,17 +1800,25 @@
           with Sign + Glow Ink Sac, shapeless).
         </p>
         <p>
-          A world can have up to 50 holograms total. Each hologram supports
-          up to 10 lines with 60 characters per line.
-          Minecraft § color and style codes are fully supported. To create
-          one, use the Hologram Tool on a block, then add lines, adjust the
-          position, preview, and place.
+          A world can have up to <strong>100 holograms</strong> total (raised
+          from 50 in v2.1). Each hologram supports up to 10 lines with 60
+          characters per line. Minecraft § color and style codes are fully
+          supported. To create one, use the Hologram Tool on a block, then add
+          lines, adjust the position, preview, and place.
         </p>
         <p>
           To edit an existing hologram, interact with it while holding the
-          Hologram Tool. If holograms despawn (for example, after a world reload),
-          restore them at
+          Hologram Tool. If holograms despawn (for example, after a world
+          reload), restore them at
           <code>Admin Tool → Control Panel → Restore Holograms</code>.
+        </p>
+        <p>
+          Holograms placed in v2.1 or later use a new half-block (0.5) entity
+          height (<code>jm_at:hologram_v2</code>), which improves placement
+          against ceilings and overhangs. Holograms placed in earlier versions
+          keep their original 1-block height and are not affected by this
+          change. General placement edge cases have also been improved, and
+          display height was reduced from 2 blocks to 1.
         </p>
 
         <div class="callout danger">
@@ -1351,8 +1826,8 @@
           <div class="callout-body">
             <span class="callout-label">Performance</span>
             <p>
-              Each hologram uses 2 entities. Too many holograms in one area
-              may cause performance issues.
+              Each hologram uses 2 entities. Too many holograms in one area may
+              cause performance issues.
             </p>
           </div>
         </div>
@@ -1376,9 +1851,9 @@
         <h2 id="chest-sorter">Chest Sorter</h2>
         <p>
           Craftable by all players. Use the Chest Sorter item on any vanilla
-          chest, trapped chest, copper chest, barrel, or shulker box to sort
-          its contents alphabetically. Recipe: Iron Ingot +
-          Chest + Iron Ingot (shaped, vertical).
+          chest, trapped chest, copper chest, barrel, or shulker box to sort its
+          contents alphabetically. Recipe: Iron Ingot + Chest + Iron Ingot
+          (shaped, vertical).
         </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
@@ -1398,8 +1873,8 @@
           exempted globally.
         </p>
         <p>
-          AFK players see cycling subtitle reminders. Moving, looking around,
-          or interacting with anything resets the timer.
+          AFK players see cycling subtitle reminders. Moving, looking around, or
+          interacting with anything resets the timer.
         </p>
 
         <a href="#" class="back-to-top">↑ Back to top</a>
@@ -1483,6 +1958,18 @@
                 <td>Toggle whitelist on/off</td>
                 <td>Admin</td>
               </tr>
+              <tr>
+                <td>
+                  <code
+                    >/jm_at:mobwhitelist &lt;add|remove|list&gt;
+                    &lt;entity_type_id&gt;</code
+                  >
+                </td>
+                <td>
+                  Manage the mob whitelist for the claim you are standing in
+                </td>
+                <td>Admin</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1515,7 +2002,7 @@
         <p>
           Make sure you're an operator on the world. Also check that both the
           behavior pack (BP) and resource pack (RP) are enabled and on the
-          latest version (v2.0.13) in your world's Add-Ons settings.
+          latest version (v2.1) in your world's Add-Ons settings.
         </p>
 
         <h3>"How do I change the owner?"</h3>
@@ -1540,8 +2027,8 @@
 
         <h3>"How do I reset everything?"</h3>
         <p>
-          Run <code>/scriptevent jm_at:resetData</code>. You must run it
-          twice within 10 seconds to confirm.
+          Run <code>/scriptevent jm_at:resetData</code>. You must run it twice
+          within 10 seconds to confirm.
         </p>
 
         <h3>"Holograms disappeared"</h3>
@@ -1552,18 +2039,25 @@
 
         <h3>"Storage is full"</h3>
         <p>
-          Check <code>Admin Tool → Control Panel → Storage Health</code>.
-          Consider deleting old tickets and clearing the admin log to free
-          up space.
+          Check <code>Admin Tool → Admin Log → Storage Health</code>. Consider
+          deleting old tickets and clearing the admin log to free up space.
+        </p>
+
+        <h3>"An offline unban didn't take effect"</h3>
+        <p>
+          Offline unbans now reliably locate ban entries. World storage is
+          synced immediately on ban and unban, so this should no longer occur.
+          If you see a stale ban, try unbanning the player again through the
+          Admin Tool.
         </p>
 
         <h3>"Claims aren't working"</h3>
         <p>
           Make sure both the behavior pack (BP) and resource pack (RP) are
-          enabled and updated to the latest version (v2.0.13). Check that you
-          have budget remaining; use the Claim Viewer in your offhand to see
-          your current usage. If claims are set to admin-only by the server
-          owner, regular players won't be able to create them.
+          enabled and updated to the latest version (v2.1). Check that you have
+          budget remaining; use the Claim Tool to see your current usage. If
+          claims are set to admin-only by the server owner, regular players
+          won't be able to create them.
         </p>
 
         <div class="callout">
@@ -1572,11 +2066,15 @@
             <span class="callout-label">More help</span>
             <p>
               For questions not covered here, visit my
-              <a href="https://discord.gg/ZsrM5HqHdS" target="_blank" rel="noopener noreferrer">Discord</a>.
+              <a
+                href="https://discord.gg/ZsrM5HqHdS"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Discord</a
+              >.
             </p>
           </div>
         </div>
-
       </main>
     </div>
 
@@ -1594,12 +2092,22 @@
             >CurseForge</a
           >
           <span class="footer-sep">|</span>
-          <a href="https://discord.gg/ZsrM5HqHdS" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Discord</a
+          >
           <span class="footer-sep">|</span>
-          <a href="https://buymeacoffee.com/jm1775" target="_blank" rel="noopener noreferrer">Donate</a>
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Donate</a
+          >
         </div>
       </div>
-      <span class="site-version">v0.1.12</span>
+      <span class="site-version">Docs v1.1.0</span>
     </footer>
 
     <script>
@@ -1615,32 +2123,41 @@
       document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
         if (li.querySelector(".sidebar-subnav")) {
           li.classList.add("has-children");
-          li.querySelector(":scope > a").addEventListener("click", function (e) {
-            e.preventDefault();
-            li.classList.toggle("open");
-          });
+          li.querySelector(":scope > a").addEventListener(
+            "click",
+            function (e) {
+              e.preventDefault();
+              li.classList.toggle("open");
+            },
+          );
         }
       });
 
       // Active section tracking via scroll position
       (function () {
-        var sidebarLinks = document.querySelectorAll(".sidebar-nav a[href^='#']");
+        var sidebarLinks = document.querySelectorAll(
+          ".sidebar-nav a[href^='#']",
+        );
         var idToLink = {};
         sidebarLinks.forEach(function (link) {
           idToLink[link.getAttribute("href").slice(1)] = link;
         });
 
         var headings = [];
-        document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(function (el) {
-          if (idToLink[el.id]) headings.push(el);
-        });
+        document
+          .querySelectorAll(".doc-content h2[id], .doc-content h3[id]")
+          .forEach(function (el) {
+            if (idToLink[el.id]) headings.push(el);
+          });
 
         var currentId = null;
 
         function setActive(id) {
           if (id === currentId) return;
           currentId = id;
-          sidebarLinks.forEach(function (l) { l.classList.remove("active"); });
+          sidebarLinks.forEach(function (l) {
+            l.classList.remove("active");
+          });
           var link = idToLink[id];
           if (link) {
             link.classList.add("active");
@@ -1649,13 +2166,15 @@
               var subnav = link.closest(".sidebar-subnav");
               if (subnav) parentLi = subnav.closest("li.has-children");
             }
-            document.querySelectorAll(".sidebar-nav > li.has-children").forEach(function (li) {
-              if (li === parentLi) {
-                li.classList.add("open");
-              } else {
-                li.classList.remove("open");
-              }
-            });
+            document
+              .querySelectorAll(".sidebar-nav > li.has-children")
+              .forEach(function (li) {
+                if (li === parentLi) {
+                  li.classList.add("open");
+                } else {
+                  li.classList.remove("open");
+                }
+              });
           }
         }
 
@@ -1675,7 +2194,10 @@
         var ticking = false;
         window.addEventListener("scroll", function () {
           if (!ticking) {
-            requestAnimationFrame(function () { onScroll(); ticking = false; });
+            requestAnimationFrame(function () {
+              onScroll();
+              ticking = false;
+            });
             ticking = true;
           }
         });

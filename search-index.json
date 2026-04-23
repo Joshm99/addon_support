@@ -140,7 +140,7 @@
       "heading": "Overview",
       "anchor": "overview",
       "level": 2,
-      "text": "Admin Tools is a complete in-game admin panel for Minecraft Bedrock servers and realms. Full control over player moderation, ticketing, land claims, ranks, teleportation, and server settings through in-game menus. Runs on Script API with zero experimental features. Cheats off, achievements on."
+      "text": "Admin Tools is a complete in-game admin panel for Minecraft Bedrock servers and realms. Full control over player moderation, ticketing, land claims, ranks, teleportation, and server settings through in-game menus. Runs on Script API with zero experimental features. Cheats off, achievements on. v2.1 adds the Elevator Block, co-owner trust level, sub-sub-claims, Quick Run, Customize Menu, owner-controlled server-wide menu visibility, reworked action log, pinned warps, mount carry on teleport, hologram limit raised to 100, and more."
     },
     {
       "page": "admintools",
@@ -171,7 +171,15 @@
       "anchor": "items-recipes",
       "level": 3,
       "parent": "Getting Started",
-      "text": "Six custom items: Admin Tool (staff only, opens Admin Panel), Player Tool (all players, opens Player Menu), Claim Tool (select corners for land claims), Claim Viewer (see claim boundaries), Hologram Tool (admin, floating text), Chest Sorter (sort chest contents)."
+      "text": "Seven custom items: Admin Tool (staff only, opens Admin Panel), Player Tool (all players, opens Player Menu), Claim Tool (select corners for land claims), Claim Viewer (see claim boundaries), Hologram Tool (admin, floating text), Chest Sorter (sort chest contents), Elevator Block (4x Iron Ingot + Piston diamond pattern, vertical teleport between stacked pads). All recipes viewable in-game through the Info menus."
+    },
+    {
+      "page": "admintools",
+      "heading": "Elevator Block",
+      "anchor": "elevator-block",
+      "level": 3,
+      "parent": "Getting Started",
+      "text": "Craftable block that teleports players vertically. Jump on a pad to go up, sneak to go down. Stack two or more pads in the same column. Maximum distance between pads is 128 blocks. If no pad is found within range, nothing happens. Respects claim protection. Recipe: 4x Iron Ingot + Piston (shaped, diamond pattern)."
     },
     {
       "page": "admintools",
@@ -198,10 +206,18 @@
     },
     {
       "page": "admintools",
+      "heading": "Owner Menu Visibility",
+      "anchor": "owner-menu-visibility",
+      "level": 3,
+      "parent": "Roles & Permissions",
+      "text": "The server owner can hide optional top-level buttons from the Admin Tool main page server-wide, affecting every admin's view. Disabling a player-facing feature in the Config Editor now also hides its button from every player's Player Tool menu automatically."
+    },
+    {
+      "page": "admintools",
       "heading": "Player Features",
       "anchor": "player-features",
       "level": 2,
-      "text": "Features available to all players through the Player Tool: tickets, homes, warps, TPA, deathback, player stats."
+      "text": "Features available to all players through the Player Tool: tickets, homes, warps, teleport, deathback, player stats."
     },
     {
       "page": "admintools",
@@ -209,7 +225,7 @@
       "anchor": "player-tool",
       "level": 3,
       "parent": "Player Features",
-      "text": "Hold the Player Tool and use it to open the Player Menu. Craftable with Paper + Redstone (shaped, vertical) or given on first join. Contains buttons for: Tickets & Warnings, Homes, Warps, TPA, Deathback, My Stats, and Info."
+      "text": "Hold the Player Tool and use it to open the Player Menu. Craftable with Paper + Redstone (shaped, vertical) or given on first join. Contains buttons for: Tickets & Warnings, Homes, Warps, Teleport, Deathback, My Stats, and Info."
     },
     {
       "page": "admintools",
@@ -225,7 +241,7 @@
       "anchor": "homes",
       "level": 3,
       "parent": "Player Features",
-      "text": "Save locations as named home points, then teleport back anytime. Up to configurable max (default 3, max 20). Each home can be assigned one of 11 color icons. Teleport to bed spawn from Homes menu. Short teleport delay, cancels if you move."
+      "text": "Save locations as named home points, then teleport back anytime. Up to configurable max (default 3, max 20). Each home has a color icon. Update Home button moves the saved location to your current position without deleting it. Teleporting to a home brings your mount (horse, mule, camel, llama, pig, strider) and nearby parrots along. Also applies to warps, TPA, summon, and dimension-lock ejection."
     },
     {
       "page": "admintools",
@@ -233,15 +249,15 @@
       "anchor": "warps",
       "level": 3,
       "parent": "Player Features",
-      "text": "Server-wide teleport points created by admins. Players can browse and teleport to any public warp. Warps show dimension icons. Staff-only warps are hidden from regular players. Teleportation to locked dimensions is blocked."
+      "text": "Server-wide teleport points created by admins. Players can browse and teleport to any public warp. Warps show dimension icons. Staff-only warps hidden from regular players. Teleportation to locked dimensions is blocked. Warps can be pinned to always appear at the top of the list. Both pinned and unpinned warps can be reordered."
     },
     {
       "page": "admintools",
-      "heading": "TPA",
+      "heading": "Teleport",
       "anchor": "tpa",
       "level": 3,
       "parent": "Player Features",
-      "text": "Send teleport requests to other online players. Requests expire after 60 seconds. Both players must stay still during the teleport countdown; moving cancels the teleport. Admins can enable or disable TPA in Config Editor."
+      "text": "Send teleport requests to other online players. Requests expire after 60 seconds. Both players must stay still during the countdown; moving cancels it. Last Location button sends you back to your location before your last teleport. Countdown now cleanly cancels if the requesting player moves or disconnects. Mount carry applies."
     },
     {
       "page": "admintools",
@@ -249,7 +265,7 @@
       "anchor": "deathback",
       "level": 3,
       "parent": "Player Features",
-      "text": "Return to the location where you last died. Tracks death point automatically. Optional tool restore on respawn. Warning shown if death location is unsafe (lava, fire, void). Configurable in Config Editor."
+      "text": "Return to the location where you last died. Tracks death point automatically. Tool restore is a three-way setting: Never, Always, or Only if held at death. Warning shown if death location is unsafe. Configurable in Config Editor."
     },
     {
       "page": "admintools",
@@ -264,7 +280,7 @@
       "heading": "Land Claims",
       "anchor": "land-claims",
       "level": 2,
-      "text": "Players and admins can claim and protect land using the Claim Tool (select corners) and the Claim Viewer (see boundaries). Claims protect builds from griefing with configurable protections. Everything managed through in-game menus."
+      "text": "Players and admins can claim and protect land using the Claim Tool (select corners) and the Claim Viewer (see boundaries). Claims protect builds from griefing with configurable protections. Three-level hierarchy: parent claim, sub-claim, sub-sub-claim. Everything managed through in-game menus."
     },
     {
       "page": "admintools",
@@ -280,7 +296,7 @@
       "anchor": "claim-viewer",
       "level": 3,
       "parent": "Land Claims",
-      "text": "Hold the Claim Viewer in your offhand, and the action bar displays info about the claim you're standing in. Crouch while holding it to show boundary particles in a 20-block range."
+      "text": "Hold the Claim Viewer in your offhand, and the action bar displays info about the claim you're standing in. Crouch while holding it to show boundary particles in a 20-block range. Particles are only visible to you. Current Claim button in any claims list view instantly selects the claim you are standing inside."
     },
     {
       "page": "admintools",
@@ -288,7 +304,7 @@
       "anchor": "protections",
       "level": 3,
       "parent": "Land Claims",
-      "text": "12 individual protection toggles per claim: Blocks, Containers, Entities, PvP, Interactions, Item Use, Explosions, Hostile Mobs, Crop Trampling, Fire Spread, Ender Pearls, Eject Players. All enabled by default except Eject Players. Configurable defaults and player abilities."
+      "text": "13 protection toggles per claim: Blocks, Containers, Entities, PvP, Interactions, Item Use, Explosions, Hostile Mobs, Crop Trampling, Fire Spread, Ender Pearls, Eject Players, Allow Vehicles (exempts minecarts, boats, and addon vehicles; off by default). Mob Whitelist lets specific mob types spawn inside the claim even with hostile mob protection on. Container break protection fix: breaking a container now correctly blocked. Fire spread no longer extinguishes fires on netherrack, soul sand, or soul soil."
     },
     {
       "page": "admintools",
@@ -296,7 +312,7 @@
       "anchor": "members-trusted",
       "level": 3,
       "parent": "Land Claims",
-      "text": "Three member roles: Visitor (enter only), Member (interact with doors, buttons, levers), Builder (full build and interact). Add members by name with optional expiring access (15 min to 7 days). Trusted Ranks grant access to everyone with a specific server rank."
+      "text": "Four member roles: Visitor (enter only), Member (interact with doors, buttons, levers), Builder (full build and interact), Co-owner (full management permissions, can create/delete sub-claims, cannot delete the root claim). Add members by name with optional expiring access. Trusted Ranks grant access by server rank."
     },
     {
       "page": "admintools",
@@ -304,7 +320,7 @@
       "anchor": "sub-claims",
       "level": 3,
       "parent": "Land Claims",
-      "text": "Zones inside a parent claim with independent protections and member lists. Up to 10 sub-claims per claim. Created by selecting an area inside an existing claim. Cannot be nested inside other sub-claims."
+      "text": "Three-level hierarchy: parent claim, sub-claim, sub-sub-claim. Example: city claim, district sub-claim, individual house sub-sub-claim. Up to 10 sub-claims per claim. Each level has independent protections and member lists. Global claim limit pool is shared across all levels."
     },
     {
       "page": "admintools",
@@ -328,14 +344,22 @@
       "anchor": "admin-claims",
       "level": 3,
       "parent": "Land Claims",
-      "text": "Server-owned protected areas that don't count against any player's budget. Ideal for protecting spawn areas, shops, arenas, and shared builds. Display the creating admin's name."
+      "text": "Server-owned protected areas that don't count against any player's budget. Ideal for protecting spawn, shops, arenas, and shared builds. Transfer Ownership, Force Delete, Edit Protections, and Adjust Height are available through every claim access path."
+    },
+    {
+      "page": "admintools",
+      "heading": "Claim Log",
+      "anchor": "claim-log",
+      "level": 3,
+      "parent": "Land Claims",
+      "text": "Admin claim log overhauled in v2.1. Entries display as inline body text, 15 per page. Bracketed colour-coded event tags: [Member Added], [Deleted by Admin], [Transfer], and more. Filter by player name or action type. Clear Filters appears only when filters are active."
     },
     {
       "page": "admintools",
       "heading": "Admin Panel",
       "anchor": "admin-panel",
       "level": 2,
-      "text": "Central hub for server management. Open with the Admin Tool. Includes: Search, Tickets, Players, Control Panel, Commands, Warps, Broadcasts, Admin Log, and Info. Moderators see a filtered version based on privileges."
+      "text": "Central hub for server management. Open with the Admin Tool. Includes: Search, Tickets, Players, Control Panel, Commands, Warps, Broadcasts, Admin Log, Customize, and Info. Moderators see a filtered version based on privileges."
     },
     {
       "page": "admintools",
@@ -359,7 +383,7 @@
       "anchor": "player-profiles",
       "level": 3,
       "parent": "Admin Panel",
-      "text": "Each profile includes: View Tickets, Punishment History, Warnings (with appeals), Spy History, Admin Notes (up to 20), and Rank. Player stats (playtime, kills, deaths, blocks, distance) visible here."
+      "text": "Each profile includes: View Tickets, Punishment History, Warnings (with appeals), Spy History, Admin Notes (up to 20), and Rank. Player stats (playtime, kills, deaths, blocks, distance) visible here. Admin home detail view is now an action form with Teleport, Delete, Back, and Close."
     },
     {
       "page": "admintools",
@@ -375,7 +399,7 @@
       "anchor": "spy-camera",
       "level": 3,
       "parent": "Admin Panel",
-      "text": "Silently orbit around a target player in spectator mode. Look around to orbit, walk to adjust distance, crouch to stop. Sessions are logged. Reworked in v2.0 to work on all platforms including consoles and Realms."
+      "text": "Silently orbit around a target player in spectator mode. Look around to orbit, walk to adjust distance, crouch to stop. Sessions are logged. Works on all platforms including consoles and Realms. Now uses spectator mode internally, fixing held item display issues and enchanted item save failures."
     },
     {
       "page": "admintools",
@@ -387,10 +411,18 @@
     },
     {
       "page": "admintools",
+      "heading": "Customize Menu",
+      "anchor": "customize-menu",
+      "level": 3,
+      "parent": "Admin Panel",
+      "text": "Each admin can customize which buttons appear on their own Admin Tool main page. Hide buttons you rarely use, or promote sub-menu items as shortcuts on the main page. Changes only affect your own view."
+    },
+    {
+      "page": "admintools",
       "heading": "Server Controls",
       "anchor": "server-controls",
       "level": 2,
-      "text": "Server-level configuration and management tools: Config Editor, Item Watch, Ticket Settings, Dimension Locks, Server Controls, Storage Health, and Restore Holograms."
+      "text": "Server-level configuration and management tools: Config Editor, Item Watch, Ticket Settings, Dimension Locks, Server Controls, and Restore Holograms. Storage Health moved to the Action Log & Reports hub."
     },
     {
       "page": "admintools",
@@ -398,7 +430,7 @@
       "anchor": "control-panel",
       "level": 3,
       "parent": "Server Controls",
-      "text": "Central server configuration hub. Contains all server-level settings including Config Editor, Item Watch, Ticket Settings, Dimension Locks, Server Controls, Storage Health, and Restore Holograms."
+      "text": "Central server configuration hub. Contains Config Editor, Item Watch, Ticket Settings, Dimension Locks, Server Controls, and Restore Holograms. Storage Health moved to the Action Log & Reports hub in v2.1."
     },
     {
       "page": "admintools",
@@ -414,7 +446,7 @@
       "anchor": "dimension-locks",
       "level": 3,
       "parent": "Server Controls",
-      "text": "Lock any dimension instantly or with countdown announcements (5 min, 1 min, 30 sec). Players inside locked dimension sent to spawn. All teleportation to locked dimensions blocked."
+      "text": "Lock any dimension instantly or with countdown announcements (5 min, 1 min, 30 sec). Players inside locked dimension sent to spawn. All teleportation to locked dimensions blocked. Mount carry applies on ejection."
     },
     {
       "page": "admintools",
@@ -430,15 +462,15 @@
       "anchor": "item-watch",
       "level": 3,
       "parent": "Server Controls",
-      "text": "Banned items are automatically removed from player inventories. Tracked items alert admins when a player holds more than the configured threshold."
+      "text": "Banned items are automatically removed from player inventories. Tracked items alert admins when a player holds more than the configured threshold. Persistent offline log of flagged events viewable under the Action Log & Reports hub."
     },
     {
       "page": "admintools",
       "heading": "Storage Health",
       "anchor": "storage-health",
       "level": 3,
-      "parent": "Server Controls",
-      "text": "Monitors dynamic property storage usage across tickets, claims, admin log, and player registry (up to 300 players). Automatic alerts on admin join when storage approaches capacity. On-demand check available."
+      "parent": "Broadcasts & Logging",
+      "text": "Monitors dynamic property storage usage. Now located under Admin Log, not the Control Panel. Limits: Claims 3000 (sub-claims and sub-sub-claims share this pool), Tickets 500, Admin log 800, Player registry 500 (eviction warning at 450). Automatic alerts on admin join when approaching capacity."
     },
     {
       "page": "admintools",
@@ -484,7 +516,7 @@
       "heading": "Broadcasts & Logging",
       "anchor": "broadcasts-logging",
       "level": 2,
-      "text": "Server-wide announcements and activity logging for moderation tracking."
+      "text": "Server-wide announcements and activity logging for moderation tracking. Logging hub includes Action Log, Rollcall, Staff Activity, Storage Health, and Item Watch Log."
     },
     {
       "page": "admintools",
@@ -496,11 +528,11 @@
     },
     {
       "page": "admintools",
-      "heading": "Admin Log",
+      "heading": "Action Log",
       "anchor": "admin-log",
       "level": 3,
       "parent": "Broadcasts & Logging",
-      "text": "All moderation actions logged with timestamps and staff names. Sub-views: Action Log (filter by type), Rollcall (session join/leave), Staff Activity (grouped by staff member). Owner can clear the log."
+      "text": "All moderation actions logged with timestamps and staff names. Entries use bracketed italic timestamps and colour-coded source tags [ADM], [PLR], [SYS]. PvP kills logged with PVP_KILL tag. Unified Filters button covers player, action type, and source in one modal. Clear Filters shown only when active. Clear Log button moved into the Action Log view. Silent eviction: no chat broadcast when old entries roll off. Rollcall and Staff Activity Back/Close buttons now have icons."
     },
     {
       "page": "admintools",
@@ -508,14 +540,22 @@
       "anchor": "saved-commands",
       "level": 3,
       "parent": "Broadcasts & Logging",
-      "text": "Save and run custom slash commands. Supports one-time execution and repeating scheduled commands. Each admin has their own command list (up to 50 saved commands). Some may require cheats."
+      "text": "Save and run custom slash commands. Up to 50 per admin. Single-modal add/edit flow covers name, command, repeat toggle, and delay in one step. Delete button lives on the command detail page. One-shot commands with no delay now run immediately. Some commands may require cheats."
+    },
+    {
+      "page": "admintools",
+      "heading": "Quick Run",
+      "anchor": "quick-run",
+      "level": 3,
+      "parent": "Broadcasts & Logging",
+      "text": "New button on the Commands panel. Opens a single text field to run a command immediately without saving it to your list. Useful for one-off commands. Logged in the Action Log like any other admin command."
     },
     {
       "page": "admintools",
       "heading": "Holograms",
       "anchor": "holograms",
       "level": 2,
-      "text": "Floating text displays placed in the world. Admin-only using the Hologram Tool (Sign + Glow Ink Sac). Up to 50 holograms, 10 lines each, 60 chars per line. Supports Minecraft color codes. Edit by interacting with Hologram Tool. Restore at Control Panel if despawned."
+      "text": "Floating text displays placed in the world. Admin-only using the Hologram Tool (Sign + Glow Ink Sac). Up to 100 holograms per world (raised from 50 in v2.1), 10 lines each, 60 chars per line. Supports Minecraft color codes. Holograms placed in v2.1 or later use jm_at:hologram_v2 with half-block entity height for better ceiling placement. Earlier holograms keep original height. Edit by interacting with Hologram Tool. Restore at Control Panel if despawned."
     },
     {
       "page": "admintools",
@@ -536,14 +576,14 @@
       "heading": "Custom Commands",
       "anchor": "custom-commands",
       "level": 2,
-      "text": "Slash commands for quick access: /jm_at:transferowner, /jm_at:resetowner, /jm_at:freeze, /jm_at:unfreeze, /jm_at:warn, /jm_at:heal, /jm_at:feed, /jm_at:summonplayer, /jm_at:lockserver, /jm_at:whitelist, /jm_at:forceunfreeze, /jm_at:removemod. Also /scriptevent jm_at:resetData for full reset."
+      "text": "Slash commands for quick access: /jm_at:transferowner, /jm_at:resetowner, /jm_at:freeze, /jm_at:unfreeze, /jm_at:warn, /jm_at:heal, /jm_at:feed, /jm_at:summonplayer, /jm_at:lockserver, /jm_at:whitelist, /jm_at:forceunfreeze, /jm_at:removemod, /jm_at:mobwhitelist <add|remove|list> <entity_type_id>. Also /scriptevent jm_at:resetData for full reset."
     },
     {
       "page": "admintools",
       "heading": "Troubleshooting & FAQ",
       "anchor": "troubleshooting",
       "level": 2,
-      "text": "Common issues: Admin Tool not in inventory, check operator status and pack versions (v2.0.13). Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared, restore from Control Panel. Storage full, check Storage Health and delete old tickets. Claims not working, check BP/RP versions and budget."
+      "text": "Common issues: Admin Tool not in inventory, check operator status and pack versions (v2.1). Change owner with /jm_at:transferowner. Achievements stay enabled, no cheats needed. Moderators cannot perm ban. Reset everything with /scriptevent jm_at:resetData (run twice). Holograms disappeared, restore from Control Panel. Storage full, check Admin Log > Storage Health and delete old tickets. Claims not working, check BP/RP versions and budget. Offline unbans now reliable; if a stale ban persists, unban again through the Admin Tool."
     },
     {
       "page": "notice-board",

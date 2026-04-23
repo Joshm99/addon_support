@@ -29,8 +29,8 @@
   font-family: var(--font-body);
   font-size: 0.82rem;
   color: var(--text);
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
+  background: rgba(240, 244, 255, 0.08);
+  border: 1px solid rgba(240, 244, 255, 0.15);
   border-radius: 100px;
   outline: none;
   transition: border-color var(--transition-base), box-shadow var(--transition-base);

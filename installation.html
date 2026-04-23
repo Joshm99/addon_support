@@ -1,250 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation & Updating | JM Addons</title>
-  <meta name="description" content="Step-by-step guide for installing and updating JM's Minecraft Bedrock addons on Realms, dedicated servers, and single-player worlds." />
-  <link rel="canonical" href="https://jmaddons.support/installation.html" />
-  <meta name="theme-color" content="#1e8fff" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="JM Addons" />
-  <meta property="og:title" content="Installation & Updating | JM Addons" />
-  <meta property="og:description" content="Step-by-step guide for installing and updating JM's Minecraft Bedrock addons on Realms, dedicated servers, and single-player worlds." />
-  <meta property="og:url" content="https://jmaddons.support/installation.html" />
-  <meta property="og:image" content="https://jmaddons.support/images/og-banner.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Installation & Updating | JM Addons" />
-  <meta name="twitter:description" content="Step-by-step guide for installing and updating JM's Minecraft Bedrock addons on Realms, dedicated servers, and single-player worlds." />
-  <meta name="twitter:image" content="https://jmaddons.support/images/og-banner.png" />
-  <link rel="apple-touch-icon" href="images/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="images/logo.png" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="search.css" />
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="94e442b6-0d47-4737-835d-95391824ef61"></script>
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation & Updating | JM Addons</title>
+    <meta
+      name="description"
+      content="Step-by-step guide for installing and updating JM's Minecraft Bedrock addons on Realms, dedicated servers, and single-player worlds."
+    />
+    <link rel="canonical" href="https://jmaddons.support/installation.html" />
+    <meta name="theme-color" content="#1e8fff" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="JM Addons" />
+    <meta property="og:title" content="Installation & Updating | JM Addons" />
+    <meta
+      property="og:description"
+      content="Step-by-step guide for installing and updating JM's Minecraft Bedrock addons on Realms, dedicated servers, and single-player worlds."
+    />
+    <meta
+      property="og:url"
+      content="https://jmaddons.support/installation.html"
+    />
+    <meta
+      property="og:image"
+      content="https://jmaddons.support/images/og-banner.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Installation & Updating | JM Addons" />
+    <meta
+      name="twitter:description"
+      content="Step-by-step guide for installing and updating JM's Minecraft Bedrock addons on Realms, dedicated servers, and single-player worlds."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jmaddons.support/images/og-banner.png"
+    />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="search.css" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="94e442b6-0d47-4737-835d-95391824ef61"
+    ></script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="JM Addons" class="logo-icon" />
-        <span class="logo-pixel">JM Addons</span>
-      </a>
-      <div class="search-wrapper">
-        <div class="search-input-wrap">
-          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" class="search-input" placeholder="Search docs..." aria-label="Search documentation" aria-expanded="false" autocomplete="off" />
-          <kbd class="search-kbd">/</kbd>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="JM Addons" class="logo-icon" />
+          <span class="logo-pixel">JM Addons</span>
+        </a>
+        <div class="search-wrapper">
+          <div class="search-input-wrap">
+            <svg
+              class="search-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search docs..."
+              aria-label="Search documentation"
+              aria-expanded="false"
+              autocomplete="off"
+            />
+            <kbd class="search-kbd">/</kbd>
+          </div>
+          <div
+            class="search-results"
+            role="listbox"
+            aria-label="Search results"
+            hidden
+          ></div>
         </div>
-        <div class="search-results" role="listbox" aria-label="Search results" hidden></div>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="top-nav">
+          <a href="index.html" class="nav-link">Docs</a>
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            class="nav-link nav-curseforge"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CurseForge</a
+          >
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            class="nav-link nav-discord"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Discord</a
+          >
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            class="nav-link nav-donate"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Donate</a
+          >
+        </nav>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav class="top-nav">
-        <a href="index.html" class="nav-link">Docs</a>
-        <a href="https://www.curseforge.com/members/jm_1775/projects" class="nav-link" target="_blank" rel="noopener noreferrer">CurseForge</a>
-        <a href="https://discord.gg/ZsrM5HqHdS" class="nav-link" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="https://buymeacoffee.com/jm1775" class="nav-link nav-donate" target="_blank" rel="noopener noreferrer">Donate</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <div class="page-layout" id="main-content">
+    <div class="page-layout" id="main-content">
+      <aside class="sidebar">
+        <a href="index.html" class="sidebar-back">← All Addons</a>
 
-    <aside class="sidebar">
-      <a href="index.html" class="sidebar-back">← All Addons</a>
+        <div class="sidebar-section">
+          <span class="sidebar-label">On this page</span>
+          <ul class="sidebar-nav">
+            <li><a href="#installation" class="active">Installation</a></li>
+            <li>
+              <a href="#updating">Updating</a>
+              <ul class="sidebar-subnav">
+                <li><a href="#updating-realms">Realms</a></li>
+                <li><a href="#updating-non-realms">Non-Realm Worlds</a></li>
+                <li><a href="#keeping-your-data">Keeping your data</a></li>
+              </ul>
+            </li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+          </ul>
+        </div>
+      </aside>
 
-      <div class="sidebar-section">
-        <span class="sidebar-label">On this page</span>
-        <ul class="sidebar-nav">
-          <li><a href="#installation" class="active">Installation</a></li>
+      <main class="doc-content">
+        <div class="doc-header">
+          <p class="doc-eyebrow">Guide</p>
+          <h1 class="doc-title">Installation & Updating</h1>
+          <p class="doc-desc">
+            How to install, update, and troubleshoot JM Addons on Minecraft
+            Bedrock Edition.
+          </p>
+        </div>
+
+        <h2 id="installation">Installation</h2>
+        <ol class="steps">
+          <li>Download the .mcaddon from CurseForge.</li>
           <li>
-            <a href="#updating">Updating</a>
-            <ul class="sidebar-subnav">
-              <li><a href="#updating-realms">Realms</a></li>
-              <li><a href="#updating-non-realms">Non-Realm Worlds</a></li>
-              <li><a href="#keeping-your-data">Keeping your data</a></li>
-            </ul>
+            Double-click the file to import the addon into Minecraft (close
+            Minecraft first for the best result).
           </li>
-          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li>
+            Create or open a world and head to Behavior Packs in world settings.
+          </li>
+          <li>
+            Activate the Behavior Pack. The resource pack is linked
+            automatically.
+          </li>
+        </ol>
+
+        <div class="callout">
+          <span class="callout-icon">★</span>
+          <div class="callout-body">
+            <span class="callout-label">Tip</span>
+            <p>
+              These steps apply to all JM Addons. Each one ships as a single
+              .mcaddon file that bundles the behavior pack and resource pack
+              together.
+            </p>
+          </div>
+        </div>
+
+        <h2 id="updating">Updating</h2>
+        <p>
+          The update process is a bit different depending on whether you're
+          running a Realm or a local/singleplayer world. Follow the steps for
+          your setup below.
+        </p>
+
+        <h3 id="updating-realms">Realms</h3>
+        <ol class="steps">
+          <li><span>Open Minecraft.</span></li>
+          <li>
+            <span
+              >Deactivate the BP and RP from your Realm, then click the back
+              button so it saves the change.</span
+            >
+          </li>
+          <li>
+            <span
+              >Go to <strong>Settings → Storage</strong> and remove the old
+              behavior pack and resource pack.</span
+            >
+          </li>
+          <li><span>Close Minecraft completely.</span></li>
+          <li>
+            <span
+              >Download the new <code>.mcaddon</code> file and open it. The pack
+              will auto-install.</span
+            >
+          </li>
+          <li>
+            <span>Go to <strong>Edit World</strong> on your Realm's page.</span>
+          </li>
+          <li>
+            <span
+              >Verify that the behavior and resource packs show the new version
+              number (use the green check mark to confirm).</span
+            >
+          </li>
+          <li><span>Load into your Realm.</span></li>
+        </ol>
+
+        <h3 id="updating-non-realms">Non-Realm Worlds</h3>
+        <ol class="steps">
+          <li><span>Open Minecraft.</span></li>
+          <li>
+            <span
+              >Go to <strong>Settings → Storage</strong> and remove the old
+              behavior pack and resource pack.</span
+            >
+          </li>
+          <li><span>Close Minecraft completely.</span></li>
+          <li>
+            <span
+              >Download the new <code>.mcaddon</code> file and open it. The pack
+              will auto-install.</span
+            >
+          </li>
+          <li><span>Click the pencil icon on your world to edit it.</span></li>
+          <li>
+            <span
+              >Activate the behavior pack and make sure the resource pack
+              activates too.</span
+            >
+          </li>
+          <li><span>Load into your world.</span></li>
+        </ol>
+
+        <div class="callout warn">
+          <span class="callout-icon">⚠</span>
+          <div class="callout-body">
+            <span class="callout-label">Important</span>
+            <p>
+              Always remove the old packs from
+              <strong>Settings → Storage</strong> before importing the new
+              version. That way Minecraft picks up the updated files and you
+              avoid version conflicts.
+            </p>
+          </div>
+        </div>
+
+        <h3 id="keeping-your-data">Keeping your data</h3>
+        <p>
+          Updates preserve your world data. Scoreboards, tags, dynamic
+          properties, and any in-game state created by the addon stay intact
+          after updating. Removing the old packs from storage only removes the
+          addon files; your world's saved data is untouched.
+        </p>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+        <ul>
+          <li>
+            <strong>Addon not appearing in Behavior Packs?</strong> Make sure
+            Minecraft was fully closed before importing, then try opening the
+            .mcaddon file again.
+          </li>
+          <li>
+            <strong>Resource pack not loading?</strong> The resource pack is
+            linked to the behavior pack and should activate on its own. If it
+            doesn't, check that it's listed under Active Packs in your world's
+            Resource Packs settings.
+          </li>
+          <li>
+            <strong>Features not working after an update?</strong> Close and
+            reopen the world. Some script-based features need a fresh world load
+            to initialize.
+          </li>
         </ul>
-      </div>
-    </aside>
-
-    <main class="doc-content">
-
-      <div class="doc-header">
-        <p class="doc-eyebrow">Guide</p>
-        <h1 class="doc-title">Installation & Updating</h1>
-        <p class="doc-desc">How to install, update, and troubleshoot JM Addons on Minecraft Bedrock Edition.</p>
-      </div>
-
-      <h2 id="installation">Installation</h2>
-      <ol class="steps">
-        <li>Download the .mcaddon from CurseForge.</li>
-        <li>Double-click the file to import the addon into Minecraft (close Minecraft first for the best result).</li>
-        <li>Create or open a world and head to Behavior Packs in world settings.</li>
-        <li>Activate the Behavior Pack. The resource pack is linked automatically.</li>
-      </ol>
-
-      <div class="callout">
-        <span class="callout-icon">★</span>
-        <div class="callout-body">
-          <span class="callout-label">Tip</span>
-          <p>These steps apply to all JM Addons. Each one ships as a single .mcaddon file that bundles the behavior pack and resource pack together.</p>
-        </div>
-      </div>
-
-      <h2 id="updating">Updating</h2>
-      <p>The update process is a bit different depending on whether you're running a Realm or a local/singleplayer world. Follow the steps for your setup below.</p>
-
-      <h3 id="updating-realms">Realms</h3>
-      <ol class="steps">
-        <li><span>Open Minecraft.</span></li>
-        <li><span>Deactivate the BP and RP from your Realm, then click the back button so it saves the change.</span></li>
-        <li><span>Go to <strong>Settings → Storage</strong> and remove the old behavior pack and resource pack.</span></li>
-        <li><span>Close Minecraft completely.</span></li>
-        <li><span>Download the new <code>.mcaddon</code> file and open it. The pack will auto-install.</span></li>
-        <li><span>Go to <strong>Edit World</strong> on your Realm's page.</span></li>
-        <li><span>Verify that the behavior and resource packs show the new version number (use the green check mark to confirm).</span></li>
-        <li><span>Load into your Realm.</span></li>
-      </ol>
-
-      <h3 id="updating-non-realms">Non-Realm Worlds</h3>
-      <ol class="steps">
-        <li><span>Open Minecraft.</span></li>
-        <li><span>Go to <strong>Settings → Storage</strong> and remove the old behavior pack and resource pack.</span></li>
-        <li><span>Close Minecraft completely.</span></li>
-        <li><span>Download the new <code>.mcaddon</code> file and open it. The pack will auto-install.</span></li>
-        <li><span>Click the pencil icon on your world to edit it.</span></li>
-        <li><span>Activate the behavior pack and make sure the resource pack activates too.</span></li>
-        <li><span>Load into your world.</span></li>
-      </ol>
-
-      <div class="callout warn">
-        <span class="callout-icon">⚠</span>
-        <div class="callout-body">
-          <span class="callout-label">Important</span>
-          <p>Always remove the old packs from <strong>Settings → Storage</strong> before importing the new version. That way Minecraft picks up the updated files and you avoid version conflicts.</p>
-        </div>
-      </div>
-
-      <h3 id="keeping-your-data">Keeping your data</h3>
-      <p>Updates preserve your world data. Scoreboards, tags, dynamic properties, and any in-game state created by the addon stay intact after updating. Removing the old packs from storage only removes the addon files; your world's saved data is untouched.</p>
-
-      <h2 id="troubleshooting">Troubleshooting</h2>
-      <ul>
-        <li><strong>Addon not appearing in Behavior Packs?</strong> Make sure Minecraft was fully closed before importing, then try opening the .mcaddon file again.</li>
-        <li><strong>Resource pack not loading?</strong> The resource pack is linked to the behavior pack and should activate on its own. If it doesn't, check that it's listed under Active Packs in your world's Resource Packs settings.</li>
-        <li><strong>Features not working after an update?</strong> Close and reopen the world. Some script-based features need a fresh world load to initialize.</li>
-      </ul>
-
-    </main>
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span class="footer-logo">JM Addons</span>
-      <span class="footer-copy">Minecraft Bedrock · Not affiliated with Mojang</span>
-      <div class="footer-links">
-        <a href="https://www.curseforge.com/members/jm_1775/projects" target="_blank" rel="noopener noreferrer">CurseForge</a>
-        <span class="footer-sep">|</span>
-        <a href="https://discord.gg/ZsrM5HqHdS" target="_blank" rel="noopener noreferrer">Discord</a>
-        <span class="footer-sep">|</span>
-        <a href="https://buymeacoffee.com/jm1775" target="_blank" rel="noopener noreferrer">Donate</a>
-      </div>
+      </main>
     </div>
-    <span class="site-version">v0.1.12</span>
-  </footer>
 
-  <script>
-    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
-      const expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!expanded));
-      document.querySelector('.top-nav').classList.toggle('open');
-    });
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-logo">JM Addons</span>
+        <span class="footer-copy"
+          >Minecraft Bedrock · Not affiliated with Mojang</span
+        >
+        <div class="footer-links">
+          <a
+            href="https://www.curseforge.com/members/jm_1775/projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CurseForge</a
+          >
+          <span class="footer-sep">|</span>
+          <a
+            href="https://discord.gg/ZsrM5HqHdS"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Discord</a
+          >
+          <span class="footer-sep">|</span>
+          <a
+            href="https://buymeacoffee.com/jm1775"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Donate</a
+          >
+        </div>
+      </div>
+      <span class="site-version">Docs v1.1.0</span>
+    </footer>
 
-    // Collapsible sidebar sections
-    document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
-      if (li.querySelector(".sidebar-subnav")) {
-        li.classList.add("has-children");
-        li.querySelector(":scope > a").addEventListener("click", function (e) {
-          e.preventDefault();
-          li.classList.toggle("open");
+    <script>
+      document
+        .querySelector(".nav-toggle")
+        ?.addEventListener("click", function () {
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", String(!expanded));
+          document.querySelector(".top-nav").classList.toggle("open");
         });
-      }
-    });
 
-    // Active section tracking via scroll position
-    (function () {
-      var sidebarLinks = document.querySelectorAll(".sidebar-nav a[href^='#']");
-      var idToLink = {};
-      sidebarLinks.forEach(function (link) {
-        idToLink[link.getAttribute("href").slice(1)] = link;
+      // Collapsible sidebar sections
+      document.querySelectorAll(".sidebar-nav > li").forEach(function (li) {
+        if (li.querySelector(".sidebar-subnav")) {
+          li.classList.add("has-children");
+          li.querySelector(":scope > a").addEventListener(
+            "click",
+            function (e) {
+              e.preventDefault();
+              li.classList.toggle("open");
+            },
+          );
+        }
       });
 
-      var headings = [];
-      document.querySelectorAll(".doc-content h2[id], .doc-content h3[id]").forEach(function (el) {
-        if (idToLink[el.id]) headings.push(el);
-      });
+      // Active section tracking via scroll position
+      (function () {
+        var sidebarLinks = document.querySelectorAll(
+          ".sidebar-nav a[href^='#']",
+        );
+        var idToLink = {};
+        sidebarLinks.forEach(function (link) {
+          idToLink[link.getAttribute("href").slice(1)] = link;
+        });
 
-      var currentId = null;
-
-      function setActive(id) {
-        if (id === currentId) return;
-        currentId = id;
-        sidebarLinks.forEach(function (l) { l.classList.remove("active"); });
-        var link = idToLink[id];
-        if (link) {
-          link.classList.add("active");
-          var parentLi = link.closest("li.has-children");
-          if (!parentLi) {
-            var subnav = link.closest(".sidebar-subnav");
-            if (subnav) parentLi = subnav.closest("li.has-children");
-          }
-          document.querySelectorAll(".sidebar-nav > li.has-children").forEach(function (li) {
-            if (li === parentLi) {
-              li.classList.add("open");
-            } else {
-              li.classList.remove("open");
-            }
+        var headings = [];
+        document
+          .querySelectorAll(".doc-content h2[id], .doc-content h3[id]")
+          .forEach(function (el) {
+            if (idToLink[el.id]) headings.push(el);
           });
-        }
-      }
 
-      function onScroll() {
-        var scrollTop = window.scrollY + 100;
-        var active = null;
-        for (var i = 0; i < headings.length; i++) {
-          if (headings[i].offsetTop <= scrollTop) {
-            active = headings[i].id;
-          } else {
-            break;
+        var currentId = null;
+
+        function setActive(id) {
+          if (id === currentId) return;
+          currentId = id;
+          sidebarLinks.forEach(function (l) {
+            l.classList.remove("active");
+          });
+          var link = idToLink[id];
+          if (link) {
+            link.classList.add("active");
+            var parentLi = link.closest("li.has-children");
+            if (!parentLi) {
+              var subnav = link.closest(".sidebar-subnav");
+              if (subnav) parentLi = subnav.closest("li.has-children");
+            }
+            document
+              .querySelectorAll(".sidebar-nav > li.has-children")
+              .forEach(function (li) {
+                if (li === parentLi) {
+                  li.classList.add("open");
+                } else {
+                  li.classList.remove("open");
+                }
+              });
           }
         }
-        if (active) setActive(active);
-      }
 
-      var ticking = false;
-      window.addEventListener("scroll", function () {
-        if (!ticking) {
-          requestAnimationFrame(function () { onScroll(); ticking = false; });
-          ticking = true;
+        function onScroll() {
+          var scrollTop = window.scrollY + 100;
+          var active = null;
+          for (var i = 0; i < headings.length; i++) {
+            if (headings[i].offsetTop <= scrollTop) {
+              active = headings[i].id;
+            } else {
+              break;
+            }
+          }
+          if (active) setActive(active);
         }
-      });
-      onScroll();
-    })();
-  </script>
-  <script defer src="search.js"></script>
-</body>
+
+        var ticking = false;
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            requestAnimationFrame(function () {
+              onScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+        onScroll();
+      })();
+    </script>
+    <script defer src="search.js"></script>
+  </body>
 </html>
